@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>ar.com.kfgodel</groupId>
+    <artifactId>java-pom</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>ar.com.kfgodel</groupId>
+  <artifactId>primitons</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>Primitons</name>
+  <description>Java project that offers numerous primitive conversions as functions</description>
+
+  <scm>
+    <connection>scm:git:ssh://github.com/kfgodel/primitons.git</connection>
+    <developerConnection>scm:git:ssh://github.com/kfgodel/primitons.git</developerConnection>
+    <url>https://github.com/kfgodel/primitons</url>
+  </scm>
+
+  <properties>
+    <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+    <spock-core.version>1.1-groovy-2.4</spock-core.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>kfgodel_mosquito</id>
+      <name>Repo Mosquito</name>
+      <url>http://kfgodel.info:8081/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
+
+
+  <dependencies>
+
+    <!-- Rspec like testing -->
+    <dependency>
+      <groupId>ar.com.dgarcia</groupId>
+      <artifactId>java-spec</artifactId>
+    </dependency>
+
+    <!-- Mandatory dependencies for using Spock -->
+    <dependency>
+      <groupId>org.spockframework</groupId>
+      <artifactId>spock-core</artifactId>
+      <version>${spock-core.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Mandatory plugins for using Spock -->
+      <plugin>
+        <!-- The gmavenplus plugin is used to compile Groovy code. To learn more about this plugin,
+        visit https://github.com/groovy/GMavenPlus/wiki -->
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+        <version>${gmavenplus-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
