@@ -3,6 +3,7 @@ package ar.com.kfgodel.primitons;
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
 
 import java.util.function.IntToLongFunction;
+import java.util.function.LongToIntFunction;
 import java.util.function.Supplier;
 
 /**
@@ -20,5 +21,13 @@ public interface PrimitonTestContext extends TestContext {
   Long longOutput();
   void longOutput(Supplier<Long> definition);
 
+  LongToIntFunction long2int();
+  void long2int(Supplier<LongToIntFunction> definition);
+
+  Long longInput();
+  void longInput(Supplier<Long> definition);
+
+  Integer intOutput();
+  void intOutput(Supplier<Integer> definition);
 
 }
