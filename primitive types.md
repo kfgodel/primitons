@@ -51,8 +51,8 @@ Size generally calculated as the array object (16 bytes) + element size o object
 
 | From | To | Function |
 |------|----|----------|
-| boolean | boolean
-| boolean | Boolean | Primiton::boolean2Boolean
+| boolean | boolean | Booleton::identity
+| boolean | Boolean | Booleton::toBoxedBoolean
 | boolean | byte 
 | boolean | Byte 
 | boolean | short 
@@ -85,8 +85,8 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | boolean | char[] 
 | boolean | Character[] 
 | boolean | String[]
-| Boolean | boolean | Primiton::Boolean2boolean
-| Boolean | Boolean
+| Boolean | boolean | BoxedBooleton::toBoolean
+| Boolean | Boolean | BoxedBooleton::identity
 | Boolean | byte 
 | Boolean | Byte 
 | Boolean | short 
@@ -263,7 +263,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int | Short 
 | int | int 
 | int | Integer 
-| int | long | Primiton::int2long
+| int | long | Inton::toLong
 | int | Long 
 | int | float 
 | int | Float 
@@ -329,7 +329,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | long | Byte 
 | long | short 
 | long | Short 
-| long | int | Primiton::long2int
+| long | int | Longon::toInt
 | long | Integer 
 | long | long 
 | long | Long 

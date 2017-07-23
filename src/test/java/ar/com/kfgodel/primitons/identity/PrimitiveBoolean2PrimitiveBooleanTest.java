@@ -1,4 +1,4 @@
-package ar.com.kfgodel.primitons.boxing;
+package ar.com.kfgodel.primitons.identity;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
@@ -9,32 +9,30 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Verifies the basic conversions for primitive to object conversion
+ * Verifies the identity function for primitive type
  * Created by kfgodel on 23/07/17.
  */
 @RunWith(JavaSpecRunner.class)
-public class PrimitiveBoolean2ObjectBooleanTest extends JavaSpec<PrimitonTestContext> {
+public class PrimitiveBoolean2PrimitiveBooleanTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
-    describe("a boolean to Boolean primiton", () -> {
-      context().boolean2boolean(()-> Booleton::toBoxedBoolean);
+    describe("a boolean to boolean primiton", () -> {
+      context().boolean2boolean(()-> Booleton::identity);
 
       describe("when used", () -> {
         context().booleanOutput(()-> context().boolean2boolean().apply(context().booleanInput()));
 
-        it("converts the primitive true into its object counterpart",()->{
+        it("returns true when it's given",()->{
           context().booleanInput(()-> true);
-          assertThat(context().booleanOutput()).isSameAs(Boolean.TRUE);
+          assertThat(context().booleanOutput()).isEqualTo(true);
         });
 
-        it("converts the primitive false into its object counterpart",()->{
+        it("returns false when it's given",()->{
           context().booleanInput(()-> false);
-          assertThat(context().booleanOutput()).isSameAs(Boolean.FALSE);
+          assertThat(context().booleanOutput()).isEqualTo(false);
         });
 
       });
-
     });
-
   }
 }
