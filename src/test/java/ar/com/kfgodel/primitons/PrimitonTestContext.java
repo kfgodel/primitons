@@ -1,6 +1,7 @@
 package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
+import ar.com.kfgodel.function.BooleanUnaryOperator;
 
 import java.util.function.IntToLongFunction;
 import java.util.function.LongToIntFunction;
@@ -11,6 +12,9 @@ import java.util.function.Supplier;
  * Created by kfgodel on 03/07/17.
  */
 public interface PrimitonTestContext extends TestContext {
+
+  BooleanUnaryOperator boolean2boolean();
+  void boolean2boolean(Supplier<BooleanUnaryOperator> definition);
 
   IntToLongFunction int2Long();
   void int2Long(Supplier<IntToLongFunction> definition);
@@ -29,5 +33,11 @@ public interface PrimitonTestContext extends TestContext {
 
   Integer intOutput();
   void intOutput(Supplier<Integer> definition);
+
+  Boolean booleanInput();
+  void booleanInput(Supplier<Boolean> definition);
+
+  Boolean booleanOutput();
+  void booleanOutput(Supplier<Boolean> definition);
 
 }
