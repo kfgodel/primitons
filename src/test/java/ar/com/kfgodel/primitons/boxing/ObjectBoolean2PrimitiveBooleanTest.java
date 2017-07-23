@@ -1,7 +1,8 @@
-package ar.com.kfgodel.primitons;
+package ar.com.kfgodel.primitons.boxing;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
+import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.Primiton;
 import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 import org.junit.runner.RunWith;
