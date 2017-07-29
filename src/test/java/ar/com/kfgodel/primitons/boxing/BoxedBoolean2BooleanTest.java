@@ -4,7 +4,7 @@ import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.boxed.BoxedBooleanton;
-import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
+import ar.com.kfgodel.primitons.api.exceptions.UnmappableException;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -33,10 +33,10 @@ public class BoxedBoolean2BooleanTest extends JavaSpec<PrimitonTestContext> {
           assertThat(context().booleanOutput()).isEqualTo(false);
         });
 
-        itThrows(PrimitonException.class, "if value is null",()->{
+        itThrows(UnmappableException.class, "if value is null",()->{
           context().boxedBoolean2boxedBoolean().apply(null);
         }, e ->{
-          assertThat(e).hasMessage("Value[null] cannot be converted to boolean");
+          assertThat(e).hasMessage("Value[null] is not convertable to type [boolean]");
         });
 
       });

@@ -1,9 +1,11 @@
-package ar.com.kfgodel.primitons;
+package ar.com.kfgodel.primitons.numeric;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
+import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.basic.Longton;
-import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
+import ar.com.kfgodel.primitons.api.exceptions.OverflowException;
+import ar.com.kfgodel.primitons.api.exceptions.UnderflowException;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,16 +39,16 @@ public class Long2IntTest extends JavaSpec<PrimitonTestContext> {
           assertThat(context().intOutput()).isEqualTo(Integer.MIN_VALUE);
         });
 
-        itThrows(PrimitonException.class, "if value is too big for an int",()->{
+        itThrows(OverflowException.class, "if value is too big for an int",()->{
          context().long2int().applyAsInt(2147483648L);
         }, e ->{
-          assertThat(e).hasMessage("Value[2147483648] overflows int type");
+          assertThat(e).hasMessage("Value[2147483648] overflows type [int]");
         });
 
-        itThrows(PrimitonException.class, "if value is too small for an int",()->{
+        itThrows(UnderflowException.class, "if value is too small for an int",()->{
           context().long2int().applyAsInt(-2147483649L);
         }, e ->{
-          assertThat(e).hasMessage("Value[-2147483649] underflows int type");
+          assertThat(e).hasMessage("Value[-2147483649] underflows type [int]");
         });
 
       });

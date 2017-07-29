@@ -1,7 +1,8 @@
-package ar.com.kfgodel.primitons;
+package ar.com.kfgodel.primitons.numeric;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
+import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.basic.Inton;
 import org.junit.runner.RunWith;
 
