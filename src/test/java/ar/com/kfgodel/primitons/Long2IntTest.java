@@ -2,7 +2,7 @@ package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
-import ar.com.kfgodel.primitons.api.Longton;
+import ar.com.kfgodel.primitons.api.basic.Longton;
 import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 import org.junit.runner.RunWith;
 

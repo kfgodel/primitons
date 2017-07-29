@@ -3,7 +3,7 @@ package ar.com.kfgodel.primitons.identity;
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
-import ar.com.kfgodel.primitons.api.BoxedBooleanton;
+import ar.com.kfgodel.primitons.api.boxed.BoxedBooleanton;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;

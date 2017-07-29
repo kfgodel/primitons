@@ -2,7 +2,7 @@ package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
-import ar.com.kfgodel.primitons.api.Inton;
+import ar.com.kfgodel.primitons.api.basic.Inton;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
