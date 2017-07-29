@@ -14,14 +14,14 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by kfgodel on 23/07/17.
  */
 @RunWith(JavaSpecRunner.class)
-public class ObjectBoolean2PrimitiveBooleanTest extends JavaSpec<PrimitonTestContext> {
+public class BoxedBoolean2BooleanTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a Boolean to boolean primiton", () -> {
-      context().boolean2boolean(()-> BoxedBooleanton::toBoolean);
+      context().boxedBoolean2boxedBoolean(()-> BoxedBooleanton::toBoolean);
 
       describe("when used", () -> {
-        context().booleanOutput(()-> context().boolean2boolean().apply(context().booleanInput()));
+        context().booleanOutput(()-> context().boxedBoolean2boxedBoolean().apply(context().booleanInput()));
 
         it("converts the object TRUE to its primitive counterpart",()->{
           context().booleanInput(()-> Boolean.TRUE);
@@ -34,7 +34,7 @@ public class ObjectBoolean2PrimitiveBooleanTest extends JavaSpec<PrimitonTestCon
         });
 
         itThrows(PrimitonException.class, "if value is null",()->{
-          context().boolean2boolean().apply(null);
+          context().boxedBoolean2boxedBoolean().apply(null);
         }, e ->{
           assertThat(e).hasMessage("Value[null] cannot be converted to boolean");
         });

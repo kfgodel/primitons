@@ -293,6 +293,8 @@ public interface PrimitonTestContext extends TestContext {
   void boxedShortArrayOutput(Supplier<Short[]> definition);
 
 
+
+
   IntToLongFunction int2Long();
   void int2Long(Supplier<IntToLongFunction> definition);
 

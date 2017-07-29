@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by kfgodel on 23/07/17.
  */
 @RunWith(JavaSpecRunner.class)
-public class PrimitiveBoolean2ObjectBooleanTest extends JavaSpec<PrimitonTestContext> {
+public class Boolean2BoxedBooleanTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a boolean to Boolean primiton", () -> {

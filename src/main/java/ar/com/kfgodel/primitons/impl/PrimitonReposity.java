@@ -2,7 +2,6 @@ package ar.com.kfgodel.primitons.impl;
 
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.basic.*;
-import ar.com.kfgodel.primitons.api.boxed.BoxedBooleanton;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,9 +30,38 @@ public class PrimitonReposity {
     addConverterFrom(int.class, int.class, Inton::identity);
     addConverterFrom(long.class, long.class, Longton::identity);
     addConverterFrom(short.class, short.class, Shorton::identity);
+
     addConverterFrom(String.class, String.class, Objecton::identity);
     addConverterFrom(Object.class, Object.class, Objecton::identity);
-    addConverterFrom(Boolean.class, Boolean.class, BoxedBooleanton::identity);
+    addConverterFrom(Boolean.class, Boolean.class, Objecton::identity);
+    addConverterFrom(Byte.class, Byte.class, Objecton::identity);
+    addConverterFrom(Character.class, Character.class, Objecton::identity);
+    addConverterFrom(Double.class, Double.class, Objecton::identity);
+    addConverterFrom(Float.class, Float.class, Objecton::identity);
+    addConverterFrom(Integer.class, Integer.class, Objecton::identity);
+    addConverterFrom(Long.class, Long.class, Objecton::identity);
+    addConverterFrom(Short.class, Short.class, Objecton::identity);
+
+    addConverterFrom(boolean[].class, boolean[].class, Objecton::identity);
+    addConverterFrom(byte[].class, byte[].class, Objecton::identity);
+    addConverterFrom(char[].class, char[].class, Objecton::identity);
+    addConverterFrom(double[].class, double[].class, Objecton::identity);
+    addConverterFrom(float[].class, float[].class, Objecton::identity);
+    addConverterFrom(int[].class, int[].class, Objecton::identity);
+    addConverterFrom(long[].class, long[].class, Objecton::identity);
+    addConverterFrom(short[].class, short[].class, Objecton::identity);
+
+    addConverterFrom(String[].class, String[].class, Objecton::identity);
+    addConverterFrom(Object[].class, Object[].class, Objecton::identity);
+    addConverterFrom(Boolean[].class, Boolean[].class, Objecton::identity);
+    addConverterFrom(Byte[].class, Byte[].class, Objecton::identity);
+    addConverterFrom(Character[].class, Character[].class, Objecton::identity);
+    addConverterFrom(Double[].class, Double[].class, Objecton::identity);
+    addConverterFrom(Float[].class, Float[].class, Objecton::identity);
+    addConverterFrom(Integer[].class, Integer[].class, Objecton::identity);
+    addConverterFrom(Long[].class, Long[].class, Objecton::identity);
+    addConverterFrom(Short[].class, Short[].class, Objecton::identity);
+
   }
 
   private<I,O> PrimitonReposity addConverterFrom(Class<I> inputType, Class<O> outputType, Function<I, O> primiton) {
