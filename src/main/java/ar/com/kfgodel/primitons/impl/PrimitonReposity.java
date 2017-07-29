@@ -3,6 +3,7 @@ package ar.com.kfgodel.primitons.impl;
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.basic.Booleanton;
 import ar.com.kfgodel.primitons.api.basic.Byteton;
+import ar.com.kfgodel.primitons.api.basic.Charton;
 import ar.com.kfgodel.primitons.api.boxed.BoxedBooleanton;
 
 import java.util.HashMap;
@@ -26,6 +27,7 @@ public class PrimitonReposity {
   private void initialize() {
     addConverterFrom(boolean.class, boolean.class, Booleanton::identity);
     addConverterFrom(byte.class, byte.class, Byteton::identity);
+    addConverterFrom(char.class, char.class, Charton::identity);
     addConverterFrom(Boolean.class, Boolean.class, BoxedBooleanton::identity);
   }
 

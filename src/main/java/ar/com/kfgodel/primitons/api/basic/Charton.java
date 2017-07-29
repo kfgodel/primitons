@@ -5,4 +5,7 @@ package ar.com.kfgodel.primitons.api.basic;
  * Date: 29/07/17 - 14:32
  */
 public interface Charton {
+  static char identity(char input) {
+    return input;
+  }
 }
