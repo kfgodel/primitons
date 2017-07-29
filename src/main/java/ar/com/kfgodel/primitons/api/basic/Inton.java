@@ -8,4 +8,8 @@ public interface Inton {
   static long toLong(int input){
     return input;
   }
+
+  static int identity(int input) {
+    return input;
+  }
 }
