@@ -23,6 +23,7 @@ public class PrimitonReposity {
 
   private void initialize() {
     addConverterFrom(boolean.class, boolean.class, Booleanton::identity);
+    addConverterFrom(Boolean.class, Boolean.class, Booleanton::identity);
   }
 
   private<I,O> PrimitonReposity addConverterFrom(Class<I> inputType, Class<O> outputType, Function<I, O> primiton) {
