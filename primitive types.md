@@ -11,25 +11,28 @@ Sizes from [this answer](https://stackoverflow.com/questions/258120/what-is-the-
 - **byte** (8 bits): 
 - **Byte** (16 bytes): 
 - **short**	(16 bits): 
-- **Short**	(16 Bytes): 
+- **Short**	(16 bytes): 
 - **int**	(32 bits): 
-- **Integer**	(16 Bytes): 
+- **Integer**	(16 bytes): 
 - **long**	(64 bits): 
-- **Long**	(16 Bytes): 
+- **Long**	(16 bytes): 
 - **float**	(32 bits): 
-- **Float**	(16 Bytes): 
+- **Float**	(16 bytes): 
 - **double**	(64 bits): 
-- **Double**	(16 Bytes): 
+- **Double**	(16 bytes): 
 
 ## Text types
 - **char**	(16 bits): 
-- **Character**	(16 Bytes): 
+- **Character**	(16 bytes): 
 - **String** (16 + n bytes): 
+
+## Object types
+- **Object** (16 bytes)
 
 ## Arrays
 Size generally calculated as the array object (16 bytes) + element size o object reference.
 
-## Boolean types
+## Array types
 - **boolean[]** (1 byte per element)
 - **Boolean[]** (4 bytes per reference)
 - **byte[]** 
@@ -47,12 +50,13 @@ Size generally calculated as the array object (16 bytes) + element size o object
 - **char[]** 
 - **Character[]** 
 - **String[]** 
+- **Object[]** 
 - **multidiomensional array** (4 bytes per reference): each sub-array is an object
 
 | From | To | Function |
 |------|----|----------|
-| boolean | boolean
-| boolean | Boolean | Primiton::boolean2Boolean
+| boolean | boolean | Booleton::identity
+| boolean | Boolean | Booleton::toBoxedBoolean
 | boolean | byte 
 | boolean | Byte 
 | boolean | short 
@@ -68,6 +72,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | boolean | char 
 | boolean | Character 
 | boolean | String 
+| boolean | Object 
 | boolean | boolean[]
 | boolean | Boolean[]
 | boolean | byte[] 
@@ -85,8 +90,9 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | boolean | char[] 
 | boolean | Character[] 
 | boolean | String[]
-| Boolean | boolean | Primiton::Boolean2boolean
-| Boolean | Boolean
+| boolean | Object[]
+| Boolean | boolean | BoxedBooleton::toBoolean
+| Boolean | Boolean | BoxedBooleton::identity
 | Boolean | byte 
 | Boolean | Byte 
 | Boolean | short 
@@ -102,6 +108,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Boolean | char 
 | Boolean | Character 
 | Boolean | String 
+| Boolean | Object 
 | Boolean | boolean[]
 | Boolean | Boolean[]
 | Boolean | byte[] 
@@ -119,6 +126,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Boolean | char[] 
 | Boolean | Character[] 
 | Boolean | String[] 
+| Boolean | Object[] 
 | byte | boolean
 | byte | Boolean
 | byte | byte 
@@ -136,6 +144,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | byte | char 
 | byte | Character 
 | byte | String 
+| byte | Object 
 | byte | boolean[]
 | byte | Boolean[]
 | byte | byte[] 
@@ -153,6 +162,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | byte | char[] 
 | byte | Character[] 
 | byte | String[] 
+| byte | Object[] 
 | Byte | boolean
 | Byte | Boolean
 | Byte | byte 
@@ -170,6 +180,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Byte | char 
 | Byte | Character 
 | Byte | String 
+| Byte | Object 
 | Byte | boolean[]
 | Byte | Boolean[]
 | Byte | byte[] 
@@ -187,6 +198,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Byte | char[] 
 | Byte | Character[] 
 | Byte | String[] 
+| Byte | Object[] 
 | short | boolean
 | short | Boolean
 | short | byte 
@@ -204,6 +216,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | short | char 
 | short | Character 
 | short | String 
+| short | Object 
 | short | boolean[]
 | short | Boolean[]
 | short | byte[] 
@@ -221,6 +234,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | short | char[] 
 | short | Character[] 
 | short | String[]
+| short | Object[]
 | Short | boolean
 | Short | Boolean
 | Short | byte 
@@ -238,6 +252,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Short | char 
 | Short | Character 
 | Short | String 
+| Short | Object 
 | Short | boolean[]
 | Short | Boolean[]
 | Short | byte[] 
@@ -255,6 +270,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Short | char[] 
 | Short | Character[] 
 | Short | String[]  
+| Short | Object[]  
 | int | boolean
 | int | Boolean
 | int | byte 
@@ -263,7 +279,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int | Short 
 | int | int 
 | int | Integer 
-| int | long | Primiton::int2long
+| int | long | Inton::toLong
 | int | Long 
 | int | float 
 | int | Float 
@@ -272,6 +288,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int | char 
 | int | Character 
 | int | String 
+| int | Object 
 | int | boolean[]
 | int | Boolean[]
 | int | byte[] 
@@ -289,6 +306,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int | char[] 
 | int | Character[] 
 | int | String[]
+| int | Object[]
 | Integer | boolean
 | Integer | Boolean
 | Integer | byte 
@@ -306,6 +324,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Integer | char 
 | Integer | Character 
 | Integer | String 
+| Integer | Object 
 | Integer | boolean[]
 | Integer | Boolean[]
 | Integer | byte[] 
@@ -323,13 +342,14 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Integer | char[] 
 | Integer | Character[] 
 | Integer | String[]  
+| Integer | Object[]  
 | long | boolean
 | long | Boolean
 | long | byte 
 | long | Byte 
 | long | short 
 | long | Short 
-| long | int | Primiton::long2int
+| long | int | Longon::toInt
 | long | Integer 
 | long | long 
 | long | Long 
@@ -340,6 +360,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | long | char 
 | long | Character 
 | long | String 
+| long | Object 
 | long | boolean[]
 | long | Boolean[]
 | long | byte[] 
@@ -357,6 +378,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | long | char[] 
 | long | Character[] 
 | long | String[]  
+| long | Object[]  
 | Long | boolean
 | Long | Boolean
 | Long | byte 
@@ -374,6 +396,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Long | char 
 | Long | Character 
 | Long | String 
+| Long | Object 
 | Long | boolean[]
 | Long | Boolean[]
 | Long | byte[] 
@@ -391,6 +414,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Long | char[] 
 | Long | Character[] 
 | Long | String[]  
+| Long | Object[]  
 | float | boolean
 | float | Boolean
 | float | byte 
@@ -408,6 +432,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | float | char 
 | float | Character 
 | float | String 
+| float | Object 
 | float | boolean[]
 | float | Boolean[]
 | float | byte[] 
@@ -425,6 +450,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | float | char[] 
 | float | Character[] 
 | float | String[]  
+| float | Object[]  
 | Float | boolean
 | Float | Boolean
 | Float | byte 
@@ -442,6 +468,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Float | char 
 | Float | Character 
 | Float | String 
+| Float | Object 
 | Float | boolean[]
 | Float | Boolean[]
 | Float | byte[] 
@@ -459,6 +486,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Float | char[] 
 | Float | Character[] 
 | Float | String[]  
+| Float | Object[]  
 | double | boolean
 | double | Boolean
 | double | byte 
@@ -476,6 +504,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | double | char 
 | double | Character 
 | double | String 
+| double | Object 
 | double | boolean[]
 | double | Boolean[]
 | double | byte[] 
@@ -493,6 +522,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | double | char[] 
 | double | Character[] 
 | double | String[]  
+| double | Object[]  
 | Double | boolean
 | Double | Boolean
 | Double | byte 
@@ -510,6 +540,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Double | char 
 | Double | Character 
 | Double | String 
+| Double | Object 
 | Double | boolean[]
 | Double | Boolean[]
 | Double | byte[] 
@@ -527,6 +558,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Double | char[] 
 | Double | Character[] 
 | Double | String[]  
+| Double | Object[]  
 | char | boolean
 | char | Boolean
 | char | byte 
@@ -544,6 +576,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | char | char 
 | char | Character 
 | char | String 
+| char | Object 
 | char | boolean[]
 | char | Boolean[]
 | char | byte[] 
@@ -561,6 +594,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | char | char[] 
 | char | Character[] 
 | char | String[]
+| char | Object[]
 | Character | boolean
 | Character | Boolean
 | Character | byte 
@@ -578,6 +612,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Character | char 
 | Character | Character 
 | Character | String 
+| Character | Object 
 | Character | boolean[]
 | Character | Boolean[]
 | Character | byte[] 
@@ -595,6 +630,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Character | char[] 
 | Character | Character[] 
 | Character | String[]
+| Character | Object[]
 | String | boolean
 | String | Boolean
 | String | byte 
@@ -612,6 +648,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | String | char 
 | String | Character 
 | String | String 
+| String | Object 
 | String | boolean[]
 | String | Boolean[]
 | String | byte[] 
@@ -629,6 +666,43 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | String | char[] 
 | String | Character[] 
 | String | String[]
+| String | Object[]
+| Object | boolean
+| Object | Boolean
+| Object | byte 
+| Object | Byte 
+| Object | short 
+| Object | Short 
+| Object | int 
+| Object | Integer 
+| Object | long 
+| Object | Long 
+| Object | float 
+| Object | Float 
+| Object | double 
+| Object | Double 
+| Object | char 
+| Object | Character 
+| Object | String 
+| Object | Object 
+| Object | boolean[]
+| Object | Boolean[]
+| Object | byte[] 
+| Object | Byte[] 
+| Object | short[] 
+| Object | Short[] 
+| Object | int[] 
+| Object | Integer[] 
+| Object | long[] 
+| Object | Long[] 
+| Object | float[] 
+| Object | Float[] 
+| Object | double[] 
+| Object | Double[] 
+| Object | char[] 
+| Object | Character[] 
+| Object | String[]
+| Object | Object[]
 | boolean[] | boolean
 | boolean[] | Boolean
 | boolean[] | byte 
@@ -646,6 +720,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | boolean[] | char 
 | boolean[] | Character 
 | boolean[] | String 
+| boolean[] | Object 
 | boolean[] | boolean[]
 | boolean[] | Boolean[]
 | boolean[] | byte[] 
@@ -663,6 +738,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | boolean[] | char[] 
 | boolean[] | Character[] 
 | boolean[] | String[]
+| boolean[] | Object[]
 | Boolean[] | boolean
 | Boolean[] | Boolean
 | Boolean[] | byte 
@@ -680,6 +756,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Boolean[] | char 
 | Boolean[] | Character 
 | Boolean[] | String 
+| Boolean[] | Object 
 | Boolean[] | boolean[]
 | Boolean[] | Boolean[]
 | Boolean[] | byte[] 
@@ -697,6 +774,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Boolean[] | char[] 
 | Boolean[] | Character[] 
 | Boolean[] | String[]
+| Boolean[] | Object[]
 | byte[] | boolean
 | byte[] | Boolean
 | byte[] | byte 
@@ -714,6 +792,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | byte[] | char 
 | byte[] | Character 
 | byte[] | String 
+| byte[] | Object 
 | byte[] | boolean[]
 | byte[] | Boolean[]
 | byte[] | byte[] 
@@ -731,6 +810,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | byte[] | char[] 
 | byte[] | Character[] 
 | byte[] | String[]
+| byte[] | Object[]
 | Byte[] | boolean
 | Byte[] | Boolean
 | Byte[] | byte 
@@ -748,6 +828,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Byte[] | char 
 | Byte[] | Character 
 | Byte[] | String 
+| Byte[] | Object 
 | Byte[] | boolean[]
 | Byte[] | Boolean[]
 | Byte[] | byte[] 
@@ -765,6 +846,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Byte[] | char[] 
 | Byte[] | Character[] 
 | Byte[] | String[]
+| Byte[] | Object[]
 | short[] | boolean
 | short[] | Boolean
 | short[] | byte 
@@ -782,6 +864,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | short[] | char 
 | short[] | Character 
 | short[] | String 
+| short[] | Object 
 | short[] | boolean[]
 | short[] | Boolean[]
 | short[] | byte[] 
@@ -799,6 +882,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | short[] | char[] 
 | short[] | Character[] 
 | short[] | String[]
+| short[] | Object[]
 | Short[] | boolean
 | Short[] | Boolean
 | Short[] | byte 
@@ -816,6 +900,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Short[] | char 
 | Short[] | Character 
 | Short[] | String 
+| Short[] | Object 
 | Short[] | boolean[]
 | Short[] | Boolean[]
 | Short[] | byte[] 
@@ -833,6 +918,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Short[] | char[] 
 | Short[] | Character[] 
 | Short[] | String[]
+| Short[] | Object[]
 | int[] | boolean
 | int[] | Boolean
 | int[] | byte 
@@ -850,6 +936,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int[] | char 
 | int[] | Character 
 | int[] | String 
+| int[] | Object 
 | int[] | boolean[]
 | int[] | Boolean[]
 | int[] | byte[] 
@@ -867,6 +954,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | int[] | char[] 
 | int[] | Character[] 
 | int[] | String[]
+| int[] | Object[]
 | Integer[] | boolean
 | Integer[] | Boolean
 | Integer[] | byte 
@@ -884,6 +972,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Integer[] | char 
 | Integer[] | Character 
 | Integer[] | String 
+| Integer[] | Object 
 | Integer[] | boolean[]
 | Integer[] | Boolean[]
 | Integer[] | byte[] 
@@ -901,6 +990,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Integer[] | char[] 
 | Integer[] | Character[] 
 | Integer[] | String[]
+| Integer[] | Object[]
 | long[] | boolean
 | long[] | Boolean
 | long[] | byte 
@@ -918,6 +1008,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | long[] | char 
 | long[] | Character 
 | long[] | String 
+| long[] | Object 
 | long[] | boolean[]
 | long[] | Boolean[]
 | long[] | byte[] 
@@ -935,6 +1026,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | long[] | char[] 
 | long[] | Character[] 
 | long[] | String[]
+| long[] | Object[]
 | Long[] | boolean
 | Long[] | Boolean
 | Long[] | byte 
@@ -952,6 +1044,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Long[] | char 
 | Long[] | Character 
 | Long[] | String 
+| Long[] | Object 
 | Long[] | boolean[]
 | Long[] | Boolean[]
 | Long[] | byte[] 
@@ -969,6 +1062,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Long[] | char[] 
 | Long[] | Character[] 
 | Long[] | String[]
+| Long[] | Object[]
 | float[] | boolean
 | float[] | Boolean
 | float[] | byte 
@@ -986,6 +1080,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | float[] | char 
 | float[] | Character 
 | float[] | String 
+| float[] | Object 
 | float[] | boolean[]
 | float[] | Boolean[]
 | float[] | byte[] 
@@ -1003,6 +1098,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | float[] | char[] 
 | float[] | Character[] 
 | float[] | String[]
+| float[] | Object[]
 | Float[] | boolean
 | Float[] | Boolean
 | Float[] | byte 
@@ -1020,6 +1116,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Float[] | char 
 | Float[] | Character 
 | Float[] | String 
+| Float[] | Object 
 | Float[] | boolean[]
 | Float[] | Boolean[]
 | Float[] | byte[] 
@@ -1037,6 +1134,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Float[] | char[] 
 | Float[] | Character[] 
 | Float[] | String[]
+| Float[] | Object[]
 | double[] | boolean
 | double[] | Boolean
 | double[] | byte 
@@ -1054,6 +1152,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | double[] | char 
 | double[] | Character 
 | double[] | String 
+| double[] | Object 
 | double[] | boolean[]
 | double[] | Boolean[]
 | double[] | byte[] 
@@ -1071,6 +1170,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | double[] | char[] 
 | double[] | Character[] 
 | double[] | String[]
+| double[] | Object[]
 | Double[] | boolean
 | Double[] | Boolean
 | Double[] | byte 
@@ -1088,6 +1188,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Double[] | char 
 | Double[] | Character 
 | Double[] | String 
+| Double[] | Object 
 | Double[] | boolean[]
 | Double[] | Boolean[]
 | Double[] | byte[] 
@@ -1105,6 +1206,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Double[] | char[] 
 | Double[] | Character[] 
 | Double[] | String[]
+| Double[] | Object[]
 | char[] | boolean
 | char[] | Boolean
 | char[] | byte 
@@ -1122,6 +1224,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | char[] | char 
 | char[] | Character 
 | char[] | String 
+| char[] | Object 
 | char[] | boolean[]
 | char[] | Boolean[]
 | char[] | byte[] 
@@ -1139,6 +1242,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | char[] | char[] 
 | char[] | Character[] 
 | char[] | String[]
+| char[] | Object[]
 | Character[] | boolean
 | Character[] | Boolean
 | Character[] | byte 
@@ -1156,6 +1260,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Character[] | char 
 | Character[] | Character 
 | Character[] | String 
+| Character[] | Object 
 | Character[] | boolean[]
 | Character[] | Boolean[]
 | Character[] | byte[] 
@@ -1173,6 +1278,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | Character[] | char[] 
 | Character[] | Character[] 
 | Character[] | String[]
+| Character[] | Object[]
 | String[] | boolean
 | String[] | Boolean
 | String[] | byte 
@@ -1190,6 +1296,7 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | String[] | char 
 | String[] | Character 
 | String[] | String 
+| String[] | Object 
 | String[] | boolean[]
 | String[] | Boolean[]
 | String[] | byte[] 
@@ -1207,3 +1314,40 @@ Size generally calculated as the array object (16 bytes) + element size o object
 | String[] | char[] 
 | String[] | Character[] 
 | String[] | String[]
+| String[] | Object[]
+| Object[] | boolean
+| Object[] | Boolean
+| Object[] | byte 
+| Object[] | Byte 
+| Object[] | short 
+| Object[] | Short 
+| Object[] | int 
+| Object[] | Integer 
+| Object[] | long 
+| Object[] | Long 
+| Object[] | float 
+| Object[] | Float 
+| Object[] | double 
+| Object[] | Double 
+| Object[] | char 
+| Object[] | Character 
+| Object[] | String 
+| Object[] | Object 
+| Object[] | boolean[]
+| Object[] | Boolean[]
+| Object[] | byte[] 
+| Object[] | Byte[] 
+| Object[] | short[] 
+| Object[] | Short[] 
+| Object[] | int[] 
+| Object[] | Integer[] 
+| Object[] | long[] 
+| Object[] | Long[] 
+| Object[] | float[] 
+| Object[] | Float[] 
+| Object[] | double[] 
+| Object[] | Double[] 
+| Object[] | char[] 
+| Object[] | Character[] 
+| Object[] | String[]
+| Object[] | Object[]

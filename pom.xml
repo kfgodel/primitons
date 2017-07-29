@@ -38,6 +38,12 @@
 
   <dependencies>
 
+    <!-- n-arity for api -->
+    <dependency>
+      <groupId>ar.com.kfgodel</groupId>
+      <artifactId>nary</artifactId>
+    </dependency>
+
     <!-- Rspec like testing -->
     <dependency>
       <groupId>ar.com.dgarcia</groupId>
