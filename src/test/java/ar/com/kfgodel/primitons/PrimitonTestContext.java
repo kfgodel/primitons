@@ -1,7 +1,7 @@
 package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
-import ar.com.kfgodel.function.intertype.booleans.BooleanToBooleanOperator;
+import ar.com.kfgodel.function.intertype.booleans.BooleanToBooleanFunction;
 import ar.com.kfgodel.function.unaryoperators.arrays.*;
 import ar.com.kfgodel.function.unaryoperators.basic.*;
 import ar.com.kfgodel.function.unaryoperators.boxed.*;
@@ -16,8 +16,8 @@ import java.util.function.Supplier;
  */
 public interface PrimitonTestContext extends TestContext {
 
-  BooleanToBooleanOperator boolean2boolean();
-  void boolean2boolean(Supplier<BooleanToBooleanOperator> definition);
+  BooleanToBooleanFunction boolean2boolean();
+  void boolean2boolean(Supplier<BooleanToBooleanFunction> definition);
 
   BoxedBooleanUnaryOperator boxedBoolean2boxedBoolean();
   void boxedBoolean2boxedBoolean(Supplier<BoxedBooleanUnaryOperator> definition);
