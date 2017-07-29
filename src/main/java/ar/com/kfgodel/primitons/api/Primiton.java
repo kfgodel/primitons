@@ -40,22 +40,14 @@ public interface Primiton {
       Character.class,
       String.class,
       boolean[].class,
-      Boolean[].class,
       byte[].class,
-      Byte[].class,
       short[].class,
-      Short[].class,
       int[].class,
-      Integer[].class,
       long[].class,
-      Long[].class,
       float[].class,
-      Float[].class,
       double[].class,
-      Double[].class,
       char[].class,
-      Character[].class,
-      String[].class
+      Object[].class
     );
   }
 

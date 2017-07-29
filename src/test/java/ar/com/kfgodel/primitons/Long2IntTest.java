@@ -2,7 +2,7 @@ package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
-import ar.com.kfgodel.primitons.api.Longon;
+import ar.com.kfgodel.primitons.api.Longton;
 import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 import org.junit.runner.RunWith;
 
@@ -17,7 +17,7 @@ public class Long2IntTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a long to int primiton", () -> {
-      context().long2int(()-> Longon::toInt);
+      context().long2int(()-> Longton::toInt);
 
       describe("when used", () -> {
         context().intOutput(()-> context().long2int().applyAsInt(context().longInput()));

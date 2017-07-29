@@ -5,7 +5,7 @@ import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 /**
  * This type defines the primiton functions for the boxed boolean type
  */
-public interface BoxedBooleton {
+public interface BoxedBooleanton {
 
   /**
    * Identity function for type completeness

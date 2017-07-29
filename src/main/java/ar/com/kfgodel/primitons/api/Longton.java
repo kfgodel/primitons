@@ -5,7 +5,7 @@ import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 /**
  * This type defines the primiton functions for the primitive long type
  */
-public interface Longon {
+public interface Longton {
   static int toInt(long input) throws PrimitonException {
     if(input > Integer.MAX_VALUE){
       throw new PrimitonException("Value["+input+"] overflows int type");

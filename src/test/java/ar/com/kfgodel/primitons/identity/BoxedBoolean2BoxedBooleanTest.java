@@ -3,7 +3,7 @@ package ar.com.kfgodel.primitons.identity;
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
-import ar.com.kfgodel.primitons.api.BoxedBooleton;
+import ar.com.kfgodel.primitons.api.BoxedBooleanton;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,7 +17,7 @@ public class BoxedBoolean2BoxedBooleanTest extends JavaSpec<PrimitonTestContext>
   @Override
   public void define() {
     describe("a boolean to boolean primiton", () -> {
-      context().boolean2boolean(()-> BoxedBooleton::identity);
+      context().boolean2boolean(()-> BoxedBooleanton::identity);
 
       describe("when used", () -> {
         context().booleanOutput(()-> context().boolean2boolean().apply(context().booleanInput()));
