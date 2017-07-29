@@ -5,4 +5,7 @@ package ar.com.kfgodel.primitons.api.basic;
  * Date: 29/07/17 - 14:31
  */
 public interface Doubleton {
+  static double identity(double input) {
+    return input;
+  }
 }
