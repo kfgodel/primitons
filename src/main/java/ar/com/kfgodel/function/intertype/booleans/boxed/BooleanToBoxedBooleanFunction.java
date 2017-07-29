@@ -1,4 +1,4 @@
-package ar.com.kfgodel.function.boxing;
+package ar.com.kfgodel.function.intertype.booleans.boxed;
 
 import java.util.function.Function;
 

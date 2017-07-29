@@ -1,4 +1,4 @@
-package ar.com.kfgodel.function.unaryoperators.basic;
+package ar.com.kfgodel.function.intertype.booleans;
 
 import ar.com.kfgodel.function.unaryoperators.boxed.BoxedBooleanUnaryOperator;
 
@@ -6,7 +6,7 @@ import ar.com.kfgodel.function.unaryoperators.boxed.BoxedBooleanUnaryOperator;
  * This type defines an operator for primitive boolean types
  * Created by kfgodel on 23/07/17.
  */
-public interface BooleanUnaryOperator extends BoxedBooleanUnaryOperator {
+public interface BooleanToBooleanOperator extends BoxedBooleanUnaryOperator {
 
   boolean apply(boolean aBoolean);
 
