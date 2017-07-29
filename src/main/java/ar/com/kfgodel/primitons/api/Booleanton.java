@@ -3,7 +3,7 @@ package ar.com.kfgodel.primitons.api;
 /**
  * This type defines the primiton functions for the primnitive boolean type
  */
-public interface Booleton {
+public interface Booleanton {
 
   /**
    * The identity function for type completeness

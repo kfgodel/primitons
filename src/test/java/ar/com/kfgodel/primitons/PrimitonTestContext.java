@@ -2,6 +2,7 @@ package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
 import ar.com.kfgodel.function.BooleanUnaryOperator;
+import ar.com.kfgodel.nary.api.Nary;
 
 import java.util.function.IntToLongFunction;
 import java.util.function.LongToIntFunction;
@@ -39,5 +40,8 @@ public interface PrimitonTestContext extends TestContext {
 
   Boolean booleanOutput();
   void booleanOutput(Supplier<Boolean> definition);
+
+  Nary<Class<?>> primitiveTypes();
+  void primitiveTypes(Supplier<Nary<Class<?>>> definition);
 
 }
