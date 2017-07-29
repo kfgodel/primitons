@@ -5,4 +5,7 @@ package ar.com.kfgodel.primitons.api.basic;
  * Date: 29/07/17 - 17:16
  */
 public interface Objecton {
+  static<T> T identity(T input) {
+    return input;
+  }
 }

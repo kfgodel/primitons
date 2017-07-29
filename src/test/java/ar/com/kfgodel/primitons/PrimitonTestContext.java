@@ -63,6 +63,12 @@ public interface PrimitonTestContext extends TestContext {
   ShortUnaryOperator short2short();
   void short2short(Supplier<ShortUnaryOperator> definition);
 
+  StringUnaryOperator string2String();
+  void string2String(Supplier<StringUnaryOperator> definition);
+
+  ObjectUnaryOperator object2Object();
+  void object2Object(Supplier<ObjectUnaryOperator> definition);
+
   ArrayOfBooleanUnaryOperator booleanArray2BooleanArray();
   void booleanArray2BooleanArray(Supplier<ArrayOfBooleanUnaryOperator> definition);
 
@@ -89,6 +95,9 @@ public interface PrimitonTestContext extends TestContext {
 
   ArrayOfStringUnaryOperator stringArray2StringArray();
   void stringArray2StringArray(Supplier<ArrayOfStringUnaryOperator> definition);
+
+  ArrayOfObjectUnaryOperator objectArray2ObjectArray();
+  void objectArray2ObjectArray(Supplier<ArrayOfObjectUnaryOperator> definition);
 
   ArrayOfBoxedBooleanUnaryOperator boxedBooleanArray2boxedBooleanArray();
   void boxedBooleanArray2boxedBooleanArray(Supplier<ArrayOfBoxedBooleanUnaryOperator> definition);
@@ -142,6 +151,9 @@ public interface PrimitonTestContext extends TestContext {
   String stringInput();
   void stringInput(Supplier<String> definition);
 
+  Object objectInput();
+  void objectInput(Supplier<Object> definition);
+
   boolean[] booleanArrayInput();
   void booleanArrayInput(Supplier<boolean[]> definition);
 
@@ -169,6 +181,9 @@ public interface PrimitonTestContext extends TestContext {
   String[] stringArrayInput();
   void stringArrayInput(Supplier<String[]> definition);
 
+  Object[] objectArrayInput();
+  void objectArrayInput(Supplier<Object[]> definition);
+
   Boolean[] boxedBooleanArrayInput();
   void boxedBooleanArrayInput(Supplier<Boolean[]> definition);
 
@@ -192,7 +207,6 @@ public interface PrimitonTestContext extends TestContext {
 
   Short[] boxedShortArrayInput();
   void boxedShortArrayInput(Supplier<Short[]> definition);
-
 
   Boolean booleanOutput();
   void booleanOutput(Supplier<Boolean> definition);
@@ -221,6 +235,9 @@ public interface PrimitonTestContext extends TestContext {
   String stringOutput();
   void stringOutput(Supplier<String> definition);
 
+  Object objectOutput();
+  void objectOutput(Supplier<Object> definition);
+
   boolean[] booleanArrayOutput();
   void booleanArrayOutput(Supplier<boolean[]> definition);
 
@@ -247,6 +264,9 @@ public interface PrimitonTestContext extends TestContext {
 
   String[] stringArrayOutput();
   void stringArrayOutput(Supplier<String[]> definition);
+
+  Object[] objectArrayOutput();
+  void objectArrayOutput(Supplier<Object[]> definition);
 
   Boolean[] boxedBooleanArrayOutput();
   void boxedBooleanArrayOutput(Supplier<Boolean[]> definition);

@@ -39,6 +39,7 @@ public interface Primiton {
       char.class,
       Character.class,
       String.class,
+      Object.class,
       boolean[].class,
       byte[].class,
       short[].class,
@@ -47,6 +48,7 @@ public interface Primiton {
       float[].class,
       double[].class,
       char[].class,
+      String[].class,
       Object[].class
     );
   }

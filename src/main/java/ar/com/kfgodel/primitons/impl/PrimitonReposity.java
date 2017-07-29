@@ -30,6 +30,9 @@ public class PrimitonReposity {
     addConverterFrom(float.class, float.class, Floaton::identity);
     addConverterFrom(int.class, int.class, Inton::identity);
     addConverterFrom(long.class, long.class, Longton::identity);
+    addConverterFrom(short.class, short.class, Shorton::identity);
+    addConverterFrom(String.class, String.class, Objecton::identity);
+    addConverterFrom(Object.class, Object.class, Objecton::identity);
     addConverterFrom(Boolean.class, Boolean.class, BoxedBooleanton::identity);
   }
 
