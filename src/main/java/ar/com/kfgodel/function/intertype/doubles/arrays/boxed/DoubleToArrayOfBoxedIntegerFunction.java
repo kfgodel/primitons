@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.doubles.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.doubles.arrays.DoubleToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface DoubleToArrayOfBoxedIntegerFunction extends Function<Double, Integer[]> {
+public interface DoubleToArrayOfBoxedIntegerFunction extends DoubleToArrayOfObjectFunction<Integer> {
 
-  Integer[] apply(double input);
-
-  @Override
-  default Integer[] apply(Double input){
-    return apply(input.doubleValue());
-  }
 }

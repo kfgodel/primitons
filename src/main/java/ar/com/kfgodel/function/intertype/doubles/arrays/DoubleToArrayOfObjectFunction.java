@@ -1,11 +1,10 @@
 package ar.com.kfgodel.function.intertype.doubles.arrays;
 
+import ar.com.kfgodel.function.intertype.doubles.DoubleToObjectFunction;
+
 /**
- * This type represents a function that takes a boolean input and produces a byte as result
  * Date: 29/07/17 - 19:57
  */
-public interface DoubleToArrayOfObjectFunction<T> {
-
-  T[] apply(double input);
+public interface DoubleToArrayOfObjectFunction<T> extends DoubleToObjectFunction<T[]> {
 
 }
