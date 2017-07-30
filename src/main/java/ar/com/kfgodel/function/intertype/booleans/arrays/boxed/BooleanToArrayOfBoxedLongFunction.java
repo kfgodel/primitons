@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.booleans.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.booleans.arrays.BooleanToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface BooleanToArrayOfBoxedLongFunction extends Function<Boolean, Long[]> {
+public interface BooleanToArrayOfBoxedLongFunction extends BooleanToArrayOfObjectFunction<Long> {
 
-  Long[] apply(boolean input);
-
-  @Override
-  default Long[] apply(Boolean input){
-    return apply(input.booleanValue());
-  }
 }

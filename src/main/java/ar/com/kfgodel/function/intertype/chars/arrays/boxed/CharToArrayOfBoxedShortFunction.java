@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.chars.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.chars.arrays.CharToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface CharToArrayOfBoxedShortFunction extends Function<Character, Short[]> {
+public interface CharToArrayOfBoxedShortFunction extends CharToArrayOfObjectFunction<Short> {
 
-  Short[] apply(char input);
-
-  @Override
-  default Short[] apply(Character input){
-    return apply(input.charValue());
-  }
 }

@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.chars.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.chars.arrays.CharToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface CharToArrayOfBoxedCharacterFunction extends Function<Character, Character[]> {
+public interface CharToArrayOfBoxedCharacterFunction extends CharToArrayOfObjectFunction<Character> {
 
-  Character[] apply(char input);
-
-  @Override
-  default Character[] apply(Character input){
-    return apply(input.charValue());
-  }
 }

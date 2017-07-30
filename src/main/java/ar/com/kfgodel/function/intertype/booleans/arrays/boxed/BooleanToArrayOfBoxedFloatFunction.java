@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.booleans.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.booleans.arrays.BooleanToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface BooleanToArrayOfBoxedFloatFunction extends Function<Boolean, Float[]> {
+public interface BooleanToArrayOfBoxedFloatFunction extends BooleanToArrayOfObjectFunction<Float> {
 
-  Float[] apply(boolean input);
-
-  @Override
-  default Float[] apply(Boolean input){
-    return apply(input.booleanValue());
-  }
 }
