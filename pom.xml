@@ -38,6 +38,13 @@
 
   <dependencies>
 
+    <!-- Additional functional interfaces -->
+    <dependency>
+      <groupId>ar.com.kfgodel</groupId>
+      <artifactId>extended-functions</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
     <!-- n-arity for api -->
     <dependency>
       <groupId>ar.com.kfgodel</groupId>

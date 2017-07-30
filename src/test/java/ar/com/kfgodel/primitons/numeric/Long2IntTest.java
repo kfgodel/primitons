@@ -22,7 +22,7 @@ public class Long2IntTest extends JavaSpec<PrimitonTestContext> {
       context().long2int(()-> Longton::toInt);
 
       describe("when used", () -> {
-        context().intOutput(()-> context().long2int().applyAsInt(context().longInput()));
+        context().intOutput(()-> context().long2int().apply(context().longInput()));
 
         it("converts a primitive long into a primitive int",()->{
           context().longInput(()-> 23L);
@@ -40,13 +40,13 @@ public class Long2IntTest extends JavaSpec<PrimitonTestContext> {
         });
 
         itThrows(OverflowException.class, "if value is too big for an int",()->{
-         context().long2int().applyAsInt(2147483648L);
+         context().long2int().apply(2147483648L);
         }, e ->{
           assertThat(e).hasMessage("Value[2147483648] overflows type [int]");
         });
 
         itThrows(UnderflowException.class, "if value is too small for an int",()->{
-          context().long2int().applyAsInt(-2147483649L);
+          context().long2int().apply(-2147483649L);
         }, e ->{
           assertThat(e).hasMessage("Value[-2147483649] underflows type [int]");
         });

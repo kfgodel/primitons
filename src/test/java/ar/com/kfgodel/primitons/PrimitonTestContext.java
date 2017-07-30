@@ -2,12 +2,12 @@ package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
 import ar.com.kfgodel.function.intertype.booleans.BooleanToBooleanFunction;
+import ar.com.kfgodel.function.intertype.ints.IntToLongFunction;
+import ar.com.kfgodel.function.intertype.longs.LongToIntFunction;
 import ar.com.kfgodel.function.unaryoperators.arrays.*;
 import ar.com.kfgodel.function.unaryoperators.basic.*;
 import ar.com.kfgodel.function.unaryoperators.boxed.*;
 
-import java.util.function.IntToLongFunction;
-import java.util.function.LongToIntFunction;
 import java.util.function.Supplier;
 
 /**

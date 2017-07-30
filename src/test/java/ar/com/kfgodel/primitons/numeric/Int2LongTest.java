@@ -20,7 +20,7 @@ public class Int2LongTest extends JavaSpec<PrimitonTestContext> {
       context().int2Long(()-> Inton::toLong);
 
       describe("when used", () -> {
-        context().longOutput(()-> context().int2Long().applyAsLong(context().intInput()));
+        context().longOutput(()-> context().int2Long().apply(context().intInput()));
 
         it("converts a primitive int into a primitive long",()->{
           context().intInput(()-> 1);
