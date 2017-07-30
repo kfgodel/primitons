@@ -1,16 +1,10 @@
 package ar.com.kfgodel.function.intertype.floats.arrays.boxed;
 
-import java.util.function.Function;
+import ar.com.kfgodel.function.intertype.floats.arrays.FloatToArrayOfObjectFunction;
 
 /**
  * Date: 29/07/17 - 19:57
  */
-public interface FloatToArrayOfBoxedShortFunction extends Function<Float, Short[]> {
+public interface FloatToArrayOfBoxedShortFunction extends FloatToArrayOfObjectFunction<Short> {
 
-  Short[] apply(float input);
-
-  @Override
-  default Short[] apply(Float input){
-    return apply(input.floatValue());
-  }
 }

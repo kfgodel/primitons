@@ -3,15 +3,14 @@ package ar.com.kfgodel.function.intertype.floats;
 import java.util.function.Function;
 
 /**
- * This type represents a function that takes a boolean input and produces a byte as result
  * Date: 29/07/17 - 19:57
  */
-public interface FloatToLongFunction extends Function<Float, Long> {
+public interface FloatToLongFunction extends Function<Integer, Long> {
 
   long apply(float input);
 
   @Override
-  default Long apply(Float input){
-    return apply(input.floatValue());
+  default Long apply(Integer input){
+    return apply(input.intValue());
   }
 }

@@ -1,11 +1,10 @@
 package ar.com.kfgodel.function.intertype.floats.arrays;
 
+import ar.com.kfgodel.function.intertype.floats.FloatToObjectFunction;
+
 /**
- * This type represents a function that takes a boolean input and produces a byte as result
  * Date: 29/07/17 - 19:57
  */
-public interface FloatToArrayOfObjectFunction<T> {
-
-  T[] apply(float input);
+public interface FloatToArrayOfObjectFunction<T> extends FloatToObjectFunction<T[]> {
 
 }
