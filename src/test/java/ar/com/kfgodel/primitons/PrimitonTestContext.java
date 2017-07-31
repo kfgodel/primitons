@@ -1,12 +1,44 @@
 package ar.com.kfgodel.primitons;
 
 import ar.com.dgarcia.javaspec.api.contexts.TestContext;
+import ar.com.kfgodel.function.arrays.booleans.arrays.ArrayOfBooleanToArrayOfBooleanFunction;
+import ar.com.kfgodel.function.arrays.boxed.booleans.boxed.ArrayOfBoxedBooleanToBoxedBooleanFunction;
+import ar.com.kfgodel.function.arrays.boxed.bytes.boxed.ArrayOfBoxedByteToBoxedByteFunction;
+import ar.com.kfgodel.function.arrays.boxed.chars.boxed.ArrayOfBoxedCharacterToBoxedCharacterFunction;
+import ar.com.kfgodel.function.arrays.boxed.doubles.boxed.ArrayOfBoxedDoubleToBoxedDoubleFunction;
+import ar.com.kfgodel.function.arrays.boxed.floats.boxed.ArrayOfBoxedFloatToBoxedFloatFunction;
+import ar.com.kfgodel.function.arrays.boxed.ints.boxed.ArrayOfBoxedIntegerToBoxedIntegerFunction;
+import ar.com.kfgodel.function.arrays.boxed.longs.boxed.ArrayOfBoxedLongToBoxedLongFunction;
+import ar.com.kfgodel.function.arrays.boxed.shorts.boxed.ArrayOfBoxedShortToBoxedShortFunction;
+import ar.com.kfgodel.function.arrays.boxed.strings.boxed.ArrayOfStringToStringFunction;
+import ar.com.kfgodel.function.arrays.bytes.arrays.ArrayOfByteToArrayOfByteFunction;
+import ar.com.kfgodel.function.arrays.chars.arrays.ArrayOfCharToArrayOfCharFunction;
+import ar.com.kfgodel.function.arrays.doubles.arrays.ArrayOfDoubleToArrayOfDoubleFunction;
+import ar.com.kfgodel.function.arrays.floats.ArrayOfFloatToFloatFunction;
+import ar.com.kfgodel.function.arrays.ints.arrays.ArrayOfIntToArrayOfIntFunction;
+import ar.com.kfgodel.function.arrays.longs.arrays.ArrayOfLongToArrayOfLongFunction;
+import ar.com.kfgodel.function.arrays.objects.ArrayOfObjectToObjectFunction;
+import ar.com.kfgodel.function.arrays.shorts.arrays.ArrayOfShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.booleans.BooleanToBooleanFunction;
+import ar.com.kfgodel.function.boxed.booleans.boxed.BoxedBooleanToBoxedBooleanFunction;
+import ar.com.kfgodel.function.boxed.bytes.boxed.BoxedByteToBoxedByteFunction;
+import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
+import ar.com.kfgodel.function.boxed.doubles.boxed.BoxedDoubleToBoxedDoubleFunction;
+import ar.com.kfgodel.function.boxed.floats.boxed.BoxedFloatToBoxedFloatFunction;
+import ar.com.kfgodel.function.boxed.ints.boxed.BoxedIntegerToBoxedIntegerFunction;
+import ar.com.kfgodel.function.boxed.longs.boxed.BoxedLongToBoxedLongFunction;
+import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
+import ar.com.kfgodel.function.bytes.ByteToByteFunction;
+import ar.com.kfgodel.function.chars.CharToCharFunction;
+import ar.com.kfgodel.function.doubles.DoubleToDoubleFunction;
+import ar.com.kfgodel.function.floats.FloatToFloatFunction;
+import ar.com.kfgodel.function.ints.IntToIntFunction;
 import ar.com.kfgodel.function.ints.IntToLongFunction;
 import ar.com.kfgodel.function.longs.LongToIntFunction;
-import ar.com.kfgodel.function.old.unaryoperators.arrays.*;
-import ar.com.kfgodel.function.old.unaryoperators.basic.*;
-import ar.com.kfgodel.function.old.unaryoperators.boxed.*;
+import ar.com.kfgodel.function.longs.LongToLongFunction;
+import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
+import ar.com.kfgodel.function.shorts.ShortToShortFunction;
 
 import java.util.function.Supplier;
 
@@ -19,110 +51,110 @@ public interface PrimitonTestContext extends TestContext {
   BooleanToBooleanFunction boolean2boolean();
   void boolean2boolean(Supplier<BooleanToBooleanFunction> definition);
 
-  BoxedBooleanUnaryOperator boxedBoolean2boxedBoolean();
-  void boxedBoolean2boxedBoolean(Supplier<BoxedBooleanUnaryOperator> definition);
+  BoxedBooleanToBoxedBooleanFunction boxedBoolean2boxedBoolean();
+  void boxedBoolean2boxedBoolean(Supplier<BoxedBooleanToBoxedBooleanFunction> definition);
 
-  BoxedByteUnaryOperator boxedByte2boxedByte();
-  void boxedByte2boxedByte(Supplier<BoxedByteUnaryOperator> definition);
+  BoxedByteToBoxedByteFunction boxedByte2boxedByte();
+  void boxedByte2boxedByte(Supplier<BoxedByteToBoxedByteFunction> definition);
 
-  BoxedCharacterUnaryOperator boxedByte2BoxedByte();
-  void boxedByte2BoxedByte(Supplier<BoxedCharacterUnaryOperator> definition);
+  BoxedCharacterToBoxedCharacterFunction boxedByte2BoxedByte();
+  void boxedByte2BoxedByte(Supplier<BoxedCharacterToBoxedCharacterFunction> definition);
 
-  BoxedDoubleUnaryOperator boxedDouble2boxedDouble();
-  void boxedDouble2boxedDouble(Supplier<BoxedDoubleUnaryOperator> definition);
+  BoxedDoubleToBoxedDoubleFunction boxedDouble2boxedDouble();
+  void boxedDouble2boxedDouble(Supplier<BoxedDoubleToBoxedDoubleFunction> definition);
 
-  BoxedFloatUnaryOperator boxedFloat2boxedFloat();
-  void boxedFloat2boxedFloat(Supplier<BoxedFloatUnaryOperator> definition);
+  BoxedFloatToBoxedFloatFunction boxedFloat2boxedFloat();
+  void boxedFloat2boxedFloat(Supplier<BoxedFloatToBoxedFloatFunction> definition);
 
-  BoxedIntegerUnaryOperator boxedInteger2boxedInteger();
-  void boxedInteger2boxedInteger(Supplier<BoxedIntegerUnaryOperator> definition);
+  BoxedIntegerToBoxedIntegerFunction boxedInteger2boxedInteger();
+  void boxedInteger2boxedInteger(Supplier<BoxedIntegerToBoxedIntegerFunction> definition);
 
-  BoxedLongUnaryOperator boxedLong2boxedLong();
-  void boxedLong2boxedLong(Supplier<BoxedLongUnaryOperator> definition);
+  BoxedLongToBoxedLongFunction boxedLong2boxedLong();
+  void boxedLong2boxedLong(Supplier<BoxedLongToBoxedLongFunction> definition);
 
-  BoxedShortUnaryOperator boxedShort2boxedShort();
-  void boxedShort2boxedShort(Supplier<BoxedShortUnaryOperator> definition);
+  BoxedShortToBoxedShortFunction boxedShort2boxedShort();
+  void boxedShort2boxedShort(Supplier<BoxedShortToBoxedShortFunction> definition);
 
-  ByteUnaryOpertor byte2byte();
-  void byte2byte(Supplier<ByteUnaryOpertor> definition);
+  ByteToByteFunction byte2byte();
+  void byte2byte(Supplier<ByteToByteFunction> definition);
 
-  CharUnaryOpertor char2char();
-  void char2char(Supplier<CharUnaryOpertor> definition);
+  CharToCharFunction char2char();
+  void char2char(Supplier<CharToCharFunction> definition);
 
-  DoubleUnaryOpertor double2double();
-  void double2double(Supplier<DoubleUnaryOpertor> definition);
+  DoubleToDoubleFunction double2double();
+  void double2double(Supplier<DoubleToDoubleFunction> definition);
 
-  FloatUnaryOperator float2float();
-  void float2float(Supplier<FloatUnaryOperator> definition);
+  FloatToFloatFunction float2float();
+  void float2float(Supplier<FloatToFloatFunction> definition);
 
-  IntUnaryOperator int2int();
-  void int2int(Supplier<IntUnaryOperator> definition);
+  IntToIntFunction int2int();
+  void int2int(Supplier<IntToIntFunction> definition);
 
-  LongUnaryOperator long2long();
-  void long2long(Supplier<LongUnaryOperator> definition);
+  LongToLongFunction long2long();
+  void long2long(Supplier<LongToLongFunction> definition);
 
-  ShortUnaryOperator short2short();
-  void short2short(Supplier<ShortUnaryOperator> definition);
+  ShortToShortFunction short2short();
+  void short2short(Supplier<ShortToShortFunction> definition);
 
-  StringUnaryOperator string2String();
-  void string2String(Supplier<StringUnaryOperator> definition);
+  StringToStringFunction string2String();
+  void string2String(Supplier<StringToStringFunction> definition);
 
-  ObjectUnaryOperator object2Object();
-  void object2Object(Supplier<ObjectUnaryOperator> definition);
+  ObjectToObjectFunction object2Object();
+  void object2Object(Supplier<ObjectToObjectFunction> definition);
 
-  ArrayOfBooleanUnaryOperator booleanArray2BooleanArray();
-  void booleanArray2BooleanArray(Supplier<ArrayOfBooleanUnaryOperator> definition);
+  ArrayOfBooleanToArrayOfBooleanFunction booleanArray2BooleanArray();
+  void booleanArray2BooleanArray(Supplier<ArrayOfBooleanToArrayOfBooleanFunction> definition);
 
-  ArrayOfByteUnaryOperator byteArray2ByteArray();
-  void byteArray2ByteArray(Supplier<ArrayOfByteUnaryOperator> definition);
+  ArrayOfByteToArrayOfByteFunction byteArray2ByteArray();
+  void byteArray2ByteArray(Supplier<ArrayOfByteToArrayOfByteFunction> definition);
 
-  ArrayOfCharUnaryOperator charArray2CharArray();
-  void charArray2CharArray(Supplier<ArrayOfCharUnaryOperator> definition);
+  ArrayOfCharToArrayOfCharFunction charArray2CharArray();
+  void charArray2CharArray(Supplier<ArrayOfCharToArrayOfCharFunction> definition);
 
-  ArrayOfDoubleUnaryOperator doubleArray2DoubleArray();
-  void doubleArray2DoubleArray(Supplier<ArrayOfDoubleUnaryOperator> definition);
+  ArrayOfDoubleToArrayOfDoubleFunction doubleArray2DoubleArray();
+  void doubleArray2DoubleArray(Supplier<ArrayOfDoubleToArrayOfDoubleFunction> definition);
 
-  ArrayOfFloatUnaryOperator floatArray2FloatArray();
-  void floatArray2FloatArray(Supplier<ArrayOfFloatUnaryOperator> definition);
+  ArrayOfFloatToFloatFunction floatArray2FloatArray();
+  void floatArray2FloatArray(Supplier<ArrayOfFloatToFloatFunction> definition);
 
-  ArrayOfIntOperator intArray2IntArray();
-  void intArray2IntArray(Supplier<ArrayOfIntOperator> definition);
+  ArrayOfIntToArrayOfIntFunction intArray2IntArray();
+  void intArray2IntArray(Supplier<ArrayOfIntToArrayOfIntFunction> definition);
 
-  ArrayOfLongOperator longArray2LongArray();
-  void longArray2LongArray(Supplier<ArrayOfLongOperator> definition);
+  ArrayOfLongToArrayOfLongFunction longArray2LongArray();
+  void longArray2LongArray(Supplier<ArrayOfLongToArrayOfLongFunction> definition);
 
-  ArrayOfShortOperator shortArray2ShortArray();
-  void shortArray2ShortArray(Supplier<ArrayOfShortOperator> definition);
+  ArrayOfShortToArrayOfShortFunction shortArray2ShortArray();
+  void shortArray2ShortArray(Supplier<ArrayOfShortToArrayOfShortFunction> definition);
 
-  ArrayOfStringUnaryOperator stringArray2StringArray();
-  void stringArray2StringArray(Supplier<ArrayOfStringUnaryOperator> definition);
+  ArrayOfStringToStringFunction stringArray2StringArray();
+  void stringArray2StringArray(Supplier<ArrayOfStringToStringFunction> definition);
 
-  ArrayOfObjectUnaryOperator objectArray2ObjectArray();
-  void objectArray2ObjectArray(Supplier<ArrayOfObjectUnaryOperator> definition);
+  ArrayOfObjectToObjectFunction objectArray2ObjectArray();
+  void objectArray2ObjectArray(Supplier<ArrayOfObjectToObjectFunction> definition);
 
-  ArrayOfBoxedBooleanUnaryOperator boxedBooleanArray2boxedBooleanArray();
-  void boxedBooleanArray2boxedBooleanArray(Supplier<ArrayOfBoxedBooleanUnaryOperator> definition);
+  ArrayOfBoxedBooleanToBoxedBooleanFunction boxedBooleanArray2boxedBooleanArray();
+  void boxedBooleanArray2boxedBooleanArray(Supplier<ArrayOfBoxedBooleanToBoxedBooleanFunction> definition);
 
-  ArrayOfBoxedByteUnaryOperator boxedByteArray2boxedByteArray();
-  void boxedByteArray2boxedByteArray(Supplier<ArrayOfBoxedByteUnaryOperator> definition);
+  ArrayOfBoxedByteToBoxedByteFunction boxedByteArray2boxedByteArray();
+  void boxedByteArray2boxedByteArray(Supplier<ArrayOfBoxedByteToBoxedByteFunction> definition);
 
-  ArrayOfBoxedCharacterUnaryOperator boxedCharacterArray2boxedCharacterArray();
-  void boxedCharacterArray2boxedCharacterArray(Supplier<ArrayOfBoxedCharacterUnaryOperator> definition);
+  ArrayOfBoxedCharacterToBoxedCharacterFunction boxedCharacterArray2boxedCharacterArray();
+  void boxedCharacterArray2boxedCharacterArray(Supplier<ArrayOfBoxedCharacterToBoxedCharacterFunction> definition);
 
-  ArrayOfBoxedDoubleUnaryOperator boxedDoubleArray2boxedDoubleArray();
-  void boxedDoubleArray2boxedDoubleArray(Supplier<ArrayOfBoxedDoubleUnaryOperator> definition);
+  ArrayOfBoxedDoubleToBoxedDoubleFunction boxedDoubleArray2boxedDoubleArray();
+  void boxedDoubleArray2boxedDoubleArray(Supplier<ArrayOfBoxedDoubleToBoxedDoubleFunction> definition);
 
-  ArrayOfBoxedFloatUnaryOperator boxedFloatArray2boxedFloatArray();
-  void boxedFloatArray2boxedFloatArray(Supplier<ArrayOfBoxedFloatUnaryOperator> definition);
+  ArrayOfBoxedFloatToBoxedFloatFunction boxedFloatArray2boxedFloatArray();
+  void boxedFloatArray2boxedFloatArray(Supplier<ArrayOfBoxedFloatToBoxedFloatFunction> definition);
 
-  ArrayOfBoxedIntegerUnaryOperator boxedIntegerArray2boxedIntegerArray();
-  void boxedIntegerArray2boxedIntegerArray(Supplier<ArrayOfBoxedIntegerUnaryOperator> definition);
+  ArrayOfBoxedIntegerToBoxedIntegerFunction boxedIntegerArray2boxedIntegerArray();
+  void boxedIntegerArray2boxedIntegerArray(Supplier<ArrayOfBoxedIntegerToBoxedIntegerFunction> definition);
 
-  ArrayOfBoxedLongUnaryOperator boxedLongArray2boxedLongArray();
-  void boxedLongArray2boxedLongArray(Supplier<ArrayOfBoxedLongUnaryOperator> definition);
+  ArrayOfBoxedLongToBoxedLongFunction boxedLongArray2boxedLongArray();
+  void boxedLongArray2boxedLongArray(Supplier<ArrayOfBoxedLongToBoxedLongFunction> definition);
 
-  ArrayOfBoxedShortUnaryOperator boxedShortArray2boxedShortArray();
-  void boxedShortArray2boxedShortArray(Supplier<ArrayOfBoxedShortUnaryOperator> definition);
+  ArrayOfBoxedShortToBoxedShortFunction boxedShortArray2boxedShortArray();
+  void boxedShortArray2boxedShortArray(Supplier<ArrayOfBoxedShortToBoxedShortFunction> definition);
 
 
   Boolean booleanInput();
