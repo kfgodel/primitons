@@ -13,4 +13,8 @@ public interface Byteton {
   static short toShort(byte input) {
     return input;
   }
+
+  static int toInt(byte input) {
+    return input;
+  }
 }

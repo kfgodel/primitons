@@ -30,6 +30,7 @@ import ar.com.kfgodel.function.boxed.longs.boxed.BoxedLongToBoxedLongFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.ByteToByteFunction;
+import ar.com.kfgodel.function.bytes.ByteToIntFunction;
 import ar.com.kfgodel.function.bytes.ByteToShortFunction;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
 import ar.com.kfgodel.function.doubles.DoubleToDoubleFunction;
@@ -330,6 +331,9 @@ public interface PrimitonTestContext extends TestContext {
 
   ByteToShortFunction byte2short();
   void byte2short(Supplier<ByteToShortFunction> definition);
+
+  ByteToIntFunction byte2int();
+  void byte2int(Supplier<ByteToIntFunction> definition);
 
   ShortToIntFunction short2int();
   void short2int(Supplier<ShortToIntFunction> definition);
