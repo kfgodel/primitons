@@ -17,4 +17,8 @@ public interface Byteton {
   static int toInt(byte input) {
     return input;
   }
+
+  static long toLong(byte input) {
+    return input;
+  }
 }
