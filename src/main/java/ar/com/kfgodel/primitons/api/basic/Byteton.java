@@ -9,4 +9,8 @@ public interface Byteton {
   static byte identity(byte input) {
     return input;
   }
+
+  static short toShort(byte input) {
+    return input;
+  }
 }
