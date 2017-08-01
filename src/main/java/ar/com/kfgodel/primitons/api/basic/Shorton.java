@@ -8,4 +8,8 @@ public interface Shorton {
   static short identity(short input) {
     return input;
   }
+
+  static int toInt(short input) {
+    return input;
+  }
 }

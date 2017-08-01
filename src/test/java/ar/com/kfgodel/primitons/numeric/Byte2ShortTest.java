@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * This type verifies the behavior of a numerico conversion
+ * This type verifies the behavior of a numeric conversion
  * Date: 01/08/17 - 20:22
  */
 @RunWith(JavaSpecRunner.class)
