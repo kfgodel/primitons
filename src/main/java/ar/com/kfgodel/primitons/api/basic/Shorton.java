@@ -12,4 +12,16 @@ public interface Shorton {
   static int toInt(short input) {
     return input;
   }
+
+  static double toDouble(short input) {
+    return input;
+  }
+
+  static float toFloat(short input) {
+    return input;
+  }
+
+  static long toLong(short input) {
+    return input;
+  }
 }

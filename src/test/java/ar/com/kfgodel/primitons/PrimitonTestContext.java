@@ -38,8 +38,7 @@ import ar.com.kfgodel.function.ints.IntToLongFunction;
 import ar.com.kfgodel.function.longs.LongToIntFunction;
 import ar.com.kfgodel.function.longs.LongToLongFunction;
 import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
-import ar.com.kfgodel.function.shorts.ShortToIntFunction;
-import ar.com.kfgodel.function.shorts.ShortToShortFunction;
+import ar.com.kfgodel.function.shorts.*;
 
 import java.util.function.Supplier;
 
@@ -340,6 +339,15 @@ public interface PrimitonTestContext extends TestContext {
 
   ByteToShortFunction byte2short();
   void byte2short(Supplier<ByteToShortFunction> definition);
+
+  ShortToDoubleFunction short2double();
+  void short2double(Supplier<ShortToDoubleFunction> definition);
+
+  ShortToFloatFunction short2float();
+  void short2float(Supplier<ShortToFloatFunction> definition);
+
+  ShortToLongFunction short2long();
+  void short2long(Supplier<ShortToLongFunction> definition);
 
   ShortToIntFunction short2int();
   void short2int(Supplier<ShortToIntFunction> definition);
