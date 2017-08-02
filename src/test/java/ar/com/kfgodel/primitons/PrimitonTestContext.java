@@ -29,10 +29,7 @@ import ar.com.kfgodel.function.boxed.ints.boxed.BoxedIntegerToBoxedIntegerFuncti
 import ar.com.kfgodel.function.boxed.longs.boxed.BoxedLongToBoxedLongFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
-import ar.com.kfgodel.function.bytes.ByteToByteFunction;
-import ar.com.kfgodel.function.bytes.ByteToIntFunction;
-import ar.com.kfgodel.function.bytes.ByteToLongFunction;
-import ar.com.kfgodel.function.bytes.ByteToShortFunction;
+import ar.com.kfgodel.function.bytes.*;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
 import ar.com.kfgodel.function.doubles.DoubleToDoubleFunction;
 import ar.com.kfgodel.function.floats.FloatToFloatFunction;
@@ -329,15 +326,17 @@ public interface PrimitonTestContext extends TestContext {
   Short[] boxedShortArrayOutput();
   void boxedShortArrayOutput(Supplier<Short[]> definition);
 
-
-  ByteToShortFunction byte2short();
-  void byte2short(Supplier<ByteToShortFunction> definition);
+  ByteToFloatFunction byte2float();
+  void byte2float(Supplier<ByteToFloatFunction> definition);
 
   ByteToIntFunction byte2int();
   void byte2int(Supplier<ByteToIntFunction> definition);
 
   ByteToLongFunction byte2long();
   void byte2long(Supplier<ByteToLongFunction> definition);
+
+  ByteToShortFunction byte2short();
+  void byte2short(Supplier<ByteToShortFunction> definition);
 
   ShortToIntFunction short2int();
   void short2int(Supplier<ShortToIntFunction> definition);
