@@ -329,6 +329,9 @@ public interface PrimitonTestContext extends TestContext {
   ByteToFloatFunction byte2float();
   void byte2float(Supplier<ByteToFloatFunction> definition);
 
+  ByteToDoubleFunction byte2double();
+  void byte2double(Supplier<ByteToDoubleFunction> definition);
+
   ByteToIntFunction byte2int();
   void byte2int(Supplier<ByteToIntFunction> definition);
 

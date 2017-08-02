@@ -25,4 +25,8 @@ public interface Byteton {
   static float toFloat(byte input) {
     return input;
   }
+
+  static double toDouble(byte input) {
+    return input;
+  }
 }
