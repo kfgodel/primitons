@@ -33,6 +33,8 @@ public class PrimitonReposity {
     addConverterFrom(double.class, double.class, Doubleton::identity);
     addConverterFrom(float.class, float.class, Floaton::identity);
     addConverterFrom(int.class, int.class, Inton::identity);
+    addConverterFrom(int.class, double.class, Inton::toDouble);
+    addConverterFrom(int.class, float.class, Inton::toFloat);
     addConverterFrom(long.class, long.class, Longton::identity);
     addConverterFrom(short.class, short.class, Shorton::identity);
     addConverterFrom(short.class, double.class, Shorton::toDouble);

@@ -12,4 +12,12 @@ public interface Inton {
   static int identity(int input) {
     return input;
   }
+
+  static double toDouble(int input) {
+    return input;
+  }
+
+  static float toFloat(int input) {
+    return input;
+  }
 }

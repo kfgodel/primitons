@@ -33,6 +33,8 @@ import ar.com.kfgodel.function.bytes.*;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
 import ar.com.kfgodel.function.doubles.DoubleToDoubleFunction;
 import ar.com.kfgodel.function.floats.FloatToFloatFunction;
+import ar.com.kfgodel.function.ints.IntToDoubleFunction;
+import ar.com.kfgodel.function.ints.IntToFloatFunction;
 import ar.com.kfgodel.function.ints.IntToIntFunction;
 import ar.com.kfgodel.function.ints.IntToLongFunction;
 import ar.com.kfgodel.function.longs.LongToIntFunction;
@@ -351,6 +353,12 @@ public interface PrimitonTestContext extends TestContext {
 
   ShortToIntFunction short2int();
   void short2int(Supplier<ShortToIntFunction> definition);
+
+  IntToFloatFunction int2float();
+  void int2float(Supplier<IntToFloatFunction> definition);
+
+  IntToDoubleFunction int2double();
+  void int2double(Supplier<IntToDoubleFunction> definition);
 
   IntToLongFunction int2Long();
   void int2Long(Supplier<IntToLongFunction> definition);
