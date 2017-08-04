@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Date: 01/08/17 - 20:22
  */
 @RunWith(JavaSpecRunner.class)
-public class short2LongTest extends JavaSpec<PrimitonTestContext> {
+public class Short2LongTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a short to long primiton", () -> {
