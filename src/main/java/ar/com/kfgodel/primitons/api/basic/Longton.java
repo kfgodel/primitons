@@ -22,4 +22,8 @@ public interface Longton {
   static long identity(long input) {
     return input;
   }
+
+  static double toDouble(long input) {
+    return input;
+  }
 }
