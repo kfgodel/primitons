@@ -37,6 +37,7 @@ public class PrimitonReposity {
     addConverterFrom(char.class, Character.class, Charton::toBoxedCharacter);
 
     addConverterFrom(double.class, double.class, Doubleton::identity);
+    addConverterFrom(double.class, Double.class, Doubleton::toBoxedDouble);
     addConverterFrom(double.class, byte.class, Doubleton::toByte);
     addConverterFrom(double.class, float.class, Doubleton::toFloat);
     addConverterFrom(double.class, int.class, Doubleton::toInt);
@@ -44,6 +45,7 @@ public class PrimitonReposity {
     addConverterFrom(double.class, short.class, Doubleton::toShort);
 
     addConverterFrom(float.class, float.class, Floaton::identity);
+    addConverterFrom(float.class, Float.class, Floaton::toBoxedFloat);
     addConverterFrom(float.class, byte.class, Floaton::toByte);
     addConverterFrom(float.class, double.class, Floaton::toDouble);
     addConverterFrom(float.class, int.class, Floaton::toInt);
@@ -51,6 +53,7 @@ public class PrimitonReposity {
     addConverterFrom(float.class, short.class, Floaton::toShort);
 
     addConverterFrom(int.class, int.class, Inton::identity);
+    addConverterFrom(int.class, Integer.class, Inton::toBoxedInteger);
     addConverterFrom(int.class, byte.class, Inton::toByte);
     addConverterFrom(int.class, double.class, Inton::toDouble);
     addConverterFrom(int.class, float.class, Inton::toFloat);
@@ -58,6 +61,7 @@ public class PrimitonReposity {
     addConverterFrom(int.class, long.class, Inton::toLong);
 
     addConverterFrom(long.class, long.class, Longton::identity);
+    addConverterFrom(long.class, Long.class, Longton::toBoxedLong);
     addConverterFrom(long.class, byte.class, Longton::toByte);
     addConverterFrom(long.class, double.class, Longton::toDouble);
     addConverterFrom(long.class, float.class, Longton::toFloat);
@@ -65,6 +69,7 @@ public class PrimitonReposity {
     addConverterFrom(long.class, short.class, Longton::toShort);
 
     addConverterFrom(short.class, short.class, Shorton::identity);
+    addConverterFrom(short.class, Short.class, Shorton::toBoxedShort);
     addConverterFrom(short.class, byte.class, Shorton::toByte);
     addConverterFrom(short.class, double.class, Shorton::toDouble);
     addConverterFrom(short.class, float.class, Shorton::toFloat);

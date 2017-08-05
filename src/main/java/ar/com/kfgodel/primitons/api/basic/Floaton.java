@@ -28,4 +28,8 @@ public interface Floaton {
   static short toShort(float input) {
     return (short) input;
   }
+
+  static Float toBoxedFloat(float input) {
+    return input;
+  }
 }

@@ -28,4 +28,8 @@ public interface Shorton {
   static byte toByte(short input) {
     return (byte) input;
   }
+
+  static Short toBoxedShort(short input) {
+    return input;
+  }
 }

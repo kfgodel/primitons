@@ -28,4 +28,8 @@ public interface Doubleton {
   static short toShort(double input) {
     return (short) input;
   }
+
+  static Double toBoxedDouble(double input) {
+    return input;
+  }
 }

@@ -443,7 +443,7 @@ public interface PrimitonTestContext extends TestContext {
   LongToBoxedLongFunction long2boxedLong();
   void long2boxedLong(Supplier<LongToBoxedLongFunction> definition);
 
-  ShortToBoxedShortFunction short2boxedshort();
-  void short2boxedshort(Supplier<ShortToBoxedShortFunction> definition);
+  ShortToBoxedShortFunction short2boxedShort();
+  void short2boxedShort(Supplier<ShortToBoxedShortFunction> definition);
 
 }

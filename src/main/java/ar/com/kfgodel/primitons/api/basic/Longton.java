@@ -30,4 +30,8 @@ public interface Longton {
   static float toFloat(long input) {
     return input;
   }
+
+  static Long toBoxedLong(long input) {
+    return input;
+  }
 }

@@ -28,4 +28,8 @@ public interface Inton {
   static byte toByte(int input) {
     return (byte) input;
   }
+
+  static Integer toBoxedInteger(int input) {
+    return input;
+  }
 }
