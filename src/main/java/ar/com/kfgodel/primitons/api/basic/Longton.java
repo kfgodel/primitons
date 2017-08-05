@@ -18,4 +18,16 @@ public interface Longton {
   static double toDouble(long input) {
     return input;
   }
+
+  static short toShort(long input) {
+    return (short) input;
+  }
+
+  static byte toByte(long input) {
+    return (byte) input;
+  }
+
+  static float toFloat(long input) {
+    return input;
+  }
 }

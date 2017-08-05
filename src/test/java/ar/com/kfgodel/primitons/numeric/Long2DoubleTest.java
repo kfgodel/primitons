@@ -27,12 +27,12 @@ public class Long2DoubleTest extends JavaSpec<PrimitonTestContext> {
           assertThat(context().doubleOutput()).isEqualTo(65d);
         });
 
-        it("converts the maximum long into a double value",()->{
+        it("converts the maximum long into a double value losing precision",()->{
           context().longInput(()-> Long.MAX_VALUE);
           assertThat(context().doubleOutput()).isEqualTo(9223372036854775807d); // High values of long lose precision converted to double
         });
 
-        it("converts the minimum long into a double",()->{
+        it("converts the minimum long into a double losing precision",()->{
           context().longInput(()-> Long.MIN_VALUE);
           assertThat(context().doubleOutput()).isEqualTo(-9.223372036854776E18d); // Very low values of long lose precision converted to double
         });

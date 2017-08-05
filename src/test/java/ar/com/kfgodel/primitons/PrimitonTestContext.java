@@ -31,12 +31,10 @@ import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.*;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
-import ar.com.kfgodel.function.doubles.DoubleToDoubleFunction;
-import ar.com.kfgodel.function.floats.FloatToFloatFunction;
+import ar.com.kfgodel.function.doubles.*;
+import ar.com.kfgodel.function.floats.*;
 import ar.com.kfgodel.function.ints.*;
-import ar.com.kfgodel.function.longs.LongToDoubleFunction;
-import ar.com.kfgodel.function.longs.LongToIntFunction;
-import ar.com.kfgodel.function.longs.LongToLongFunction;
+import ar.com.kfgodel.function.longs.*;
 import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
 import ar.com.kfgodel.function.shorts.*;
 
@@ -340,17 +338,35 @@ public interface PrimitonTestContext extends TestContext {
   ByteToShortFunction byte2short();
   void byte2short(Supplier<ByteToShortFunction> definition);
 
-  ShortToDoubleFunction short2double();
-  void short2double(Supplier<ShortToDoubleFunction> definition);
+  DoubleToByteFunction double2byte();
+  void double2byte(Supplier<DoubleToByteFunction> definition);
 
-  ShortToFloatFunction short2float();
-  void short2float(Supplier<ShortToFloatFunction> definition);
+  DoubleToFloatFunction double2float();
+  void double2float(Supplier<DoubleToFloatFunction> definition);
 
-  ShortToLongFunction short2long();
-  void short2long(Supplier<ShortToLongFunction> definition);
+  DoubleToIntFunction double2int();
+  void double2int(Supplier<DoubleToIntFunction> definition);
 
-  ShortToIntFunction short2int();
-  void short2int(Supplier<ShortToIntFunction> definition);
+  DoubleToLongFunction double2long();
+  void double2long(Supplier<DoubleToLongFunction> definition);
+
+  DoubleToShortFunction double2short();
+  void double2short(Supplier<DoubleToShortFunction> definition);
+
+  FloatToByteFunction float2byte();
+  void float2byte(Supplier<FloatToByteFunction> definition);
+
+  FloatToIntFunction float2int();
+  void float2int(Supplier<FloatToIntFunction> definition);
+
+  FloatToLongFunction float2long();
+  void float2long(Supplier<FloatToLongFunction> definition);
+
+  FloatToShortFunction float2short();
+  void float2short(Supplier<FloatToShortFunction> definition);
+
+  IntToByteFunction int2byte();
+  void int2byte(Supplier<IntToByteFunction> definition);
 
   IntToFloatFunction int2float();
   void int2float(Supplier<IntToFloatFunction> definition);
@@ -364,14 +380,36 @@ public interface PrimitonTestContext extends TestContext {
   IntToShortFunction int2short();
   void int2short(Supplier<IntToShortFunction> definition);
 
+  LongToByteFunction long2byte();
+  void long2byte(Supplier<LongToByteFunction> definition);
+
   LongToDoubleFunction long2double();
   void long2double(Supplier<LongToDoubleFunction> definition);
+
+  LongToFloatFunction long2float();
+  void long2float(Supplier<LongToFloatFunction> definition);
 
   LongToIntFunction long2int();
   void long2int(Supplier<LongToIntFunction> definition);
 
+  LongToShortFunction long2short();
+  void long2short(Supplier<LongToShortFunction> definition);
+
   ShortToByteFunction short2byte();
   void short2byte(Supplier<ShortToByteFunction> definition);
+
+  ShortToDoubleFunction short2double();
+  void short2double(Supplier<ShortToDoubleFunction> definition);
+
+  ShortToFloatFunction short2float();
+  void short2float(Supplier<ShortToFloatFunction> definition);
+
+  ShortToIntFunction short2int();
+  void short2int(Supplier<ShortToIntFunction> definition);
+
+  ShortToLongFunction short2long();
+  void short2long(Supplier<ShortToLongFunction> definition);
+
 
 
 }
