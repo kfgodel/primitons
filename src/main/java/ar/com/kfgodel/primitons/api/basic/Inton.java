@@ -20,4 +20,8 @@ public interface Inton {
   static float toFloat(int input) {
     return input;
   }
+
+  static short toShort(int input) {
+    return (short) input;
+  }
 }
