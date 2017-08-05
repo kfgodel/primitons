@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Verifies the basic conversions for objecto to primitive conversion
+ * Verifies the basic conversions for object to primitive conversion
  * Created by kfgodel on 23/07/17.
  */
 @RunWith(JavaSpecRunner.class)
@@ -18,10 +18,10 @@ public class BoxedBoolean2BooleanTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a Boolean to boolean primiton", () -> {
-      context().boxedBoolean2boxedBoolean(()-> BoxedBooleanton::toBoolean);
+      context().boxedBoolean2Boolean(()-> BoxedBooleanton::toBoolean);
 
       describe("when used", () -> {
-        context().booleanOutput(()-> context().boxedBoolean2boxedBoolean().apply(context().booleanInput()));
+        context().booleanOutput(()-> context().boxedBoolean2Boolean().apply(context().booleanInput()));
 
         it("converts the object TRUE to its primitive counterpart",()->{
           context().booleanInput(()-> Boolean.TRUE);
@@ -34,9 +34,9 @@ public class BoxedBoolean2BooleanTest extends JavaSpec<PrimitonTestContext> {
         });
 
         itThrows(UnmappableException.class, "if value is null",()->{
-          context().boxedBoolean2boxedBoolean().apply(null);
+          context().boxedBoolean2Boolean().apply(null);
         }, e ->{
-          assertThat(e).hasMessage("Value[null] is not convertable to type [boolean]");
+          assertThat(e).hasMessage("Value[null] is not convertible to type [boolean]");
         });
 
       });

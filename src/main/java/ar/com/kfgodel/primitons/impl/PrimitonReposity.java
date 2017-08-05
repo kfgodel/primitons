@@ -2,6 +2,7 @@ package ar.com.kfgodel.primitons.impl;
 
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.basic.*;
+import ar.com.kfgodel.primitons.api.boxed.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -76,16 +77,33 @@ public class PrimitonReposity {
     addConverterFrom(short.class, int.class, Shorton::toInt);
     addConverterFrom(short.class, long.class, Shorton::toLong);
 
-    addConverterFrom(String.class, String.class, Objecton::identity);
-    addConverterFrom(Object.class, Object.class, Objecton::identity);
     addConverterFrom(Boolean.class, Boolean.class, Objecton::identity);
+    addConverterFrom(Boolean.class, boolean.class, BoxedBooleanton::toBoolean);
+
     addConverterFrom(Byte.class, Byte.class, Objecton::identity);
+    addConverterFrom(Byte.class, byte.class, BoxedByteton::toByte);
+
     addConverterFrom(Character.class, Character.class, Objecton::identity);
+    addConverterFrom(Character.class, char.class, BoxedCharacterton::toChar);
+
     addConverterFrom(Double.class, Double.class, Objecton::identity);
+    addConverterFrom(Double.class, double.class, BoxedDoubleton::toDouble);
+
     addConverterFrom(Float.class, Float.class, Objecton::identity);
+    addConverterFrom(Float.class, float.class, BoxedFloaton::toFloat);
+
     addConverterFrom(Integer.class, Integer.class, Objecton::identity);
+    addConverterFrom(Integer.class, int.class, BoxedIntegerton::toInt);
+
     addConverterFrom(Long.class, Long.class, Objecton::identity);
+    addConverterFrom(Long.class, long.class, BoxedLongton::toLong);
+
+    addConverterFrom(Object.class, Object.class, Objecton::identity);
+
     addConverterFrom(Short.class, Short.class, Objecton::identity);
+    addConverterFrom(Short.class, short.class, BoxedShorton::toShort);
+
+    addConverterFrom(String.class, String.class, Objecton::identity);
 
     addConverterFrom(boolean[].class, boolean[].class, Objecton::identity);
     addConverterFrom(byte[].class, byte[].class, Objecton::identity);

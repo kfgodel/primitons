@@ -21,13 +21,21 @@ import ar.com.kfgodel.function.arrays.objects.ArrayOfObjectToObjectFunction;
 import ar.com.kfgodel.function.arrays.shorts.arrays.ArrayOfShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.booleans.BooleanToBooleanFunction;
 import ar.com.kfgodel.function.booleans.boxed.BooleanToBoxedBooleanFunction;
+import ar.com.kfgodel.function.boxed.booleans.BoxedBooleanToBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.boxed.BoxedBooleanToBoxedBooleanFunction;
+import ar.com.kfgodel.function.boxed.bytes.BoxedByteToByteFunction;
 import ar.com.kfgodel.function.boxed.bytes.boxed.BoxedByteToBoxedByteFunction;
+import ar.com.kfgodel.function.boxed.chars.BoxedCharacterToCharFunction;
 import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
+import ar.com.kfgodel.function.boxed.doubles.BoxedDoubleToDoubleFunction;
 import ar.com.kfgodel.function.boxed.doubles.boxed.BoxedDoubleToBoxedDoubleFunction;
+import ar.com.kfgodel.function.boxed.floats.BoxedFloatToFloatFunction;
 import ar.com.kfgodel.function.boxed.floats.boxed.BoxedFloatToBoxedFloatFunction;
+import ar.com.kfgodel.function.boxed.ints.BoxedIntegerToIntFunction;
 import ar.com.kfgodel.function.boxed.ints.boxed.BoxedIntegerToBoxedIntegerFunction;
+import ar.com.kfgodel.function.boxed.longs.BoxedLongToLongFunction;
 import ar.com.kfgodel.function.boxed.longs.boxed.BoxedLongToBoxedLongFunction;
+import ar.com.kfgodel.function.boxed.shorts.BoxedShortToShortFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.*;
@@ -445,5 +453,29 @@ public interface PrimitonTestContext extends TestContext {
 
   ShortToBoxedShortFunction short2boxedShort();
   void short2boxedShort(Supplier<ShortToBoxedShortFunction> definition);
+
+  BoxedBooleanToBooleanFunction boxedBoolean2Boolean();
+  void boxedBoolean2Boolean(Supplier<BoxedBooleanToBooleanFunction> definition);
+
+  BoxedByteToByteFunction boxedByte2Byte();
+  void boxedByte2Byte(Supplier<BoxedByteToByteFunction> definition);
+
+  BoxedCharacterToCharFunction boxedCharacter2Char();
+  void boxedCharacter2Char(Supplier<BoxedCharacterToCharFunction> definition);
+
+  BoxedDoubleToDoubleFunction boxedDouble2Double();
+  void boxedDouble2Double(Supplier<BoxedDoubleToDoubleFunction> definition);
+
+  BoxedFloatToFloatFunction boxedFloat2Float();
+  void boxedFloat2Float(Supplier<BoxedFloatToFloatFunction> definition);
+
+  BoxedIntegerToIntFunction boxedInteger2Int();
+  void boxedInteger2Int(Supplier<BoxedIntegerToIntFunction> definition);
+
+  BoxedLongToLongFunction boxedLong2Long();
+  void boxedLong2Long(Supplier<BoxedLongToLongFunction> definition);
+
+  BoxedShortToShortFunction boxedShort2Short();
+  void boxedShort2Short(Supplier<BoxedShortToShortFunction> definition);
 
 }
