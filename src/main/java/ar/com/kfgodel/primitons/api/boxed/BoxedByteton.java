@@ -13,4 +13,11 @@ public interface BoxedByteton {
     }
     return input;
   }
+
+  static double toDouble(Byte input) {
+    if(input == null){
+      throw new UnmappableException(input, double.class);
+    }
+    return input.doubleValue();
+  }
 }
