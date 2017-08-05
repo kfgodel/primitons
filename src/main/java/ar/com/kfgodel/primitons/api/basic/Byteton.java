@@ -29,4 +29,8 @@ public interface Byteton {
   static double toDouble(byte input) {
     return input;
   }
+
+  static Byte toBoxedByte(byte input) {
+    return input;
+  }
 }

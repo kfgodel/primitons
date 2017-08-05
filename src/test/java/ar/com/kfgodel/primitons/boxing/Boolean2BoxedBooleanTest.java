@@ -17,10 +17,10 @@ public class Boolean2BoxedBooleanTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a boolean to Boolean primiton", () -> {
-      context().boolean2boolean(()-> Booleanton::toBoxedBoolean);
+      context().boolean2boxedBoolean(()-> Booleanton::toBoxedBoolean);
 
       describe("when used", () -> {
-        context().booleanOutput(()-> context().boolean2boolean().apply(context().booleanInput()));
+        context().booleanOutput(()-> context().boolean2boxedBoolean().apply(context().booleanInput()));
 
         it("converts the primitive true into its object counterpart",()->{
           context().booleanInput(()-> true);

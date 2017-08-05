@@ -23,37 +23,47 @@ public class PrimitonReposity {
 
   private void initialize() {
     addConverterFrom(boolean.class, boolean.class, Booleanton::identity);
+    addConverterFrom(boolean.class, Boolean.class, Booleanton::toBoxedBoolean);
+
     addConverterFrom(byte.class, byte.class, Byteton::identity);
+    addConverterFrom(byte.class, Byte.class, Byteton::toBoxedByte);
     addConverterFrom(byte.class, double.class, Byteton::toDouble);
     addConverterFrom(byte.class, float.class, Byteton::toFloat);
     addConverterFrom(byte.class, int.class, Byteton::toInt);
     addConverterFrom(byte.class, long.class, Byteton::toLong);
     addConverterFrom(byte.class, short.class, Byteton::toShort);
+
     addConverterFrom(char.class, char.class, Charton::identity);
+    addConverterFrom(char.class, Character.class, Charton::toBoxedCharacter);
+
     addConverterFrom(double.class, double.class, Doubleton::identity);
     addConverterFrom(double.class, byte.class, Doubleton::toByte);
     addConverterFrom(double.class, float.class, Doubleton::toFloat);
     addConverterFrom(double.class, int.class, Doubleton::toInt);
     addConverterFrom(double.class, long.class, Doubleton::toLong);
     addConverterFrom(double.class, short.class, Doubleton::toShort);
+
     addConverterFrom(float.class, float.class, Floaton::identity);
     addConverterFrom(float.class, byte.class, Floaton::toByte);
     addConverterFrom(float.class, double.class, Floaton::toDouble);
     addConverterFrom(float.class, int.class, Floaton::toInt);
     addConverterFrom(float.class, long.class, Floaton::toLong);
     addConverterFrom(float.class, short.class, Floaton::toShort);
+
     addConverterFrom(int.class, int.class, Inton::identity);
     addConverterFrom(int.class, byte.class, Inton::toByte);
     addConverterFrom(int.class, double.class, Inton::toDouble);
     addConverterFrom(int.class, float.class, Inton::toFloat);
     addConverterFrom(int.class, short.class, Inton::toShort);
     addConverterFrom(int.class, long.class, Inton::toLong);
+
     addConverterFrom(long.class, long.class, Longton::identity);
     addConverterFrom(long.class, byte.class, Longton::toByte);
     addConverterFrom(long.class, double.class, Longton::toDouble);
     addConverterFrom(long.class, float.class, Longton::toFloat);
     addConverterFrom(long.class, int.class, Longton::toInt);
     addConverterFrom(long.class, short.class, Longton::toShort);
+
     addConverterFrom(short.class, short.class, Shorton::identity);
     addConverterFrom(short.class, byte.class, Shorton::toByte);
     addConverterFrom(short.class, double.class, Shorton::toDouble);

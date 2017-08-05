@@ -8,4 +8,8 @@ public interface Charton {
   static char identity(char input) {
     return input;
   }
+
+  static Character toBoxedCharacter(char input) {
+    return input;
+  }
 }
