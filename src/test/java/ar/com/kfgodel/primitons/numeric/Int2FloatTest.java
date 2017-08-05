@@ -27,14 +27,14 @@ public class Int2FloatTest extends JavaSpec<PrimitonTestContext> {
           assertThat(context().floatOutput()).isEqualTo(-4f);
         });
 
-        it("converts the maximum int into a float value",()->{
+        it("converts the maximum int into a float value losing precision",()->{
           context().intInput(()-> Integer.MAX_VALUE);
-          assertThat(context().floatOutput()).isEqualTo(2.147483647E9f);
+          assertThat(context().floatOutput()).isEqualTo(2.14748365E9f);
         });
 
-        it("converts the minimum int into a float",()->{
+        it("converts the minimum int into a float value losing precision",()->{
           context().intInput(()-> Integer.MIN_VALUE);
-          assertThat(context().floatOutput()).isEqualTo(-2.147483648E9f);
+          assertThat(context().floatOutput()).isEqualTo(-2.14748365E9f);
         });
 
       });

@@ -24,4 +24,8 @@ public interface Inton {
   static short toShort(int input) {
     return (short) input;
   }
+
+  static byte toByte(int input) {
+    return (byte) input;
+  }
 }
