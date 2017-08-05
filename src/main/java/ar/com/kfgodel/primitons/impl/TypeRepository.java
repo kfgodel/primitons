@@ -48,7 +48,7 @@ public class TypeRepository {
   /**
    * @return The set of classes that represent all the primitive types convertible with primitons
    */
-  public Nary<Class<?>> types() {
+  public Nary<Class<?>> all() {
     return Nary.of(
       boolean.class,
       byte.class,
@@ -92,7 +92,7 @@ public class TypeRepository {
   /**
    * @return The sub-set of types that represent numeric values
    */
-  public Nary<Class<?>> numericTypes(){
+  public Nary<Class<?>> numeric(){
     return Nary.of(
       byte.class,
       double.class,
@@ -104,9 +104,9 @@ public class TypeRepository {
   }
 
   /**
-   * @return The sub-set of types that have an Object version (boxed)
+   * @return The sub-set of primitive types that have an Object version (boxed)
    */
-  public Nary<Class<?>> unboxedTypes() {
+  public Nary<Class<?>> unboxed() {
     return Nary.of(
       boolean.class,
       byte.class,
@@ -120,12 +120,36 @@ public class TypeRepository {
   }
 
   /**
+   * @return The sub-set of boxed types that have a primitive version (unboxed)
+   */
+  public Nary<Class<?>> boxed() {
+    return Nary.of(
+      Boolean.class,
+      Byte.class,
+      Character.class,
+      Double.class,
+      Float.class,
+      Integer.class,
+      Long.class,
+      Short.class
+    );
+  }
+
+  /**
    * Returns the boxed type that corresponds to the given unboxed type
    * @param unboxedType The primitive unboxed type
    * @return The boxed equivalent or empty if type doesn't have a boxed equivalent
    */
-  public Optional<Class<?>> boxedTypeFor(Class<?> unboxedType) {
-    Class<?> boxedType = unboxedToBoxedTypes.get(unboxedType);
-    return Optional.ofNullable(boxedType);
+  public Optional<Class<?>> boxedFor(Class<?> unboxedType) {
+    return findOptionalIn(unboxedToBoxedTypes, unboxedType);
+  }
+
+  public Optional<Class<?>> unboxedFor(Class<?> boxedType) {
+    return findOptionalIn(boxedToUnboxedTypes, boxedType);
+  }
+
+  private Optional<Class<?>> findOptionalIn(Map<Class<?>, Class<?>> map, Class<?> key) {
+    Class<?> value = map.get(key);
+    return Optional.ofNullable(value);
   }
 }

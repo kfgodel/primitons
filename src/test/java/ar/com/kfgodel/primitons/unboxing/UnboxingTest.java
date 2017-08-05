@@ -1,4 +1,4 @@
-package ar.com.kfgodel.primitons.boxing;
+package ar.com.kfgodel.primitons.unboxing;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
@@ -10,19 +10,19 @@ import org.junit.runner.RunWith;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * This class verifies that every boxable type has a boxing function
+ * This class verifies that every boxed type has a un-boxing function
  * Date: 05/08/17 - 17:40
  */
 @RunWith(JavaSpecRunner.class)
-public class BoxingTest extends JavaSpec<PrimitonTestContext> {
+public class UnboxingTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("primiton", () -> {
-      Primiton.types().unboxed()
-        .forEach(unboxedType -> {
-          Class<?> boxedType = Primiton.types().boxedFor(unboxedType).get();
-          it("has a boxing function from " + unboxedType.getSimpleName() + " to " + boxedType.getSimpleName() ,()->{
-            Optional converter = Primiton.converterFrom(unboxedType, boxedType);
+      Primiton.types().boxed()
+        .forEach(boxedType -> {
+          Class<?> unboxedType = Primiton.types().unboxedFor(boxedType).get();
+          it("has a un-boxing function from " + boxedType.getSimpleName() + " to " + unboxedType.getSimpleName() ,()->{
+            Optional converter = Primiton.converterFrom(boxedType, unboxedType);
             assertThat(converter.isPresent()).isTrue();
           });
         });
