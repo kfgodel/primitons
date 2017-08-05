@@ -24,4 +24,8 @@ public interface Shorton {
   static long toLong(short input) {
     return input;
   }
+
+  static byte toByte(short input) {
+    return (byte) input;
+  }
 }

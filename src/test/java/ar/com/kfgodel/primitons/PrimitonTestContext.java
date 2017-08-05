@@ -370,4 +370,8 @@ public interface PrimitonTestContext extends TestContext {
   LongToIntFunction long2int();
   void long2int(Supplier<LongToIntFunction> definition);
 
+  ShortToByteFunction short2byte();
+  void short2byte(Supplier<ShortToByteFunction> definition);
+
+
 }
