@@ -1,4 +1,4 @@
-package ar.com.kfgodel.primitons.numbers;
+package ar.com.kfgodel.primitons.numeric.numbers;
 
 import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
