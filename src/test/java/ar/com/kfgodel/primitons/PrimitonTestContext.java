@@ -27,7 +27,7 @@ import ar.com.kfgodel.function.boxed.bytes.*;
 import ar.com.kfgodel.function.boxed.bytes.boxed.BoxedByteToBoxedByteFunction;
 import ar.com.kfgodel.function.boxed.chars.BoxedCharacterToCharFunction;
 import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
-import ar.com.kfgodel.function.boxed.doubles.BoxedDoubleToDoubleFunction;
+import ar.com.kfgodel.function.boxed.doubles.*;
 import ar.com.kfgodel.function.boxed.doubles.boxed.BoxedDoubleToBoxedDoubleFunction;
 import ar.com.kfgodel.function.boxed.floats.BoxedFloatToFloatFunction;
 import ar.com.kfgodel.function.boxed.floats.boxed.BoxedFloatToBoxedFloatFunction;
@@ -478,8 +478,23 @@ public interface PrimitonTestContext extends TestContext {
   BoxedCharacterToCharFunction boxedCharacter2Char();
   void boxedCharacter2Char(Supplier<BoxedCharacterToCharFunction> definition);
 
+  BoxedDoubleToByteFunction boxedDouble2Byte();
+  void boxedDouble2Byte(Supplier<BoxedDoubleToByteFunction> definition);
+
   BoxedDoubleToDoubleFunction boxedDouble2Double();
   void boxedDouble2Double(Supplier<BoxedDoubleToDoubleFunction> definition);
+
+  BoxedDoubleToFloatFunction boxedDouble2Float();
+  void boxedDouble2Float(Supplier<BoxedDoubleToFloatFunction> definition);
+
+  BoxedDoubleToIntFunction boxedDouble2Int();
+  void boxedDouble2Int(Supplier<BoxedDoubleToIntFunction> definition);
+
+  BoxedDoubleToLongFunction boxedDouble2Long();
+  void boxedDouble2Long(Supplier<BoxedDoubleToLongFunction> definition);
+
+  BoxedDoubleToShortFunction boxedDouble2Short();
+  void boxedDouble2Short(Supplier<BoxedDoubleToShortFunction> definition);
 
   BoxedFloatToFloatFunction boxedFloat2Float();
   void boxedFloat2Float(Supplier<BoxedFloatToFloatFunction> definition);
