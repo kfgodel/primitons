@@ -658,4 +658,5 @@ public interface PrimitonTestContext extends TestContext {
   ShortToBoxedLongFunction short2BoxedLong();
   void short2BoxedLong(Supplier<ShortToBoxedLongFunction> definition);
 
+
 }

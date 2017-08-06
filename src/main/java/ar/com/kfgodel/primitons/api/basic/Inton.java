@@ -29,7 +29,26 @@ public interface Inton {
     return (byte) input;
   }
 
+  static Byte toBoxedByte(int input) {
+    return toByte(input);
+  }
+
+  static Double toBoxedDouble(int input) {
+    return toDouble(input);
+  }
+
+  static Float toBoxedFloat(int input) {
+    return toFloat(input);
+  }
+
   static Integer toBoxedInteger(int input) {
     return input;
   }
-}
+
+  static Long toBoxedLong(int input) {
+    return toLong(input);
+  }
+
+  static Short toBoxedShort(int input) {
+    return toShort(input);
+  }}
