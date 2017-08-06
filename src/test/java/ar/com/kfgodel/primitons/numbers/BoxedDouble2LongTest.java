@@ -28,12 +28,12 @@ public class BoxedDouble2LongTest extends JavaSpec<PrimitonTestContext> {
           assertThat(context().longOutput()).isEqualTo(5L);
         });
 
-        it("converts the maximum double into an long value losing precision",()->{
+        it("converts the maximum double into a long value losing precision",()->{
           context().doubleInput(()-> Double.valueOf(Double.MAX_VALUE));
           assertThat(context().longOutput()).isEqualTo(Long.MAX_VALUE); //Most significant bits are lost
         });
 
-        it("converts the minimum double into an long value losing precision",()->{
+        it("converts the minimum double into a long value losing precision",()->{
           context().doubleInput(()-> Double.valueOf(Double.MIN_VALUE));
           assertThat(context().longOutput()).isEqualTo(0L); //Most significant bits are lost
         });
