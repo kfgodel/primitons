@@ -20,4 +20,32 @@ public interface BoxedByteton {
     }
     return input.doubleValue();
   }
+
+  static float toFloat(Byte input) {
+    if(input == null){
+      throw new UnmappableException(input, float.class);
+    }
+    return input.floatValue();
+  }
+
+  static int toInt(Byte input) {
+    if(input == null){
+      throw new UnmappableException(input, int.class);
+    }
+    return input.intValue();
+  }
+
+  static long toLong(Byte input) {
+    if(input == null){
+      throw new UnmappableException(input, long.class);
+    }
+    return input.longValue();
+  }
+
+  static short toShort(Byte input) {
+    if(input == null){
+      throw new UnmappableException(input, short.class);
+    }
+    return input.shortValue();
+  }
 }
