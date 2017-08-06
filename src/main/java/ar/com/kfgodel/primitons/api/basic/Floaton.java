@@ -29,7 +29,27 @@ public interface Floaton {
     return (short) input;
   }
 
+  static Byte toBoxedByte(float input) {
+    return toByte(input);
+  }
+
+  static Double toBoxedDouble(float input) {
+    return toDouble(input);
+  }
+
   static Float toBoxedFloat(float input) {
     return input;
+  }
+
+  static Integer toBoxedInteger(float input) {
+    return toInt(input);
+  }
+
+  static Long toBoxedLong(float input) {
+    return toLong(input);
+  }
+
+  static Short toBoxedShort(float input) {
+    return toShort(input);
   }
 }
