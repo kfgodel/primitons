@@ -31,7 +31,27 @@ public interface Longton {
     return input;
   }
 
+  static Byte toBoxedByte(long input) {
+    return toByte(input);
+  }
+
+  static Double toBoxedDouble(long input) {
+    return toDouble(input);
+  }
+
+  static Float toBoxedFloat(long input) {
+    return toFloat(input);
+  }
+
+  static Integer toBoxedInteger(long input) {
+    return toInt(input);
+  }
+
   static Long toBoxedLong(long input) {
     return input;
+  }
+
+  static Short toBoxedShort(long input) {
+    return toShort(input);
   }
 }

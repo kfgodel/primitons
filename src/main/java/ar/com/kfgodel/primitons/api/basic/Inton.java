@@ -51,4 +51,5 @@ public interface Inton {
 
   static Short toBoxedShort(int input) {
     return toShort(input);
-  }}
+  }
+}
