@@ -29,6 +29,26 @@ public interface Shorton {
     return (byte) input;
   }
 
+  static Byte toBoxedByte(short input) {
+    return toByte(input);
+  }
+
+  static Double toBoxedDouble(short input) {
+    return toDouble(input);
+  }
+
+  static Float toBoxedFloat(short input) {
+    return toFloat(input);
+  }
+
+  static Integer toBoxedInteger(short input) {
+    return toInt(input);
+  }
+
+  static Long toBoxedLong(short input) {
+    return toLong(input);
+  }
+
   static Short toBoxedShort(short input) {
     return input;
   }
