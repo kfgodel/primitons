@@ -110,58 +110,88 @@ public class PrimitonReposity {
     addConverterFrom(Boolean.class, Boolean.class, Objecton::identity);
     addConverterFrom(Boolean.class, boolean.class, BoxedBooleanton::toBoolean);
 
-    addConverterFrom(Byte.class, Byte.class, Objecton::identity);
     addConverterFrom(Byte.class, byte.class, BoxedByteton::toByte);
     addConverterFrom(Byte.class, double.class, BoxedByteton::toDouble);
     addConverterFrom(Byte.class, float.class, BoxedByteton::toFloat);
     addConverterFrom(Byte.class, int.class, BoxedByteton::toInt);
     addConverterFrom(Byte.class, long.class, BoxedByteton::toLong);
     addConverterFrom(Byte.class, short.class, BoxedByteton::toShort);
+    addConverterFrom(Byte.class, Byte.class, BoxedByteton::toBoxedByte);
+    addConverterFrom(Byte.class, Double.class, BoxedByteton::toBoxedDouble);
+    addConverterFrom(Byte.class, Float.class, BoxedByteton::toBoxedFloat);
+    addConverterFrom(Byte.class, Integer.class, BoxedByteton::toBoxedInteger);
+    addConverterFrom(Byte.class, Long.class, BoxedByteton::toBoxedLong);
+    addConverterFrom(Byte.class, Short.class, BoxedByteton::toBoxedShort);
 
     addConverterFrom(Character.class, Character.class, Objecton::identity);
     addConverterFrom(Character.class, char.class, BoxedCharacterton::toChar);
 
-    addConverterFrom(Double.class, Double.class, Objecton::identity);
     addConverterFrom(Double.class, byte.class, BoxedDoubleton::toByte);
     addConverterFrom(Double.class, double.class, BoxedDoubleton::toDouble);
     addConverterFrom(Double.class, float.class, BoxedDoubleton::toFloat);
     addConverterFrom(Double.class, int.class, BoxedDoubleton::toInt);
     addConverterFrom(Double.class, long.class, BoxedDoubleton::toLong);
     addConverterFrom(Double.class, short.class, BoxedDoubleton::toShort);
+    addConverterFrom(Double.class, Byte.class, BoxedDoubleton::toBoxedByte);
+    addConverterFrom(Double.class, Double.class, BoxedDoubleton::toBoxedDouble);
+    addConverterFrom(Double.class, Float.class, BoxedDoubleton::toBoxedFloat);
+    addConverterFrom(Double.class, Integer.class, BoxedDoubleton::toBoxedInteger);
+    addConverterFrom(Double.class, Long.class, BoxedDoubleton::toBoxedLong);
+    addConverterFrom(Double.class, Short.class, BoxedDoubleton::toBoxedShort);
 
-    addConverterFrom(Float.class, Float.class, Objecton::identity);
     addConverterFrom(Float.class, byte.class, BoxedFloaton::toByte);
     addConverterFrom(Float.class, double.class, BoxedFloaton::toDouble);
     addConverterFrom(Float.class, float.class, BoxedFloaton::toFloat);
     addConverterFrom(Float.class, int.class, BoxedFloaton::toInt);
     addConverterFrom(Float.class, long.class, BoxedFloaton::toLong);
     addConverterFrom(Float.class, short.class, BoxedFloaton::toShort);
+    addConverterFrom(Float.class, Byte.class, BoxedFloaton::toBoxedByte);
+    addConverterFrom(Float.class, Double.class, BoxedFloaton::toBoxedDouble);
+    addConverterFrom(Float.class, Float.class, BoxedFloaton::toBoxedFloat);
+    addConverterFrom(Float.class, Integer.class, BoxedFloaton::toBoxedInteger);
+    addConverterFrom(Float.class, Long.class, BoxedFloaton::toBoxedLong);
+    addConverterFrom(Float.class, Short.class, BoxedFloaton::toBoxedShort);
 
-    addConverterFrom(Integer.class, Integer.class, Objecton::identity);
     addConverterFrom(Integer.class, byte.class, BoxedIntegerton::toByte);
     addConverterFrom(Integer.class, double.class, BoxedIntegerton::toDouble);
     addConverterFrom(Integer.class, float.class, BoxedIntegerton::toFloat);
     addConverterFrom(Integer.class, int.class, BoxedIntegerton::toInt);
     addConverterFrom(Integer.class, long.class, BoxedIntegerton::toLong);
     addConverterFrom(Integer.class, short.class, BoxedIntegerton::toShort);
+    addConverterFrom(Integer.class, Byte.class, BoxedIntegerton::toBoxedByte);
+    addConverterFrom(Integer.class, Double.class, BoxedIntegerton::toBoxedDouble);
+    addConverterFrom(Integer.class, Float.class, BoxedIntegerton::toBoxedFloat);
+    addConverterFrom(Integer.class, Integer.class, BoxedIntegerton::toBoxedInteger);
+    addConverterFrom(Integer.class, Long.class, BoxedIntegerton::toBoxedLong);
+    addConverterFrom(Integer.class, Short.class, BoxedIntegerton::toBoxedShort);
 
-    addConverterFrom(Long.class, Long.class, Objecton::identity);
     addConverterFrom(Long.class, byte.class, BoxedLongton::toByte);
     addConverterFrom(Long.class, double.class, BoxedLongton::toDouble);
     addConverterFrom(Long.class, float.class, BoxedLongton::toFloat);
     addConverterFrom(Long.class, int.class, BoxedLongton::toInt);
     addConverterFrom(Long.class, long.class, BoxedLongton::toLong);
     addConverterFrom(Long.class, short.class, BoxedLongton::toShort);
+    addConverterFrom(Long.class, Byte.class, BoxedLongton::toBoxedByte);
+    addConverterFrom(Long.class, Double.class, BoxedLongton::toBoxedDouble);
+    addConverterFrom(Long.class, Float.class, BoxedLongton::toBoxedFloat);
+    addConverterFrom(Long.class, Integer.class, BoxedLongton::toBoxedInteger);
+    addConverterFrom(Long.class, Long.class, BoxedLongton::toBoxedLong);
+    addConverterFrom(Long.class, Short.class, BoxedLongton::toBoxedShort);
 
     addConverterFrom(Object.class, Object.class, Objecton::identity);
 
-    addConverterFrom(Short.class, Short.class, Objecton::identity);
     addConverterFrom(Short.class, byte.class, BoxedShorton::toByte);
     addConverterFrom(Short.class, double.class, BoxedShorton::toDouble);
     addConverterFrom(Short.class, float.class, BoxedShorton::toFloat);
     addConverterFrom(Short.class, int.class, BoxedShorton::toInt);
     addConverterFrom(Short.class, long.class, BoxedShorton::toLong);
     addConverterFrom(Short.class, short.class, BoxedShorton::toShort);
+    addConverterFrom(Short.class, Byte.class, BoxedShorton::toBoxedByte);
+    addConverterFrom(Short.class, Double.class, BoxedShorton::toBoxedDouble);
+    addConverterFrom(Short.class, Float.class, BoxedShorton::toBoxedFloat);
+    addConverterFrom(Short.class, Integer.class, BoxedShorton::toBoxedInteger);
+    addConverterFrom(Short.class, Long.class, BoxedShorton::toBoxedLong);
+    addConverterFrom(Short.class, Short.class, BoxedShorton::toBoxedShort);
 
     addConverterFrom(String.class, String.class, Objecton::identity);
 

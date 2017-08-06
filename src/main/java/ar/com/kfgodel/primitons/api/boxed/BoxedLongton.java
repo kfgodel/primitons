@@ -28,4 +28,29 @@ public interface BoxedLongton {
   static short toShort(Long input) {
     return Numberton.toShort(input);
   }
+
+  static Byte toBoxedByte(Long input) {
+    return (input == null)? null :toByte(input);
+  }
+
+  static Double toBoxedDouble(Long input) {
+    return (input == null)? null :toDouble(input);
+  }
+
+  static Float toBoxedFloat(Long input) {
+    return (input == null)? null :toFloat(input);
+  }
+
+  static Integer toBoxedInteger(Long input) {
+    return (input == null)? null :toInt(input);
+  }
+
+  static Long toBoxedLong(Long input) {
+    return input;
+  }
+
+  static Short toBoxedShort(Long input) {
+    return (input == null)? null :toShort(input);
+  }
+
 }
