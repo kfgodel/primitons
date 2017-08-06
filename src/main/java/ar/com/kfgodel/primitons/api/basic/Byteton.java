@@ -33,4 +33,24 @@ public interface Byteton {
   static Byte toBoxedByte(byte input) {
     return input;
   }
+
+  static Double toBoxedDouble(byte input) {
+    return Doubleton.toBoxedDouble(toDouble(input));
+  }
+
+  static Float toBoxedFloat(byte input) {
+    return Floaton.toBoxedFloat(toFloat(input));
+  }
+
+  static Integer toBoxedInteger(byte input) {
+    return Inton.toBoxedInteger(toInt(input));
+  }
+
+  static Long toBoxedLong(byte input) {
+    return Longton.toBoxedLong(toLong(input));
+  }
+
+  static Short toBoxedShort(byte input) {
+    return Shorton.toBoxedShort(toShort(input));
+  }
 }
