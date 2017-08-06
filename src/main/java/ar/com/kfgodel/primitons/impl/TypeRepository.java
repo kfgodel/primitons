@@ -99,7 +99,13 @@ public class TypeRepository {
       float.class,
       int.class,
       long.class,
-      short.class
+      short.class,
+      Byte.class,
+      Double.class,
+      Float.class,
+      Integer.class,
+      Long.class,
+      Short.class
     );
   }
 
