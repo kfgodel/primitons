@@ -27,12 +27,12 @@ public class PrimitonReposity {
     addConverterFrom(boolean.class, Boolean.class, Booleanton::toBoxedBoolean);
 
     addConverterFrom(byte.class, byte.class, Byteton::identity);
-    addConverterFrom(byte.class, Byte.class, Byteton::toBoxedByte);
     addConverterFrom(byte.class, double.class, Byteton::toDouble);
     addConverterFrom(byte.class, float.class, Byteton::toFloat);
     addConverterFrom(byte.class, int.class, Byteton::toInt);
     addConverterFrom(byte.class, long.class, Byteton::toLong);
     addConverterFrom(byte.class, short.class, Byteton::toShort);
+    addConverterFrom(byte.class, Byte.class, Byteton::toBoxedByte);
     addConverterFrom(byte.class, Double.class, Byteton::toBoxedDouble);
     addConverterFrom(byte.class, Float.class, Byteton::toBoxedFloat);
     addConverterFrom(byte.class, Integer.class, Byteton::toBoxedInteger);
@@ -43,12 +43,17 @@ public class PrimitonReposity {
     addConverterFrom(char.class, Character.class, Charton::toBoxedCharacter);
 
     addConverterFrom(double.class, double.class, Doubleton::identity);
-    addConverterFrom(double.class, Double.class, Doubleton::toBoxedDouble);
     addConverterFrom(double.class, byte.class, Doubleton::toByte);
     addConverterFrom(double.class, float.class, Doubleton::toFloat);
     addConverterFrom(double.class, int.class, Doubleton::toInt);
     addConverterFrom(double.class, long.class, Doubleton::toLong);
     addConverterFrom(double.class, short.class, Doubleton::toShort);
+    addConverterFrom(double.class, Byte.class, Doubleton::toBoxedByte);
+    addConverterFrom(double.class, Double.class, Doubleton::toBoxedDouble);
+    addConverterFrom(double.class, Float.class, Doubleton::toBoxedFloat);
+    addConverterFrom(double.class, Integer.class, Doubleton::toBoxedInteger);
+    addConverterFrom(double.class, Long.class, Doubleton::toBoxedLong);
+    addConverterFrom(double.class, Short.class, Doubleton::toBoxedShort);
 
     addConverterFrom(float.class, float.class, Floaton::identity);
     addConverterFrom(float.class, Float.class, Floaton::toBoxedFloat);

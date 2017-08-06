@@ -35,22 +35,22 @@ public interface Byteton {
   }
 
   static Double toBoxedDouble(byte input) {
-    return Doubleton.toBoxedDouble(toDouble(input));
+    return toDouble(input);
   }
 
   static Float toBoxedFloat(byte input) {
-    return Floaton.toBoxedFloat(toFloat(input));
+    return toFloat(input);
   }
 
   static Integer toBoxedInteger(byte input) {
-    return Inton.toBoxedInteger(toInt(input));
+    return toInt(input);
   }
 
   static Long toBoxedLong(byte input) {
-    return Longton.toBoxedLong(toLong(input));
+    return toLong(input);
   }
 
   static Short toBoxedShort(byte input) {
-    return Shorton.toBoxedShort(toShort(input));
+    return toShort(input);
   }
 }

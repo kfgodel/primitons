@@ -29,7 +29,27 @@ public interface Doubleton {
     return (short) input;
   }
 
+  static Byte toBoxedByte(double input) {
+    return toByte(input);
+  }
+
   static Double toBoxedDouble(double input) {
     return input;
+  }
+
+  static Float toBoxedFloat(double input) {
+    return toFloat(input);
+  }
+
+  static Integer toBoxedInteger(double input) {
+    return toInt(input);
+  }
+
+  static Long toBoxedLong(double input) {
+    return toLong(input);
+  }
+
+  static Short toBoxedShort(double input) {
+    return toShort(input);
   }
 }
