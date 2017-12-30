@@ -4,7 +4,7 @@ import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.impl.TypeRepositoryImpl;
-import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.junit.runner.RunWith;
 
 import java.util.stream.Collectors;
@@ -22,8 +22,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       context().typeRepository(TypeRepositoryImpl::create);
 
       it("knows all the primiton types", () -> {
-        assertThat(context().typeRepository().allTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().allTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
@@ -66,8 +66,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knwos all the primitive types", () -> {
-        assertThat(context().typeRepository().primitiveTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().primitiveTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
@@ -81,8 +81,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the non primitive types", () -> {
-        assertThat(context().typeRepository().nonPrimitiveTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().nonPrimitiveTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             Boolean.class,
             Byte.class,
             Character.class,
@@ -116,16 +116,16 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boolean types", () -> {
-        assertThat(context().typeRepository().booleanTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().booleanTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             Boolean.class
           ));
       });
 
       it("knows all the numericTypes types", () -> {
-        assertThat(context().typeRepository().numericTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().numericTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             byte.class,
             double.class,
             float.class,
@@ -142,8 +142,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the alphabetic types", () -> {
-        assertThat(context().typeRepository().alphabeticTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().alphabeticTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             char.class,
             Character.class,
             String.class
@@ -151,8 +151,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the array types", () -> {
-        assertThat(context().typeRepository().arrayTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().arrayTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean[].class,
             byte[].class,
             char[].class,
@@ -175,8 +175,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boxed types", () -> {
-        assertThat(context().typeRepository().boxedTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().boxedTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             Boolean.class,
             Byte.class,
             Character.class,
@@ -190,8 +190,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boxeable types", () -> {
-        assertThat(context().typeRepository().boxeableTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().boxeableTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
