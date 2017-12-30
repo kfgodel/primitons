@@ -38,6 +38,7 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
     unboxedToBoxedTypes.put(int.class, Integer.class);
     unboxedToBoxedTypes.put(long.class, Long.class);
     unboxedToBoxedTypes.put(short.class, Short.class);
+    unboxedToBoxedTypes.put(void.class, Void.class);
   }
 
   private void initializeBoxedToUnboxed() {
@@ -60,6 +61,7 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       int.class,
       long.class,
       short.class,
+      void.class,
       Boolean.class,
       Byte.class,
       Character.class,
@@ -70,6 +72,7 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       Short.class,
       String.class,
       Object.class,
+      Void.class,
       boolean[].class,
       byte[].class,
       char[].class,
@@ -89,6 +92,27 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       String[].class,
       Object[].class
     );
+  }
+
+  @Override
+  public Nary<Class<?>> primitiveTypes() {
+    return Nary.of(
+      boolean.class,
+      byte.class,
+      char.class,
+      double.class,
+      float.class,
+      int.class,
+      long.class,
+      short.class,
+      void.class
+    );
+  }
+
+  @Override
+  public Nary<Class<?>> nonPrimitiveTypes() {
+    return allTypes()
+      .filterNary(type-> primitiveTypes().noneMatch(type::equals));
   }
 
   /**
@@ -140,7 +164,8 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       float.class,
       int.class,
       long.class,
-      short.class
+      short.class,
+      void.class
     );
   }
 
@@ -157,7 +182,8 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       Float.class,
       Integer.class,
       Long.class,
-      Short.class
+      Short.class,
+      Void.class
     );
   }
 

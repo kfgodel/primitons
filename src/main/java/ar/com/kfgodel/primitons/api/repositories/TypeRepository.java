@@ -11,10 +11,22 @@ import ar.com.kfgodel.nary.api.optionals.Optional;
 public interface TypeRepository {
 
   /**
-   * All the classes that represent primitive types
+   * All the classes that represent primiton types (primitives and some basic object types)
    * @return A nary containing primitives, boxedTypes, boolean, alphabetic, numeric and array types
    */
   Nary<Class<?>> allTypes();
+
+  /**
+   * All the classes that represent primitive java types
+   * @return The eigth types that representes values plus void
+   */
+  Nary<Class<?>> primitiveTypes();
+
+  /**
+   * All the classes that are primiton types but do not represent a primitive java type
+   * @return A Nary of all the non primitive types
+   */
+  Nary<Class<?>> nonPrimitiveTypes();
 
   /**
    * Returns the boxed and unboxed boolean types

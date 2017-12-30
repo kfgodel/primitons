@@ -108,6 +108,9 @@ public class PrimitonReposityImpl implements ar.com.kfgodel.primitons.api.reposi
     addConverterFrom(short.class, Long.class, Shorton::toBoxedLong);
     addConverterFrom(short.class, Short.class, Shorton::toBoxedShort);
 
+    addConverterFrom(void.class, void.class, Objecton::identity);
+    addConverterFrom(void.class, Void.class, Objecton::identity);
+
     addConverterFrom(Boolean.class, Boolean.class, Objecton::identity);
     addConverterFrom(Boolean.class, boolean.class, BoxedBooleanton::toBoolean);
 
@@ -180,6 +183,9 @@ public class PrimitonReposityImpl implements ar.com.kfgodel.primitons.api.reposi
     addConverterFrom(Long.class, Short.class, BoxedLongton::toBoxedShort);
 
     addConverterFrom(Object.class, Object.class, Objecton::identity);
+
+    addConverterFrom(Void.class, Void.class, Objecton::identity);
+    addConverterFrom(Void.class, void.class, Objecton::identity);
 
     addConverterFrom(Short.class, byte.class, BoxedShorton::toByte);
     addConverterFrom(Short.class, double.class, BoxedShorton::toDouble);
