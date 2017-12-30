@@ -17,7 +17,7 @@ public class IdentityTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("primiton", () -> {
-      Primiton.types().all()
+      Primiton.types().allTypes()
         .forEach(primitiveType -> {
           it("has an identity function for " + primitiveType.getSimpleName()  ,()->{
             Optional converter = Primiton.converterFrom(primitiveType, primitiveType);

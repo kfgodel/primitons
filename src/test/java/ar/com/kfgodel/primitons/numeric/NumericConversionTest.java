@@ -17,8 +17,8 @@ public class NumericConversionTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("primiton", () -> {
-      Primiton.types().numeric().forEach(sourceNumericType -> {
-        Primiton.types().numeric().forEach(targetNumericType -> {
+      Primiton.types().numericTypes().forEach(sourceNumericType -> {
+        Primiton.types().numericTypes().forEach(targetNumericType -> {
           it("has a conversion function from " + sourceNumericType.getSimpleName() + " to " + targetNumericType.getSimpleName() ,()->{
             Optional converter = Primiton.converterFrom(sourceNumericType, targetNumericType);
             assertThat(converter.isPresent()).isTrue();

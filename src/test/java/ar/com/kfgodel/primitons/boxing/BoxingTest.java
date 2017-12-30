@@ -18,7 +18,7 @@ public class BoxingTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("primiton", () -> {
-      Primiton.types().unboxed()
+      Primiton.types().boxeableTypes()
         .forEach(unboxedType -> {
           Class<?> boxedType = Primiton.types().boxedFor(unboxedType).get();
           it("has a boxing function from " + unboxedType.getSimpleName() + " to " + boxedType.getSimpleName() ,()->{

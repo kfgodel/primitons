@@ -2,6 +2,7 @@ package ar.com.kfgodel.primitons.impl;
 
 import ar.com.kfgodel.nary.api.Nary;
 import ar.com.kfgodel.nary.api.optionals.Optional;
+import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,13 +11,13 @@ import java.util.Map;
  * This type represents a type repository with the metadata about type sets and relationships
  * Date: 05/08/17 - 17:51
  */
-public class TypeRepository {
+public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.repositories.TypeRepository {
 
   private Map<Class<?>,Class<?>> unboxedToBoxedTypes;
   private Map<Class<?>,Class<?>> boxedToUnboxedTypes;
 
   public static TypeRepository create() {
-    TypeRepository typeRepository = new TypeRepository();
+    TypeRepositoryImpl typeRepository = new TypeRepositoryImpl();
     typeRepository.boxedToUnboxedTypes = new HashMap<>();
     typeRepository.unboxedToBoxedTypes = new HashMap<>();
     typeRepository.initialize();
@@ -46,9 +47,10 @@ public class TypeRepository {
   }
 
   /**
-   * @return The set of classes that represent all the primitive types convertible with primitons
+   * @return The set of classes that represent allPrimitiveTypes the primitive types convertible with primitons
    */
-  public Nary<Class<?>> all() {
+  @Override
+  public Nary<Class<?>> allTypes() {
     return Nary.of(
       boolean.class,
       byte.class,
@@ -90,9 +92,10 @@ public class TypeRepository {
   }
 
   /**
-   * @return The sub-set of types that represent numeric values
+   * @return The sub-set of types that represent numericTypes values
    */
-  public Nary<Class<?>> numeric(){
+  @Override
+  public Nary<Class<?>> numericTypes(){
     return Nary.of(
       byte.class,
       double.class,
@@ -109,10 +112,26 @@ public class TypeRepository {
     );
   }
 
+  @Override
+  public Nary<Class<?>> alphabeticTypes() {
+    return Nary.of(
+      char.class,
+      Character.class,
+      String.class
+    );
+  }
+
+  @Override
+  public Nary<Class<?>> arrayTypes() {
+    return allTypes()
+      .filterNary(Class::isArray);
+  }
+
   /**
-   * @return The sub-set of primitive types that have an Object version (boxed)
+   * @return The sub-set of primitive types that have an Object version (boxedTypes)
    */
-  public Nary<Class<?>> unboxed() {
+  @Override
+  public Nary<Class<?>> boxeableTypes() {
     return Nary.of(
       boolean.class,
       byte.class,
@@ -126,9 +145,10 @@ public class TypeRepository {
   }
 
   /**
-   * @return The sub-set of boxed types that have a primitive version (unboxed)
+   * @return The sub-set of boxedTypes types that have a primitive version (unboxedTypes)
    */
-  public Nary<Class<?>> boxed() {
+  @Override
+  public Nary<Class<?>> boxedTypes() {
     return Nary.of(
       Boolean.class,
       Byte.class,
@@ -142,16 +162,23 @@ public class TypeRepository {
   }
 
   /**
-   * Returns the boxed type that corresponds to the given unboxed type
-   * @param unboxedType The primitive unboxed type
-   * @return The boxed equivalent or empty if type doesn't have a boxed equivalent
+   * Returns the boxedTypes type that corresponds to the given unboxedTypes type
+   * @param unboxedType The primitive unboxedTypes type
+   * @return The boxedTypes equivalent or empty if type doesn't have a boxedTypes equivalent
    */
+  @Override
   public Optional<Class<?>> boxedFor(Class<?> unboxedType) {
     return findOptionalIn(unboxedToBoxedTypes, unboxedType);
   }
 
+  @Override
   public Optional<Class<?>> unboxedFor(Class<?> boxedType) {
     return findOptionalIn(boxedToUnboxedTypes, boxedType);
+  }
+
+  @Override
+  public Nary<Class<?>> booleanTypes() {
+    return Nary.of(boolean.class, Boolean.class);
   }
 
   private Optional<Class<?>> findOptionalIn(Map<Class<?>, Class<?>> map, Class<?> key) {

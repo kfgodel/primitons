@@ -16,7 +16,7 @@ public class PrimitiveTypesTest extends JavaSpec<PrimitonTestContext> {
   public void define() {
     describe("primiton", () -> {
       it("has the list of all the primitive types", () -> {
-        assertThat(Primiton.types().all().collect(Collectors.toList()))
+        assertThat(Primiton.types().allTypes().collect(Collectors.toList()))
           .isEqualTo(Lists.newArrayList(
             boolean.class,
             byte.class,
