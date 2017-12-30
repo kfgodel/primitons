@@ -4,6 +4,7 @@ import ar.com.kfgodel.nary.api.Nary;
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -200,6 +201,18 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
   @Override
   public Optional<Class<?>> unboxedFor(Class<?> boxedType) {
     return findOptionalIn(boxedToUnboxedTypes, boxedType);
+  }
+
+  @Override
+  public Optional<Class<?>> elementTypeOf(Class<?> anArrayType) {
+    Class<?> componentType = anArrayType.getComponentType();
+    return Optional.ofNullable(componentType);
+  }
+
+  @Override
+  public Class<?> arrayTypeOf(Class<?> elementType) {
+    Object temporarilyCreatedArray = Array.newInstance(elementType, 0);
+    return temporarilyCreatedArray.getClass();
   }
 
   @Override

@@ -78,6 +78,17 @@ public interface TypeRepository {
    */
   Optional<Class<?>> unboxedFor(Class<?> boxedType);
 
+  /**
+   * Returns the class that represents the type of elements the array holds
+   * @param anArrayType An array type
+   * @return The class for the element type or empty if the input is not an array type
+   */
+  Optional<Class<?>> elementTypeOf(Class<?> anArrayType);
 
-
+  /**
+   * Returns the class that represents the array holding elements of the given type
+   * @param elementType The type of element for the array
+   * @return The class that represents the array type
+   */
+  Class<?> arrayTypeOf(Class<?> elementType);
 }

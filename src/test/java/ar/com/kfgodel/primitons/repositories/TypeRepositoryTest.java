@@ -238,6 +238,56 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
         });
       });
 
+      describe("when asking the element type of given array", () -> {
+        it("returns the element type of the array",()->{
+          assertThat(context().typeRepository().elementTypeOf(boolean[].class).get()).isEqualTo(boolean.class);
+          assertThat(context().typeRepository().elementTypeOf(byte[].class).get()).isEqualTo(byte.class);
+          assertThat(context().typeRepository().elementTypeOf(char[].class).get()).isEqualTo(char.class);
+          assertThat(context().typeRepository().elementTypeOf(double[].class).get()).isEqualTo(double.class);
+          assertThat(context().typeRepository().elementTypeOf(float[].class).get()).isEqualTo(float.class);
+          assertThat(context().typeRepository().elementTypeOf(int[].class).get()).isEqualTo(int.class);
+          assertThat(context().typeRepository().elementTypeOf(long[].class).get()).isEqualTo(long.class);
+          assertThat(context().typeRepository().elementTypeOf(short[].class).get()).isEqualTo(short.class);
+          assertThat(context().typeRepository().elementTypeOf(Boolean[].class).get()).isEqualTo(Boolean.class);
+          assertThat(context().typeRepository().elementTypeOf(Byte[].class).get()).isEqualTo(Byte.class);
+          assertThat(context().typeRepository().elementTypeOf(Character[].class).get()).isEqualTo(Character.class);
+          assertThat(context().typeRepository().elementTypeOf(Double[].class).get()).isEqualTo(Double.class);
+          assertThat(context().typeRepository().elementTypeOf(Float[].class).get()).isEqualTo(Float.class);
+          assertThat(context().typeRepository().elementTypeOf(Integer[].class).get()).isEqualTo(Integer.class);
+          assertThat(context().typeRepository().elementTypeOf(Long[].class).get()).isEqualTo(Long.class);
+          assertThat(context().typeRepository().elementTypeOf(Short[].class).get()).isEqualTo(Short.class);
+          assertThat(context().typeRepository().elementTypeOf(String[].class).get()).isEqualTo(String.class);
+          assertThat(context().typeRepository().elementTypeOf(Object[].class).get()).isEqualTo(Object.class);
+        });
+
+        it("returns empty if given input is not an array",()->{
+          assertThat(context().typeRepository().elementTypeOf(Object.class).isAbsent()).isTrue();
+        });
+      });
+
+      describe("when asking the array version of the given type", () -> {
+        it("returns the element type of the array",()->{
+          assertThat(context().typeRepository().arrayTypeOf(boolean.class)).isEqualTo(boolean[].class);
+          assertThat(context().typeRepository().arrayTypeOf(byte.class)).isEqualTo(byte[].class);
+          assertThat(context().typeRepository().arrayTypeOf(char.class)).isEqualTo(char[].class);
+          assertThat(context().typeRepository().arrayTypeOf(double.class)).isEqualTo(double[].class);
+          assertThat(context().typeRepository().arrayTypeOf(float.class)).isEqualTo(float[].class);
+          assertThat(context().typeRepository().arrayTypeOf(int.class)).isEqualTo(int[].class);
+          assertThat(context().typeRepository().arrayTypeOf(long.class)).isEqualTo(long[].class);
+          assertThat(context().typeRepository().arrayTypeOf(short.class)).isEqualTo(short[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Boolean.class)).isEqualTo(Boolean[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Byte.class)).isEqualTo(Byte[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Character.class)).isEqualTo(Character[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Double.class)).isEqualTo(Double[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Float.class)).isEqualTo(Float[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Integer.class)).isEqualTo(Integer[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Long.class)).isEqualTo(Long[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Short.class)).isEqualTo(Short[].class);
+          assertThat(context().typeRepository().arrayTypeOf(String.class)).isEqualTo(String[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Object.class)).isEqualTo(Object[].class);
+        });
+      });
+
 
     });
 
