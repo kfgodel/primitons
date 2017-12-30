@@ -4,7 +4,7 @@ import ar.com.dgarcia.javaspec.api.JavaSpec;
 import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.impl.TypeRepositoryImpl;
-import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.junit.runner.RunWith;
 
 import java.util.stream.Collectors;
@@ -22,8 +22,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       context().typeRepository(TypeRepositoryImpl::create);
 
       it("knows all the primiton types", () -> {
-        assertThat(context().typeRepository().allTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().allTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
@@ -66,8 +66,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knwos all the primitive types", () -> {
-        assertThat(context().typeRepository().primitiveTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().primitiveTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
@@ -81,8 +81,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the non primitive types", () -> {
-        assertThat(context().typeRepository().nonPrimitiveTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().nonPrimitiveTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             Boolean.class,
             Byte.class,
             Character.class,
@@ -116,16 +116,16 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boolean types", () -> {
-        assertThat(context().typeRepository().booleanTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().booleanTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             Boolean.class
           ));
       });
 
       it("knows all the numericTypes types", () -> {
-        assertThat(context().typeRepository().numericTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().numericTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             byte.class,
             double.class,
             float.class,
@@ -142,8 +142,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the alphabetic types", () -> {
-        assertThat(context().typeRepository().alphabeticTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().alphabeticTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             char.class,
             Character.class,
             String.class
@@ -151,8 +151,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the array types", () -> {
-        assertThat(context().typeRepository().arrayTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().arrayTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean[].class,
             byte[].class,
             char[].class,
@@ -175,8 +175,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boxed types", () -> {
-        assertThat(context().typeRepository().boxedTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().boxedTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             Boolean.class,
             Byte.class,
             Character.class,
@@ -190,8 +190,8 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
       });
 
       it("knows all the boxeable types", () -> {
-        assertThat(context().typeRepository().boxeableTypes().collect(Collectors.toList()))
-          .isEqualTo(Lists.newArrayList(
+        assertThat(context().typeRepository().boxeableTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
             boolean.class,
             byte.class,
             char.class,
@@ -235,6 +235,56 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
         });
         it("returns empty if non boxed input given", () -> {
           assertThat(context().typeRepository().boxedFor(Object.class).isAbsent()).isTrue();
+        });
+      });
+
+      describe("when asking the element type of given array", () -> {
+        it("returns the element type of the array",()->{
+          assertThat(context().typeRepository().elementTypeOf(boolean[].class).get()).isEqualTo(boolean.class);
+          assertThat(context().typeRepository().elementTypeOf(byte[].class).get()).isEqualTo(byte.class);
+          assertThat(context().typeRepository().elementTypeOf(char[].class).get()).isEqualTo(char.class);
+          assertThat(context().typeRepository().elementTypeOf(double[].class).get()).isEqualTo(double.class);
+          assertThat(context().typeRepository().elementTypeOf(float[].class).get()).isEqualTo(float.class);
+          assertThat(context().typeRepository().elementTypeOf(int[].class).get()).isEqualTo(int.class);
+          assertThat(context().typeRepository().elementTypeOf(long[].class).get()).isEqualTo(long.class);
+          assertThat(context().typeRepository().elementTypeOf(short[].class).get()).isEqualTo(short.class);
+          assertThat(context().typeRepository().elementTypeOf(Boolean[].class).get()).isEqualTo(Boolean.class);
+          assertThat(context().typeRepository().elementTypeOf(Byte[].class).get()).isEqualTo(Byte.class);
+          assertThat(context().typeRepository().elementTypeOf(Character[].class).get()).isEqualTo(Character.class);
+          assertThat(context().typeRepository().elementTypeOf(Double[].class).get()).isEqualTo(Double.class);
+          assertThat(context().typeRepository().elementTypeOf(Float[].class).get()).isEqualTo(Float.class);
+          assertThat(context().typeRepository().elementTypeOf(Integer[].class).get()).isEqualTo(Integer.class);
+          assertThat(context().typeRepository().elementTypeOf(Long[].class).get()).isEqualTo(Long.class);
+          assertThat(context().typeRepository().elementTypeOf(Short[].class).get()).isEqualTo(Short.class);
+          assertThat(context().typeRepository().elementTypeOf(String[].class).get()).isEqualTo(String.class);
+          assertThat(context().typeRepository().elementTypeOf(Object[].class).get()).isEqualTo(Object.class);
+        });
+
+        it("returns empty if given input is not an array",()->{
+          assertThat(context().typeRepository().elementTypeOf(Object.class).isAbsent()).isTrue();
+        });
+      });
+
+      describe("when asking the array version of the given type", () -> {
+        it("returns the element type of the array",()->{
+          assertThat(context().typeRepository().arrayTypeOf(boolean.class)).isEqualTo(boolean[].class);
+          assertThat(context().typeRepository().arrayTypeOf(byte.class)).isEqualTo(byte[].class);
+          assertThat(context().typeRepository().arrayTypeOf(char.class)).isEqualTo(char[].class);
+          assertThat(context().typeRepository().arrayTypeOf(double.class)).isEqualTo(double[].class);
+          assertThat(context().typeRepository().arrayTypeOf(float.class)).isEqualTo(float[].class);
+          assertThat(context().typeRepository().arrayTypeOf(int.class)).isEqualTo(int[].class);
+          assertThat(context().typeRepository().arrayTypeOf(long.class)).isEqualTo(long[].class);
+          assertThat(context().typeRepository().arrayTypeOf(short.class)).isEqualTo(short[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Boolean.class)).isEqualTo(Boolean[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Byte.class)).isEqualTo(Byte[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Character.class)).isEqualTo(Character[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Double.class)).isEqualTo(Double[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Float.class)).isEqualTo(Float[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Integer.class)).isEqualTo(Integer[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Long.class)).isEqualTo(Long[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Short.class)).isEqualTo(Short[].class);
+          assertThat(context().typeRepository().arrayTypeOf(String.class)).isEqualTo(String[].class);
+          assertThat(context().typeRepository().arrayTypeOf(Object.class)).isEqualTo(Object[].class);
         });
       });
 

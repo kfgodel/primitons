@@ -3,9 +3,12 @@ package ar.com.kfgodel.primitons.impl;
 import ar.com.kfgodel.nary.api.Nary;
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
+import com.google.common.collect.Sets;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * This type represents a type repository with the metadata about type sets and relationships
@@ -16,6 +19,86 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
   private Map<Class<?>,Class<?>> unboxedToBoxedTypes;
   private Map<Class<?>,Class<?>> boxedToUnboxedTypes;
 
+
+  private Set<Class<?>> allTypes = Sets.newHashSet(
+    boolean.class,
+    byte.class,
+    char.class,
+    double.class,
+    float.class,
+    int.class,
+    long.class,
+    short.class,
+    void.class,
+    Boolean.class,
+    Byte.class,
+    Character.class,
+    Double.class,
+    Float.class,
+    Integer.class,
+    Long.class,
+    Short.class,
+    String.class,
+    Object.class,
+    Void.class,
+    boolean[].class,
+    byte[].class,
+    char[].class,
+    double[].class,
+    float[].class,
+    int[].class,
+    long[].class,
+    short[].class,
+    Boolean[].class,
+    Byte[].class,
+    Character[].class,
+    Double[].class,
+    Float[].class,
+    Integer[].class,
+    Long[].class,
+    Short[].class,
+    String[].class,
+    Object[].class
+  );
+
+  private Set<Class<?>> primitiveTypes = Sets.newHashSet(
+    boolean.class,
+    byte.class,
+    char.class,
+    double.class,
+    float.class,
+    int.class,
+    long.class,
+    short.class,
+    void.class
+  );
+
+  private Set<Class<?>> numericTypes = Sets.newHashSet(
+    byte.class,
+    double.class,
+    float.class,
+    int.class,
+    long.class,
+    short.class,
+    Byte.class,
+    Double.class,
+    Float.class,
+    Integer.class,
+    Long.class,
+    Short.class
+  );
+
+  private Set<Class<?>> booleanTypes = Sets.newHashSet(
+    boolean.class,
+    Boolean.class
+  );
+
+  private Set<Class<?>> alphabeticTypes = Sets.newHashSet(
+    char.class,
+    Character.class,
+    String.class
+  );
+
   public static TypeRepository create() {
     TypeRepositoryImpl typeRepository = new TypeRepositoryImpl();
     typeRepository.boxedToUnboxedTypes = new HashMap<>();
@@ -25,26 +108,24 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
   }
 
   private void initialize() {
-    initializeUnboxedtoBoxed();
-    initializeBoxedToUnboxed();
+    initializeBoxedRelationships();
   }
 
-  private void initializeUnboxedtoBoxed() {
-    unboxedToBoxedTypes.put(boolean.class, Boolean.class);
-    unboxedToBoxedTypes.put(byte.class, Byte.class);
-    unboxedToBoxedTypes.put(char.class, Character.class);
-    unboxedToBoxedTypes.put(double.class, Double.class);
-    unboxedToBoxedTypes.put(float.class, Float.class);
-    unboxedToBoxedTypes.put(int.class, Integer.class);
-    unboxedToBoxedTypes.put(long.class, Long.class);
-    unboxedToBoxedTypes.put(short.class, Short.class);
-    unboxedToBoxedTypes.put(void.class, Void.class);
+  private void initializeBoxedRelationships() {
+    addBoxingRelationship(boolean.class, Boolean.class);
+    addBoxingRelationship(byte.class, Byte.class);
+    addBoxingRelationship(char.class, Character.class);
+    addBoxingRelationship(double.class, Double.class);
+    addBoxingRelationship(float.class, Float.class);
+    addBoxingRelationship(int.class, Integer.class);
+    addBoxingRelationship(long.class, Long.class);
+    addBoxingRelationship(short.class, Short.class);
+    addBoxingRelationship(void.class, Void.class);
   }
 
-  private void initializeBoxedToUnboxed() {
-    unboxedToBoxedTypes.forEach((unboxedType, boxedType) ->{
-      boxedToUnboxedTypes.put(boxedType, unboxedType);
-    });
+  private void addBoxingRelationship(Class<?> boxeableType, Class<?> boxedType) {
+    unboxedToBoxedTypes.put(boxeableType, boxedType);
+    boxedToUnboxedTypes.put(boxedType, boxeableType);
   }
 
   /**
@@ -52,67 +133,18 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
    */
   @Override
   public Nary<Class<?>> allTypes() {
-    return Nary.of(
-      boolean.class,
-      byte.class,
-      char.class,
-      double.class,
-      float.class,
-      int.class,
-      long.class,
-      short.class,
-      void.class,
-      Boolean.class,
-      Byte.class,
-      Character.class,
-      Double.class,
-      Float.class,
-      Integer.class,
-      Long.class,
-      Short.class,
-      String.class,
-      Object.class,
-      Void.class,
-      boolean[].class,
-      byte[].class,
-      char[].class,
-      double[].class,
-      float[].class,
-      int[].class,
-      long[].class,
-      short[].class,
-      Boolean[].class,
-      Byte[].class,
-      Character[].class,
-      Double[].class,
-      Float[].class,
-      Integer[].class,
-      Long[].class,
-      Short[].class,
-      String[].class,
-      Object[].class
-    );
+    return Nary.create(allTypes);
   }
 
   @Override
   public Nary<Class<?>> primitiveTypes() {
-    return Nary.of(
-      boolean.class,
-      byte.class,
-      char.class,
-      double.class,
-      float.class,
-      int.class,
-      long.class,
-      short.class,
-      void.class
-    );
+    return Nary.create(primitiveTypes);
   }
 
   @Override
   public Nary<Class<?>> nonPrimitiveTypes() {
     return allTypes()
-      .filterNary(type-> primitiveTypes().noneMatch(type::equals));
+      .filterNary(type-> !primitiveTypes.contains(type));
   }
 
   /**
@@ -120,29 +152,12 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
    */
   @Override
   public Nary<Class<?>> numericTypes(){
-    return Nary.of(
-      byte.class,
-      double.class,
-      float.class,
-      int.class,
-      long.class,
-      short.class,
-      Byte.class,
-      Double.class,
-      Float.class,
-      Integer.class,
-      Long.class,
-      Short.class
-    );
+    return Nary.create(numericTypes);
   }
 
   @Override
   public Nary<Class<?>> alphabeticTypes() {
-    return Nary.of(
-      char.class,
-      Character.class,
-      String.class
-    );
+    return Nary.create(alphabeticTypes);
   }
 
   @Override
@@ -156,17 +171,7 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
    */
   @Override
   public Nary<Class<?>> boxeableTypes() {
-    return Nary.of(
-      boolean.class,
-      byte.class,
-      char.class,
-      double.class,
-      float.class,
-      int.class,
-      long.class,
-      short.class,
-      void.class
-    );
+    return primitiveTypes();
   }
 
   /**
@@ -174,17 +179,7 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
    */
   @Override
   public Nary<Class<?>> boxedTypes() {
-    return Nary.of(
-      Boolean.class,
-      Byte.class,
-      Character.class,
-      Double.class,
-      Float.class,
-      Integer.class,
-      Long.class,
-      Short.class,
-      Void.class
-    );
+    return Nary.create(boxedToUnboxedTypes.keySet());
   }
 
   /**
@@ -203,8 +198,20 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
   }
 
   @Override
+  public Optional<Class<?>> elementTypeOf(Class<?> anArrayType) {
+    Class<?> componentType = anArrayType.getComponentType();
+    return Optional.ofNullable(componentType);
+  }
+
+  @Override
+  public Class<?> arrayTypeOf(Class<?> elementType) {
+    Object temporarilyCreatedArray = Array.newInstance(elementType, 0);
+    return temporarilyCreatedArray.getClass();
+  }
+
+  @Override
   public Nary<Class<?>> booleanTypes() {
-    return Nary.of(boolean.class, Boolean.class);
+    return Nary.create(booleanTypes);
   }
 
   private Optional<Class<?>> findOptionalIn(Map<Class<?>, Class<?>> map, Class<?> key) {
