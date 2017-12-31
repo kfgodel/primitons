@@ -1,5 +1,7 @@
 package ar.com.kfgodel.primitons.api.boxed;
 
+import static ar.com.kfgodel.primitons.api.basic.Objecton.newArrayOf;
+
 /**
  * This type defines the primiton functions for the boxed integer type
  * Date: 29/07/17 - 14:29
@@ -54,6 +56,6 @@ public interface BoxedIntegerton {
   }
 
   static Integer[] toArray(Integer value) {
-    return new Integer[]{value};
+    return newArrayOf(Integer.class, value);
   }
 }

@@ -1,5 +1,7 @@
 package ar.com.kfgodel.primitons.api.boxed;
 
+import static ar.com.kfgodel.primitons.api.basic.Objecton.newArrayOf;
+
 /**
  * This type defines the primiton functions for the boxed float type
  * Date: 29/07/17 - 14:31
@@ -54,6 +56,6 @@ public interface BoxedFloaton {
   }
 
   static Float[] toArray(Float value) {
-    return new Float[]{value};
+    return newArrayOf(Float.class, value);
   }
 }

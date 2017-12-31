@@ -23,8 +23,10 @@ import ar.com.kfgodel.function.booleans.BooleanToBooleanFunction;
 import ar.com.kfgodel.function.booleans.arrays.BooleanToArrayOfBooleanFunction;
 import ar.com.kfgodel.function.booleans.boxed.BooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.BoxedBooleanToBooleanFunction;
+import ar.com.kfgodel.function.boxed.booleans.arrays.boxed.BoxedBooleanToArrayOfBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.boxed.BoxedBooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.bytes.*;
+import ar.com.kfgodel.function.boxed.bytes.arrays.boxed.BoxedByteToArrayOfBoxedByteFunction;
 import ar.com.kfgodel.function.boxed.bytes.boxed.*;
 import ar.com.kfgodel.function.boxed.chars.BoxedCharacterToCharFunction;
 import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
@@ -814,5 +816,11 @@ public interface PrimitonTestContext extends TestContext {
 
   BoxedShortToArrayOfBoxedShortFunction boxedShort2ArrayOfBoxedShort();
   void boxedShort2ArrayOfBoxedShort(Supplier<BoxedShortToArrayOfBoxedShortFunction> definition);
+
+  BoxedByteToArrayOfBoxedByteFunction boxedByte2ArrayOfBoxedByte();
+  void boxedByte2ArrayOfBoxedByte(Supplier<BoxedByteToArrayOfBoxedByteFunction> definition);
+
+  BoxedBooleanToArrayOfBoxedBooleanFunction boxedBoolean2ArrayOfBoxedBoolean();
+  void boxedBoolean2ArrayOfBoxedBoolean(Supplier<BoxedBooleanToArrayOfBoxedBooleanFunction> definition);
 
 }
