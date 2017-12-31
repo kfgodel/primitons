@@ -52,11 +52,14 @@ import ar.com.kfgodel.function.floats.*;
 import ar.com.kfgodel.function.floats.arrays.FloatToArrayOfFloatFunction;
 import ar.com.kfgodel.function.floats.boxed.*;
 import ar.com.kfgodel.function.ints.*;
+import ar.com.kfgodel.function.ints.arrays.IntToArrayOfIntFunction;
 import ar.com.kfgodel.function.ints.boxed.*;
 import ar.com.kfgodel.function.longs.*;
+import ar.com.kfgodel.function.longs.arrays.LongToArrayOfLongFunction;
 import ar.com.kfgodel.function.longs.boxed.*;
 import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
 import ar.com.kfgodel.function.shorts.*;
+import ar.com.kfgodel.function.shorts.arrays.ShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.shorts.boxed.*;
 import ar.com.kfgodel.primitons.api.repositories.FunctionReposity;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
@@ -776,5 +779,13 @@ public interface PrimitonTestContext extends TestContext {
   FloatToArrayOfFloatFunction float2ArrayOfFloat();
   void float2ArrayOfFloat(Supplier<FloatToArrayOfFloatFunction> definition);
 
+  IntToArrayOfIntFunction int2ArrayOfInteger();
+  void int2ArrayOfInteger(Supplier<IntToArrayOfIntFunction> definition);
+
+  LongToArrayOfLongFunction long2ArrayOfLong();
+  void long2ArrayOfLong(Supplier<LongToArrayOfLongFunction> definition);
+
+  ShortToArrayOfShortFunction short2ArrayOfShort();
+  void short2ArrayOfShort(Supplier<ShortToArrayOfShortFunction> definition);
 
 }

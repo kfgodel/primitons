@@ -54,4 +54,8 @@ public interface Longton {
   static Short toBoxedShort(long input) {
     return toShort(input);
   }
+
+  static long[] toArray(long value) {
+    return new long[]{value};
+  }
 }

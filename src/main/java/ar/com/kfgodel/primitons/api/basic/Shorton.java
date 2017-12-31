@@ -52,4 +52,8 @@ public interface Shorton {
   static Short toBoxedShort(short input) {
     return input;
   }
+
+  static short[] toArray(short value) {
+    return new short[]{value};
+  }
 }
