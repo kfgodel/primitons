@@ -53,4 +53,7 @@ public interface BoxedDoubleton {
     return (input == null)? null : toShort(input);
   }
 
+  static Double[] toArray(Double value) {
+    return new Double[]{value};
+  }
 }
