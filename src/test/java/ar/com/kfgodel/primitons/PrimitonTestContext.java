@@ -36,6 +36,7 @@ import ar.com.kfgodel.function.boxed.ints.*;
 import ar.com.kfgodel.function.boxed.ints.arrays.boxed.BoxedIntegerToArrayOfBoxedIntegerFunction;
 import ar.com.kfgodel.function.boxed.ints.boxed.*;
 import ar.com.kfgodel.function.boxed.longs.*;
+import ar.com.kfgodel.function.boxed.longs.arrays.boxed.BoxedLongToArrayOfBoxedLongFunction;
 import ar.com.kfgodel.function.boxed.longs.boxed.*;
 import ar.com.kfgodel.function.boxed.shorts.*;
 import ar.com.kfgodel.function.boxed.shorts.boxed.*;
@@ -342,8 +343,8 @@ public interface PrimitonTestContext extends TestContext {
   Float[] boxedFloatArrayOutput();
   void boxedFloatArrayOutput(Supplier<Float[]> definition);
 
-  Integer[] boxedintegerArrayOutput();
-  void boxedintegerArrayOutput(Supplier<Integer[]> definition);
+  Integer[] boxedIntegerArrayOutput();
+  void boxedIntegerArrayOutput(Supplier<Integer[]> definition);
 
   Long[] boxedLongArrayOutput();
   void boxedLongArrayOutput(Supplier<Long[]> definition);
@@ -798,5 +799,8 @@ public interface PrimitonTestContext extends TestContext {
 
   BoxedIntegerToArrayOfBoxedIntegerFunction boxedInteger2ArrayOfBoxedInteger();
   void boxedInteger2ArrayOfBoxedInteger(Supplier<BoxedIntegerToArrayOfBoxedIntegerFunction> definition);
+
+  BoxedLongToArrayOfBoxedLongFunction boxedLong2ArrayOfBoxedLong();
+  void boxedLong2ArrayOfBoxedLong(Supplier<BoxedLongToArrayOfBoxedLongFunction> definition);
 
 }

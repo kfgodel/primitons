@@ -13,18 +13,18 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by kfgodel on 30/12/17.
  */
 @RunWith(JavaSpecRunner.class)
-public class Integer2ArrayOfIntegerTest extends JavaSpec<PrimitonTestContext> {
+public class BoxedInteger2ArrayOfBoxedIntegerTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
     describe("a integer to array of integer primiton", () -> {
       context().boxedInteger2ArrayOfBoxedInteger(()-> BoxedIntegerton::toArray);
 
       describe("when used", () -> {
-        context().boxedintegerArrayOutput(()-> context().boxedInteger2ArrayOfBoxedInteger().apply(context().intInput()));
+        context().boxedIntegerArrayOutput(()-> context().boxedInteger2ArrayOfBoxedInteger().apply(context().intInput()));
 
         it("converts the given integer into an array containing that integer",()->{
           context().intInput(()-> 123);
-          assertThat(context().boxedintegerArrayOutput()).isEqualTo(new Integer[]{123});
+          assertThat(context().boxedIntegerArrayOutput()).isEqualTo(new Integer[]{123});
         });
 
       });

@@ -53,4 +53,7 @@ public interface BoxedLongton {
     return (input == null)? null :toShort(input);
   }
 
+  static Long[] toArray(Long value) {
+    return new Long[]{value};
+  }
 }
