@@ -52,4 +52,8 @@ public interface BoxedFloaton {
   static Short toBoxedShort(Float input) {
     return (input == null)? null : toShort(input);
   }
+
+  static Float[] toArray(Float value) {
+    return new Float[]{value};
+  }
 }
