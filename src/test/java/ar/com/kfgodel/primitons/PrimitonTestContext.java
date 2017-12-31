@@ -46,6 +46,7 @@ import ar.com.kfgodel.function.chars.CharToCharFunction;
 import ar.com.kfgodel.function.chars.arrays.CharToArrayOfCharFunction;
 import ar.com.kfgodel.function.chars.boxed.CharToBoxedCharacterFunction;
 import ar.com.kfgodel.function.doubles.*;
+import ar.com.kfgodel.function.doubles.arrays.DoubleToArrayOfDoubleFunction;
 import ar.com.kfgodel.function.doubles.boxed.*;
 import ar.com.kfgodel.function.floats.*;
 import ar.com.kfgodel.function.floats.boxed.*;
@@ -768,6 +769,8 @@ public interface PrimitonTestContext extends TestContext {
   CharToArrayOfCharFunction char2ArrayOfChar();
   void char2ArrayOfChar(Supplier<CharToArrayOfCharFunction> definition);
 
+  DoubleToArrayOfDoubleFunction double2ArrayOfDouble();
+  void double2ArrayOfDouble(Supplier<DoubleToArrayOfDoubleFunction> definition);
 
 
 }
