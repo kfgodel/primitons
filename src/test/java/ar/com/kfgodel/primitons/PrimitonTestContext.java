@@ -53,6 +53,7 @@ import ar.com.kfgodel.function.longs.boxed.*;
 import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
 import ar.com.kfgodel.function.shorts.*;
 import ar.com.kfgodel.function.shorts.boxed.*;
+import ar.com.kfgodel.primitons.api.repositories.FunctionReposity;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
 
 import java.util.function.Supplier;
@@ -751,5 +752,8 @@ public interface PrimitonTestContext extends TestContext {
 
   TypeRepository typeRepository();
   void typeRepository(Supplier<TypeRepository> definition);
+
+  FunctionReposity functionRepository();
+  void functionRepository(Supplier<FunctionReposity> definition);
 
 }
