@@ -22,7 +22,7 @@ public class Char2ArrayOfCharTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().charArrayOutput(()-> context().char2ArrayOfChar().apply(context().charInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().charInput(()-> 'a');
           assertThat(context().charArrayOutput()).isEqualTo(new char[]{'a'});
         });

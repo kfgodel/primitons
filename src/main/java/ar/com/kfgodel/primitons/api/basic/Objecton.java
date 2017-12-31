@@ -8,4 +8,8 @@ public interface Objecton {
   static<T> T identity(T input) {
     return input;
   }
+
+  static Object[] toArray(Object value) {
+    return new Object[]{value};
+  }
 }

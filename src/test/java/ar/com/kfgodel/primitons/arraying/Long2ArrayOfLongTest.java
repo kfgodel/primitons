@@ -22,7 +22,7 @@ public class Long2ArrayOfLongTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().longArrayOutput(()-> context().long2ArrayOfLong().apply(context().longInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().longInput(()-> 1L);
           assertThat(context().longArrayOutput()).isEqualTo(new long[]{1L});
         });

@@ -22,7 +22,7 @@ public class Float2ArrayOfFloatTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().floatArrayOutput(()-> context().float2ArrayOfFloat().apply(context().floatInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().floatInput(()-> 1.0f);
           assertThat(context().floatArrayOutput()).isEqualTo(new float[]{1.0f});
         });

@@ -22,7 +22,7 @@ public class Double2ArrayOfDoubleTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().doubleArrayOutput(()-> context().double2ArrayOfDouble().apply(context().doubleInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().doubleInput(()-> 1.0);
           assertThat(context().doubleArrayOutput()).isEqualTo(new double[]{1.0});
         });

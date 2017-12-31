@@ -22,7 +22,7 @@ public class Int2ArrayOfIntTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().intArrayOutput(()-> context().int2ArrayOfInteger().apply(context().intInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().intInput(()-> 1);
           assertThat(context().intArrayOutput()).isEqualTo(new int[]{1});
         });

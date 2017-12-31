@@ -22,7 +22,7 @@ public class Short2ArrayOfShortTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().shortArrayOutput(()-> context().short2ArrayOfShort().apply(context().shortInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().shortInput(()-> (short)1);
           assertThat(context().shortArrayOutput()).isEqualTo(new short[]{1});
         });

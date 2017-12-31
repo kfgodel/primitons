@@ -22,7 +22,7 @@ public class Byte2ArrayOfByteTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().byteArrayOutput(()-> context().byte2ArrayOfByte().apply(context().byteInput()));
 
-        it("converts the given number into an array containing that number",()->{
+        it("converts the given value into an array containing that value",()->{
           context().byteInput(()-> (byte)89);
           assertThat(context().byteArrayOutput()).isEqualTo(new byte[]{89});
         });
