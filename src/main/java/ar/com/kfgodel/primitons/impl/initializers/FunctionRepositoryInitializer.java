@@ -164,6 +164,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Integer.class, Integer.class, BoxedIntegerton::toBoxedInteger);
     reposity.addConverterFrom(Integer.class, Long.class, BoxedIntegerton::toBoxedLong);
     reposity.addConverterFrom(Integer.class, Short.class, BoxedIntegerton::toBoxedShort);
+    reposity.addConverterFrom(Integer.class, Integer[].class, BoxedIntegerton::toArray);
 
     reposity.addConverterFrom(Long.class, byte.class, BoxedLongton::toByte);
     reposity.addConverterFrom(Long.class, double.class, BoxedLongton::toDouble);

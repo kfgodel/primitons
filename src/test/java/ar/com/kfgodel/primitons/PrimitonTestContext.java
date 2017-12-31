@@ -33,6 +33,7 @@ import ar.com.kfgodel.function.boxed.doubles.boxed.*;
 import ar.com.kfgodel.function.boxed.floats.*;
 import ar.com.kfgodel.function.boxed.floats.boxed.*;
 import ar.com.kfgodel.function.boxed.ints.*;
+import ar.com.kfgodel.function.boxed.ints.arrays.boxed.BoxedIntegerToArrayOfBoxedIntegerFunction;
 import ar.com.kfgodel.function.boxed.ints.boxed.*;
 import ar.com.kfgodel.function.boxed.longs.*;
 import ar.com.kfgodel.function.boxed.longs.boxed.*;
@@ -181,7 +182,6 @@ public interface PrimitonTestContext extends TestContext {
 
   ArrayOfBoxedShortToBoxedShortFunction boxedShortArray2boxedShortArray();
   void boxedShortArray2boxedShortArray(Supplier<ArrayOfBoxedShortToBoxedShortFunction> definition);
-
 
   Boolean booleanInput();
   void booleanInput(Supplier<Boolean> definition);
@@ -795,5 +795,8 @@ public interface PrimitonTestContext extends TestContext {
 
   StringToArrayOfStringFunction string2ArrayOfString();
   void string2ArrayOfString(Supplier<StringToArrayOfStringFunction> definition);
+
+  BoxedIntegerToArrayOfBoxedIntegerFunction boxedInteger2ArrayOfBoxedInteger();
+  void boxedInteger2ArrayOfBoxedInteger(Supplier<BoxedIntegerToArrayOfBoxedIntegerFunction> definition);
 
 }

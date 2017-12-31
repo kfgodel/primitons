@@ -53,4 +53,7 @@ public interface BoxedIntegerton {
     return (input == null)? null :toShort(input);
   }
 
+  static Integer[] toArray(Integer value) {
+    return new Integer[]{value};
+  }
 }
