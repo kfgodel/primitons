@@ -49,6 +49,7 @@ import ar.com.kfgodel.function.doubles.*;
 import ar.com.kfgodel.function.doubles.arrays.DoubleToArrayOfDoubleFunction;
 import ar.com.kfgodel.function.doubles.boxed.*;
 import ar.com.kfgodel.function.floats.*;
+import ar.com.kfgodel.function.floats.arrays.FloatToArrayOfFloatFunction;
 import ar.com.kfgodel.function.floats.boxed.*;
 import ar.com.kfgodel.function.ints.*;
 import ar.com.kfgodel.function.ints.boxed.*;
@@ -771,6 +772,9 @@ public interface PrimitonTestContext extends TestContext {
 
   DoubleToArrayOfDoubleFunction double2ArrayOfDouble();
   void double2ArrayOfDouble(Supplier<DoubleToArrayOfDoubleFunction> definition);
+
+  FloatToArrayOfFloatFunction float2ArrayOfFloat();
+  void float2ArrayOfFloat(Supplier<FloatToArrayOfFloatFunction> definition);
 
 
 }
