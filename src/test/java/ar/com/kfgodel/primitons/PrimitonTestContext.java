@@ -29,6 +29,7 @@ import ar.com.kfgodel.function.boxed.bytes.*;
 import ar.com.kfgodel.function.boxed.bytes.arrays.boxed.BoxedByteToArrayOfBoxedByteFunction;
 import ar.com.kfgodel.function.boxed.bytes.boxed.*;
 import ar.com.kfgodel.function.boxed.chars.BoxedCharacterToCharFunction;
+import ar.com.kfgodel.function.boxed.chars.arrays.boxed.BoxedCharacterToArrayOfBoxedCharacterFunction;
 import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
 import ar.com.kfgodel.function.boxed.doubles.*;
 import ar.com.kfgodel.function.boxed.doubles.arrays.boxed.BoxedDoubleToArrayOfBoxedDoubleFunction;
@@ -822,5 +823,8 @@ public interface PrimitonTestContext extends TestContext {
 
   BoxedBooleanToArrayOfBoxedBooleanFunction boxedBoolean2ArrayOfBoxedBoolean();
   void boxedBoolean2ArrayOfBoxedBoolean(Supplier<BoxedBooleanToArrayOfBoxedBooleanFunction> definition);
+
+  BoxedCharacterToArrayOfBoxedCharacterFunction boxedCharacter2ArrayOfBoxedCharacter();
+  void boxedCharacter2ArrayOfBoxedCharacter(Supplier<BoxedCharacterToArrayOfBoxedCharacterFunction> definition);
 
 }
