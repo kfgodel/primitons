@@ -4,6 +4,7 @@ import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.api.PrimitonApi;
 import ar.com.kfgodel.primitons.api.repositories.PrimitonReposity;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
+import ar.com.kfgodel.primitons.impl.initializers.PrimitonInitializer;
 
 import java.util.function.Function;
 
@@ -20,7 +21,12 @@ public class PrimitonApiProvider implements PrimitonApi {
     PrimitonApiProvider primiton = new PrimitonApiProvider();
     primiton.typeRepository = TypeRepositoryImpl.create();
     primiton.functionRepository = PrimitonReposityImpl.create();
+    primiton.initialize();
     return primiton;
+  }
+
+  private void initialize() {
+    PrimitonInitializer.create().initialize(this.functionRepository);
   }
 
   @Override
