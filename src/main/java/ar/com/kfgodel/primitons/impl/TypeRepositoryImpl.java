@@ -2,6 +2,7 @@ package ar.com.kfgodel.primitons.impl;
 
 import ar.com.kfgodel.nary.api.Nary;
 import ar.com.kfgodel.nary.api.optionals.Optional;
+import ar.com.kfgodel.primitons.api.exceptions.PrimitonException;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
 import com.google.common.collect.Sets;
 
@@ -99,6 +100,11 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
     String.class
   );
 
+  private Set<Class<?>> voidTypes = Sets.newHashSet(
+    void.class,
+    Void.class
+  );
+
   public static TypeRepository create() {
     TypeRepositoryImpl typeRepository = new TypeRepositoryImpl();
     typeRepository.boxedToUnboxedTypes = new HashMap<>();
@@ -166,6 +172,18 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
       .filterNary(Class::isArray);
   }
 
+  @Override
+  public Nary<Class<?>> arrayableTypes() {
+    return allTypes()
+      .filterNary(type -> !type.isArray())
+      .filterNary(type -> !voidTypes.contains(type));
+  }
+
+  @Override
+  public Nary<Class<?>> voidTypes() {
+    return Nary.create(voidTypes);
+  }
+
   /**
    * @return The sub-set of primitive types that have an Object version (boxedTypes)
    */
@@ -205,7 +223,12 @@ public class TypeRepositoryImpl implements ar.com.kfgodel.primitons.api.reposito
 
   @Override
   public Class<?> arrayTypeOf(Class<?> elementType) {
-    Object temporarilyCreatedArray = Array.newInstance(elementType, 0);
+    Object temporarilyCreatedArray = null;
+    try {
+      temporarilyCreatedArray = Array.newInstance(elementType, 0);
+    } catch (IllegalArgumentException e) {
+      throw new PrimitonException("There's no valid array type for the given element type["+elementType+"]");
+    }
     return temporarilyCreatedArray.getClass();
   }
 

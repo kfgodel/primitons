@@ -52,4 +52,8 @@ public interface Doubleton {
   static Short toBoxedShort(double input) {
     return toShort(input);
   }
+
+  static double[] toArray(double value) {
+    return new double[]{value};
+  }
 }

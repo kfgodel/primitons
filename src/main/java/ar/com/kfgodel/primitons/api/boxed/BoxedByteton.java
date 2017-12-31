@@ -1,5 +1,7 @@
 package ar.com.kfgodel.primitons.api.boxed;
 
+import static ar.com.kfgodel.primitons.api.basic.Objecton.newArrayOf;
+
 /**
  * This type defines the primiton functions for the boxed byte type
  * Date: 29/07/17 - 14:28
@@ -51,5 +53,9 @@ public interface BoxedByteton {
 
   static Short toBoxedShort(Byte input) {
     return (input == null)? null : toShort(input);
+  }
+
+  static Byte[] toArray(Byte value) {
+    return newArrayOf(Byte.class, value);
   }
 }

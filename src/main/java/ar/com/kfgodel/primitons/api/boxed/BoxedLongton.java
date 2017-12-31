@@ -1,5 +1,7 @@
 package ar.com.kfgodel.primitons.api.boxed;
 
+import static ar.com.kfgodel.primitons.api.basic.Objecton.newArrayOf;
+
 /**
  * This type defines the primiton functions for the boxed long type
  * Date: 29/07/17 - 14:30
@@ -53,4 +55,7 @@ public interface BoxedLongton {
     return (input == null)? null :toShort(input);
   }
 
+  static Long[] toArray(Long value) {
+    return newArrayOf(Long.class, value);
+  }
 }

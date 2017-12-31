@@ -53,4 +53,8 @@ public interface Byteton {
   static Short toBoxedShort(byte input) {
     return toShort(input);
   }
+
+  static byte[] toArray(byte value) {
+    return new byte[]{value};
+  }
 }

@@ -14,6 +14,7 @@ public class FunctionRepositoryInitializer {
   public void initialize(FunctionReposity reposity){
     reposity.addConverterFrom(boolean.class, boolean.class, Booleanton::identity);
     reposity.addConverterFrom(boolean.class, Boolean.class, Booleanton::toBoxedBoolean);
+    reposity.addConverterFrom(boolean.class, boolean[].class, Booleanton::toArray);
 
     reposity.addConverterFrom(byte.class, byte.class, Byteton::identity);
     reposity.addConverterFrom(byte.class, double.class, Byteton::toDouble);
@@ -27,9 +28,11 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(byte.class, Integer.class, Byteton::toBoxedInteger);
     reposity.addConverterFrom(byte.class, Long.class, Byteton::toBoxedLong);
     reposity.addConverterFrom(byte.class, Short.class, Byteton::toBoxedShort);
+    reposity.addConverterFrom(byte.class, byte[].class, Byteton::toArray);
 
     reposity.addConverterFrom(char.class, char.class, Charton::identity);
     reposity.addConverterFrom(char.class, Character.class, Charton::toBoxedCharacter);
+    reposity.addConverterFrom(char.class, char[].class, Charton::toArray);
 
     reposity.addConverterFrom(double.class, double.class, Doubleton::identity);
     reposity.addConverterFrom(double.class, byte.class, Doubleton::toByte);
@@ -43,6 +46,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(double.class, Integer.class, Doubleton::toBoxedInteger);
     reposity.addConverterFrom(double.class, Long.class, Doubleton::toBoxedLong);
     reposity.addConverterFrom(double.class, Short.class, Doubleton::toBoxedShort);
+    reposity.addConverterFrom(double.class, double[].class, Doubleton::toArray);
 
     reposity.addConverterFrom(float.class, float.class, Floaton::identity);
     reposity.addConverterFrom(float.class, byte.class, Floaton::toByte);
@@ -56,6 +60,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(float.class, Integer.class, Floaton::toBoxedInteger);
     reposity.addConverterFrom(float.class, Long.class, Floaton::toBoxedLong);
     reposity.addConverterFrom(float.class, Short.class, Floaton::toBoxedShort);
+    reposity.addConverterFrom(float.class, float[].class, Floaton::toArray);
 
     reposity.addConverterFrom(int.class, int.class, Inton::identity);
     reposity.addConverterFrom(int.class, byte.class, Inton::toByte);
@@ -69,6 +74,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(int.class, Integer.class, Inton::toBoxedInteger);
     reposity.addConverterFrom(int.class, Long.class, Inton::toBoxedLong);
     reposity.addConverterFrom(int.class, Short.class, Inton::toBoxedShort);
+    reposity.addConverterFrom(int.class, int[].class, Inton::toArray);
 
     reposity.addConverterFrom(long.class, long.class, Longton::identity);
     reposity.addConverterFrom(long.class, byte.class, Longton::toByte);
@@ -82,6 +88,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(long.class, Integer.class, Longton::toBoxedInteger);
     reposity.addConverterFrom(long.class, Long.class, Longton::toBoxedLong);
     reposity.addConverterFrom(long.class, Short.class, Longton::toBoxedShort);
+    reposity.addConverterFrom(long.class, long[].class, Longton::toArray);
 
     reposity.addConverterFrom(short.class, short.class, Shorton::identity);
     reposity.addConverterFrom(short.class, byte.class, Shorton::toByte);
@@ -95,12 +102,14 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(short.class, Integer.class, Shorton::toBoxedInteger);
     reposity.addConverterFrom(short.class, Long.class, Shorton::toBoxedLong);
     reposity.addConverterFrom(short.class, Short.class, Shorton::toBoxedShort);
+    reposity.addConverterFrom(short.class, short[].class, Shorton::toArray);
 
     reposity.addConverterFrom(void.class, void.class, Objecton::identity);
     reposity.addConverterFrom(void.class, Void.class, Objecton::identity);
 
     reposity.addConverterFrom(Boolean.class, Boolean.class, Objecton::identity);
     reposity.addConverterFrom(Boolean.class, boolean.class, BoxedBooleanton::toBoolean);
+    reposity.addConverterFrom(Boolean.class, Boolean[].class, BoxedBooleanton::toArray);
 
     reposity.addConverterFrom(Byte.class, byte.class, BoxedByteton::toByte);
     reposity.addConverterFrom(Byte.class, double.class, BoxedByteton::toDouble);
@@ -114,9 +123,11 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Byte.class, Integer.class, BoxedByteton::toBoxedInteger);
     reposity.addConverterFrom(Byte.class, Long.class, BoxedByteton::toBoxedLong);
     reposity.addConverterFrom(Byte.class, Short.class, BoxedByteton::toBoxedShort);
+    reposity.addConverterFrom(Byte.class, Byte[].class, BoxedByteton::toArray);
 
     reposity.addConverterFrom(Character.class, Character.class, Objecton::identity);
     reposity.addConverterFrom(Character.class, char.class, BoxedCharacterton::toChar);
+    reposity.addConverterFrom(Character.class, Character[].class, BoxedCharacterton::toArray);
 
     reposity.addConverterFrom(Double.class, byte.class, BoxedDoubleton::toByte);
     reposity.addConverterFrom(Double.class, double.class, BoxedDoubleton::toDouble);
@@ -130,6 +141,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Double.class, Integer.class, BoxedDoubleton::toBoxedInteger);
     reposity.addConverterFrom(Double.class, Long.class, BoxedDoubleton::toBoxedLong);
     reposity.addConverterFrom(Double.class, Short.class, BoxedDoubleton::toBoxedShort);
+    reposity.addConverterFrom(Double.class, Double[].class, BoxedDoubleton::toArray);
 
     reposity.addConverterFrom(Float.class, byte.class, BoxedFloaton::toByte);
     reposity.addConverterFrom(Float.class, double.class, BoxedFloaton::toDouble);
@@ -143,6 +155,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Float.class, Integer.class, BoxedFloaton::toBoxedInteger);
     reposity.addConverterFrom(Float.class, Long.class, BoxedFloaton::toBoxedLong);
     reposity.addConverterFrom(Float.class, Short.class, BoxedFloaton::toBoxedShort);
+    reposity.addConverterFrom(Float.class, Float[].class, BoxedFloaton::toArray);
 
     reposity.addConverterFrom(Integer.class, byte.class, BoxedIntegerton::toByte);
     reposity.addConverterFrom(Integer.class, double.class, BoxedIntegerton::toDouble);
@@ -156,6 +169,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Integer.class, Integer.class, BoxedIntegerton::toBoxedInteger);
     reposity.addConverterFrom(Integer.class, Long.class, BoxedIntegerton::toBoxedLong);
     reposity.addConverterFrom(Integer.class, Short.class, BoxedIntegerton::toBoxedShort);
+    reposity.addConverterFrom(Integer.class, Integer[].class, BoxedIntegerton::toArray);
 
     reposity.addConverterFrom(Long.class, byte.class, BoxedLongton::toByte);
     reposity.addConverterFrom(Long.class, double.class, BoxedLongton::toDouble);
@@ -169,8 +183,10 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Long.class, Integer.class, BoxedLongton::toBoxedInteger);
     reposity.addConverterFrom(Long.class, Long.class, BoxedLongton::toBoxedLong);
     reposity.addConverterFrom(Long.class, Short.class, BoxedLongton::toBoxedShort);
+    reposity.addConverterFrom(Long.class, Long[].class, BoxedLongton::toArray);
 
     reposity.addConverterFrom(Object.class, Object.class, Objecton::identity);
+    reposity.addConverterFrom(Object.class, Object[].class, Objecton::toArray);
 
     reposity.addConverterFrom(Void.class, Void.class, Objecton::identity);
     reposity.addConverterFrom(Void.class, void.class, Objecton::identity);
@@ -187,8 +203,10 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Short.class, Integer.class, BoxedShorton::toBoxedInteger);
     reposity.addConverterFrom(Short.class, Long.class, BoxedShorton::toBoxedLong);
     reposity.addConverterFrom(Short.class, Short.class, BoxedShorton::toBoxedShort);
+    reposity.addConverterFrom(Short.class, Short[].class, BoxedShorton::toArray);
 
     reposity.addConverterFrom(String.class, String.class, Objecton::identity);
+    reposity.addConverterFrom(String.class, String[].class, Strington::toArray);
 
     reposity.addConverterFrom(boolean[].class, boolean[].class, Objecton::identity);
     reposity.addConverterFrom(byte[].class, byte[].class, Objecton::identity);

@@ -20,39 +20,58 @@ import ar.com.kfgodel.function.arrays.longs.arrays.ArrayOfLongToArrayOfLongFunct
 import ar.com.kfgodel.function.arrays.objects.ArrayOfObjectToObjectFunction;
 import ar.com.kfgodel.function.arrays.shorts.arrays.ArrayOfShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.booleans.BooleanToBooleanFunction;
+import ar.com.kfgodel.function.booleans.arrays.BooleanToArrayOfBooleanFunction;
 import ar.com.kfgodel.function.booleans.boxed.BooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.BoxedBooleanToBooleanFunction;
+import ar.com.kfgodel.function.boxed.booleans.arrays.boxed.BoxedBooleanToArrayOfBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.boxed.BoxedBooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.bytes.*;
+import ar.com.kfgodel.function.boxed.bytes.arrays.boxed.BoxedByteToArrayOfBoxedByteFunction;
 import ar.com.kfgodel.function.boxed.bytes.boxed.*;
 import ar.com.kfgodel.function.boxed.chars.BoxedCharacterToCharFunction;
+import ar.com.kfgodel.function.boxed.chars.arrays.boxed.BoxedCharacterToArrayOfBoxedCharacterFunction;
 import ar.com.kfgodel.function.boxed.chars.boxed.BoxedCharacterToBoxedCharacterFunction;
 import ar.com.kfgodel.function.boxed.doubles.*;
+import ar.com.kfgodel.function.boxed.doubles.arrays.boxed.BoxedDoubleToArrayOfBoxedDoubleFunction;
 import ar.com.kfgodel.function.boxed.doubles.boxed.*;
 import ar.com.kfgodel.function.boxed.floats.*;
+import ar.com.kfgodel.function.boxed.floats.arrays.boxed.BoxedFloatToArrayOfBoxedFloatFunction;
 import ar.com.kfgodel.function.boxed.floats.boxed.*;
 import ar.com.kfgodel.function.boxed.ints.*;
+import ar.com.kfgodel.function.boxed.ints.arrays.boxed.BoxedIntegerToArrayOfBoxedIntegerFunction;
 import ar.com.kfgodel.function.boxed.ints.boxed.*;
 import ar.com.kfgodel.function.boxed.longs.*;
+import ar.com.kfgodel.function.boxed.longs.arrays.boxed.BoxedLongToArrayOfBoxedLongFunction;
 import ar.com.kfgodel.function.boxed.longs.boxed.*;
 import ar.com.kfgodel.function.boxed.shorts.*;
+import ar.com.kfgodel.function.boxed.shorts.arrays.boxed.BoxedShortToArrayOfBoxedShortFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.*;
+import ar.com.kfgodel.function.boxed.strings.arrays.boxed.StringToArrayOfStringFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.*;
+import ar.com.kfgodel.function.bytes.arrays.ByteToArrayOfByteFunction;
 import ar.com.kfgodel.function.bytes.boxed.*;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
+import ar.com.kfgodel.function.chars.arrays.CharToArrayOfCharFunction;
 import ar.com.kfgodel.function.chars.boxed.CharToBoxedCharacterFunction;
 import ar.com.kfgodel.function.doubles.*;
+import ar.com.kfgodel.function.doubles.arrays.DoubleToArrayOfDoubleFunction;
 import ar.com.kfgodel.function.doubles.boxed.*;
 import ar.com.kfgodel.function.floats.*;
+import ar.com.kfgodel.function.floats.arrays.FloatToArrayOfFloatFunction;
 import ar.com.kfgodel.function.floats.boxed.*;
 import ar.com.kfgodel.function.ints.*;
+import ar.com.kfgodel.function.ints.arrays.IntToArrayOfIntFunction;
 import ar.com.kfgodel.function.ints.boxed.*;
 import ar.com.kfgodel.function.longs.*;
+import ar.com.kfgodel.function.longs.arrays.LongToArrayOfLongFunction;
 import ar.com.kfgodel.function.longs.boxed.*;
 import ar.com.kfgodel.function.objects.ObjectToObjectFunction;
+import ar.com.kfgodel.function.objects.arrays.ObjectToArrayOfObjectFunction;
 import ar.com.kfgodel.function.shorts.*;
+import ar.com.kfgodel.function.shorts.arrays.ShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.shorts.boxed.*;
+import ar.com.kfgodel.primitons.api.repositories.FunctionReposity;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
 
 import java.util.function.Supplier;
@@ -170,7 +189,6 @@ public interface PrimitonTestContext extends TestContext {
 
   ArrayOfBoxedShortToBoxedShortFunction boxedShortArray2boxedShortArray();
   void boxedShortArray2boxedShortArray(Supplier<ArrayOfBoxedShortToBoxedShortFunction> definition);
-
 
   Boolean booleanInput();
   void booleanInput(Supplier<Boolean> definition);
@@ -331,8 +349,8 @@ public interface PrimitonTestContext extends TestContext {
   Float[] boxedFloatArrayOutput();
   void boxedFloatArrayOutput(Supplier<Float[]> definition);
 
-  Integer[] boxedintegerArrayOutput();
-  void boxedintegerArrayOutput(Supplier<Integer[]> definition);
+  Integer[] boxedIntegerArrayOutput();
+  void boxedIntegerArrayOutput(Supplier<Integer[]> definition);
 
   Long[] boxedLongArrayOutput();
   void boxedLongArrayOutput(Supplier<Long[]> definition);
@@ -751,5 +769,62 @@ public interface PrimitonTestContext extends TestContext {
 
   TypeRepository typeRepository();
   void typeRepository(Supplier<TypeRepository> definition);
+
+  FunctionReposity functionRepository();
+  void functionRepository(Supplier<FunctionReposity> definition);
+
+  BooleanToArrayOfBooleanFunction boolean2ArrayOfBoolean();
+  void boolean2ArrayOfBoolean(Supplier<BooleanToArrayOfBooleanFunction> definition);
+
+  ByteToArrayOfByteFunction byte2ArrayOfByte();
+  void byte2ArrayOfByte(Supplier<ByteToArrayOfByteFunction> definition);
+
+  CharToArrayOfCharFunction char2ArrayOfChar();
+  void char2ArrayOfChar(Supplier<CharToArrayOfCharFunction> definition);
+
+  DoubleToArrayOfDoubleFunction double2ArrayOfDouble();
+  void double2ArrayOfDouble(Supplier<DoubleToArrayOfDoubleFunction> definition);
+
+  FloatToArrayOfFloatFunction float2ArrayOfFloat();
+  void float2ArrayOfFloat(Supplier<FloatToArrayOfFloatFunction> definition);
+
+  IntToArrayOfIntFunction int2ArrayOfInteger();
+  void int2ArrayOfInteger(Supplier<IntToArrayOfIntFunction> definition);
+
+  LongToArrayOfLongFunction long2ArrayOfLong();
+  void long2ArrayOfLong(Supplier<LongToArrayOfLongFunction> definition);
+
+  ShortToArrayOfShortFunction short2ArrayOfShort();
+  void short2ArrayOfShort(Supplier<ShortToArrayOfShortFunction> definition);
+
+  <I,O> ObjectToArrayOfObjectFunction<I,O> object2ArrayOfObject();
+  void object2ArrayOfObject(Supplier<ObjectToArrayOfObjectFunction> definition);
+
+  StringToArrayOfStringFunction string2ArrayOfString();
+  void string2ArrayOfString(Supplier<StringToArrayOfStringFunction> definition);
+
+  BoxedIntegerToArrayOfBoxedIntegerFunction boxedInteger2ArrayOfBoxedInteger();
+  void boxedInteger2ArrayOfBoxedInteger(Supplier<BoxedIntegerToArrayOfBoxedIntegerFunction> definition);
+
+  BoxedLongToArrayOfBoxedLongFunction boxedLong2ArrayOfBoxedLong();
+  void boxedLong2ArrayOfBoxedLong(Supplier<BoxedLongToArrayOfBoxedLongFunction> definition);
+
+  BoxedFloatToArrayOfBoxedFloatFunction boxedFloat2ArrayOfBoxedFloat();
+  void boxedFloat2ArrayOfBoxedFloat(Supplier<BoxedFloatToArrayOfBoxedFloatFunction> definition);
+
+  BoxedDoubleToArrayOfBoxedDoubleFunction boxedDouble2ArrayOfBoxedDouble();
+  void boxedDouble2ArrayOfBoxedDouble(Supplier<BoxedDoubleToArrayOfBoxedDoubleFunction> definition);
+
+  BoxedShortToArrayOfBoxedShortFunction boxedShort2ArrayOfBoxedShort();
+  void boxedShort2ArrayOfBoxedShort(Supplier<BoxedShortToArrayOfBoxedShortFunction> definition);
+
+  BoxedByteToArrayOfBoxedByteFunction boxedByte2ArrayOfBoxedByte();
+  void boxedByte2ArrayOfBoxedByte(Supplier<BoxedByteToArrayOfBoxedByteFunction> definition);
+
+  BoxedBooleanToArrayOfBoxedBooleanFunction boxedBoolean2ArrayOfBoxedBoolean();
+  void boxedBoolean2ArrayOfBoxedBoolean(Supplier<BoxedBooleanToArrayOfBoxedBooleanFunction> definition);
+
+  BoxedCharacterToArrayOfBoxedCharacterFunction boxedCharacter2ArrayOfBoxedCharacter();
+  void boxedCharacter2ArrayOfBoxedCharacter(Supplier<BoxedCharacterToArrayOfBoxedCharacterFunction> definition);
 
 }

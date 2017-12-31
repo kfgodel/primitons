@@ -52,4 +52,8 @@ public interface Inton {
   static Short toBoxedShort(int input) {
     return toShort(input);
   }
+
+  static int[] toArray(int value) {
+    return new int[]{value};
+  }
 }
