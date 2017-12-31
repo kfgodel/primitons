@@ -17,4 +17,8 @@ public interface Booleanton {
   static Boolean toBoxedBoolean(boolean value){
     return value;
   }
+
+  static boolean[] toArray(boolean value) {
+    return new boolean[]{value};
+  }
 }

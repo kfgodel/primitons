@@ -12,4 +12,8 @@ public interface Charton {
   static Character toBoxedCharacter(char input) {
     return input;
   }
+
+  static char[] toArray(char value) {
+    return new char[]{value};
+  }
 }

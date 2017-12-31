@@ -174,6 +174,38 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
           ));
       });
 
+      it("knows all the array-able types", () -> {
+        assertThat(context().typeRepository().arrayableTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
+            boolean.class,
+            byte.class,
+            char.class,
+            double.class,
+            float.class,
+            int.class,
+            long.class,
+            short.class,
+            Boolean.class,
+            Byte.class,
+            Character.class,
+            Double.class,
+            Float.class,
+            Integer.class,
+            Long.class,
+            Short.class,
+            String.class,
+            Object.class
+          ));
+      });
+
+      it("knows all the void types", () -> {
+        assertThat(context().typeRepository().voidTypes().collect(Collectors.toSet()))
+          .isEqualTo(Sets.newHashSet(
+            void.class,
+            Void.class
+          ));
+      });
+
       it("knows all the boxed types", () -> {
         assertThat(context().typeRepository().boxedTypes().collect(Collectors.toSet()))
           .isEqualTo(Sets.newHashSet(

@@ -20,6 +20,7 @@ import ar.com.kfgodel.function.arrays.longs.arrays.ArrayOfLongToArrayOfLongFunct
 import ar.com.kfgodel.function.arrays.objects.ArrayOfObjectToObjectFunction;
 import ar.com.kfgodel.function.arrays.shorts.arrays.ArrayOfShortToArrayOfShortFunction;
 import ar.com.kfgodel.function.booleans.BooleanToBooleanFunction;
+import ar.com.kfgodel.function.booleans.arrays.BooleanToArrayOfBooleanFunction;
 import ar.com.kfgodel.function.booleans.boxed.BooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.BoxedBooleanToBooleanFunction;
 import ar.com.kfgodel.function.boxed.booleans.boxed.BoxedBooleanToBoxedBooleanFunction;
@@ -39,8 +40,10 @@ import ar.com.kfgodel.function.boxed.shorts.*;
 import ar.com.kfgodel.function.boxed.shorts.boxed.*;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.*;
+import ar.com.kfgodel.function.bytes.arrays.ByteToArrayOfByteFunction;
 import ar.com.kfgodel.function.bytes.boxed.*;
 import ar.com.kfgodel.function.chars.CharToCharFunction;
+import ar.com.kfgodel.function.chars.arrays.CharToArrayOfCharFunction;
 import ar.com.kfgodel.function.chars.boxed.CharToBoxedCharacterFunction;
 import ar.com.kfgodel.function.doubles.*;
 import ar.com.kfgodel.function.doubles.boxed.*;
@@ -755,5 +758,16 @@ public interface PrimitonTestContext extends TestContext {
 
   FunctionReposity functionRepository();
   void functionRepository(Supplier<FunctionReposity> definition);
+
+  BooleanToArrayOfBooleanFunction boolean2ArrayOfBoolean();
+  void boolean2ArrayOfBoolean(Supplier<BooleanToArrayOfBooleanFunction> definition);
+
+  ByteToArrayOfByteFunction byte2ArrayOfByte();
+  void byte2ArrayOfByte(Supplier<ByteToArrayOfByteFunction> definition);
+
+  CharToArrayOfCharFunction char2ArrayOfChar();
+  void char2ArrayOfChar(Supplier<CharToArrayOfCharFunction> definition);
+
+
 
 }

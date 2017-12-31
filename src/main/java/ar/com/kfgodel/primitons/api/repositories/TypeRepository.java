@@ -47,10 +47,23 @@ public interface TypeRepository {
   Nary<Class<?>> alphabeticTypes();
 
   /**
+   * All the classes that represent void types
+   * @return A nary of void.class and Void.class
+   */
+  Nary<Class<?>> voidTypes();
+
+  /**
    * All the classes that represent array types of primitive types
    * @return A nary containing all the basic array types
    */
   Nary<Class<?>> arrayTypes();
+
+  /**
+   * All the classes that can be used as element type of an array.<br>
+   *   Void types are excluded
+   * @return A nary consisting of classes that are not array types or void
+   */
+  Nary<Class<?>> arrayableTypes();
 
   /**
    * All the classes that represent primitive types (numeric and alpha) that have a boxed alternative
@@ -91,4 +104,5 @@ public interface TypeRepository {
    * @return The class that represents the array type
    */
   Class<?> arrayTypeOf(Class<?> elementType);
+
 }
