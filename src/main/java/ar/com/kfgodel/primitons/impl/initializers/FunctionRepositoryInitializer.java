@@ -2,16 +2,16 @@ package ar.com.kfgodel.primitons.impl.initializers;
 
 import ar.com.kfgodel.primitons.api.basic.*;
 import ar.com.kfgodel.primitons.api.boxed.*;
-import ar.com.kfgodel.primitons.api.repositories.PrimitonReposity;
+import ar.com.kfgodel.primitons.api.repositories.FunctionReposity;
 
 /**
  * This class initializes a primiton repository for the basic primiton functions
  *
  * Date: 30/12/17 - 21:28
  */
-public class PrimitonInitializer {
+public class FunctionRepositoryInitializer {
 
-  public void initialize(PrimitonReposity reposity){
+  public void initialize(FunctionReposity reposity){
     reposity.addConverterFrom(boolean.class, boolean.class, Booleanton::identity);
     reposity.addConverterFrom(boolean.class, Boolean.class, Booleanton::toBoxedBoolean);
 
@@ -211,8 +211,8 @@ public class PrimitonInitializer {
     reposity.addConverterFrom(Short[].class, Short[].class, Objecton::identity);
   }
 
-  public static PrimitonInitializer create() {
-    PrimitonInitializer initializer = new PrimitonInitializer();
+  public static FunctionRepositoryInitializer create() {
+    FunctionRepositoryInitializer initializer = new FunctionRepositoryInitializer();
     return initializer;
   }
 

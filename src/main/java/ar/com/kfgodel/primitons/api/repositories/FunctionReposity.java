@@ -9,7 +9,7 @@ import java.util.function.Function;
  *
  * Date: 30/12/17 - 16:36
  */
-public interface PrimitonReposity {
+public interface FunctionReposity {
 
   /**
    * Registers a transformation function for the given types. A previous function for the given types is replaced if present
@@ -20,7 +20,7 @@ public interface PrimitonReposity {
    * @param <O> Expected output type
    * @return This instance for method chaining
    */
-  <I, O> PrimitonReposity addConverterFrom(Class<I> inputType, Class<O> outputType, Function<? extends  I, ? super O> primiton);
+  <I, O> FunctionReposity addConverterFrom(Class<I> inputType, Class<O> outputType, Function<? extends  I, ? super O> primiton);
 
   /**
    * Returns a function that converts input of the given type to output of the expected type.<br>
