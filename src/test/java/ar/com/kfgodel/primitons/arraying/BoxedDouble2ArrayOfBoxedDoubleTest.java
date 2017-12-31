@@ -16,13 +16,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BoxedDouble2ArrayOfBoxedDoubleTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
-    describe("a long to array of long primiton", () -> {
+    describe("a double to array of double primiton", () -> {
       context().boxedDouble2ArrayOfBoxedDouble(()-> BoxedDoubleton::toArray);
 
       describe("when used", () -> {
         context().boxedDoubleArrayOutput(()-> context().boxedDouble2ArrayOfBoxedDouble().apply(context().doubleInput()));
 
-        it("converts the given long into an array containing that long",()->{
+        it("converts the given double into an array containing that double",()->{
           context().doubleInput(()-> 123.0);
           assertThat(context().boxedDoubleArrayOutput()).isEqualTo(new Double[]{123.0});
         });

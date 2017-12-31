@@ -53,4 +53,7 @@ public interface BoxedShorton {
     return input;
   }
 
+  static Short[] toArray(Short value) {
+    return new Short[]{value};
+  }
 }

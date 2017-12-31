@@ -16,13 +16,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BoxedFloat2ArrayOfBoxedFloatTest extends JavaSpec<PrimitonTestContext> {
   @Override
   public void define() {
-    describe("a long to array of long primiton", () -> {
+    describe("a float to array of float primiton", () -> {
       context().boxedFloat2ArrayOfBoxedFloat(()-> BoxedFloaton::toArray);
 
       describe("when used", () -> {
         context().boxedFloatArrayOutput(()-> context().boxedFloat2ArrayOfBoxedFloat().apply(context().floatInput()));
 
-        it("converts the given long into an array containing that long",()->{
+        it("converts the given float into an array containing that float",()->{
           context().floatInput(()-> 123f);
           assertThat(context().boxedFloatArrayOutput()).isEqualTo(new Float[]{123f});
         });
