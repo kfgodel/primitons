@@ -38,6 +38,7 @@ import ar.com.kfgodel.function.boxed.longs.*;
 import ar.com.kfgodel.function.boxed.longs.boxed.*;
 import ar.com.kfgodel.function.boxed.shorts.*;
 import ar.com.kfgodel.function.boxed.shorts.boxed.*;
+import ar.com.kfgodel.function.boxed.strings.arrays.boxed.StringToArrayOfStringFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.*;
 import ar.com.kfgodel.function.bytes.arrays.ByteToArrayOfByteFunction;
@@ -791,5 +792,8 @@ public interface PrimitonTestContext extends TestContext {
 
   <I,O> ObjectToArrayOfObjectFunction<I,O> object2ArrayOfObject();
   void object2ArrayOfObject(Supplier<ObjectToArrayOfObjectFunction> definition);
+
+  StringToArrayOfStringFunction string2ArrayOfString();
+  void string2ArrayOfString(Supplier<StringToArrayOfStringFunction> definition);
 
 }
