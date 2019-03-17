@@ -32,7 +32,7 @@
   </scm>
 
   <properties>
-    <version.extended-functions>0.0.1-SNAPSHOT</version.extended-functions>
+    <version.extended-functions>0.0.1</version.extended-functions>
   </properties>
 
   <dependencies>
