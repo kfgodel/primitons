@@ -1,64 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>ar.com.kfgodel</groupId>
-    <artifactId>java-pom</artifactId>
-    <version>0.1-SNAPSHOT</version>
-  </parent>
-
-  <groupId>ar.com.kfgodel</groupId>
   <artifactId>primitons</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <parent>
+    <groupId>info.kfgodel</groupId>
+    <artifactId>java-pom</artifactId>
+    <version>0.1.5</version>
+  </parent>
+
   <name>Primitons</name>
   <description>Java project that offers numerous primitive conversions as functions</description>
+  <url>https://github.com/kfgodel/primitons</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <scm>
-    <connection>scm:git:ssh://github.com/kfgodel/primitons.git</connection>
     <developerConnection>scm:git:ssh://github.com/kfgodel/primitons.git</developerConnection>
-    <url>https://github.com/kfgodel/primitons</url>
+    <connection>${project.scm.developerConnection}</connection>
+    <url>${project.url}</url>
   </scm>
 
   <properties>
-    <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
-    <spock-core.version>1.1-groovy-2.4</spock-core.version>
-    <verison.extended-functions>0.0.1-SNAPSHOT</verison.extended-functions>
+    <version.extended-functions>0.0.1-SNAPSHOT</version.extended-functions>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>kfgodel_mosquito</id>
-      <name>Repo Mosquito</name>
-      <url>http://kfgodel.info:8081/nexus/content/groups/public/</url>
-    </repository>
-  </repositories>
-
 
   <dependencies>
 
     <!-- Additional functional interfaces -->
     <dependency>
-      <groupId>ar.com.kfgodel</groupId>
+      <groupId>info.kfgodel</groupId>
       <artifactId>extended-functions</artifactId>
-      <version>${verison.extended-functions}</version>
+      <version>${version.extended-functions}</version>
       <scope>test</scope>
     </dependency>
 
     <!-- n-arity for api -->
     <dependency>
-      <groupId>ar.com.kfgodel</groupId>
+      <groupId>info.kfgodel</groupId>
       <artifactId>nary</artifactId>
+      <version>${version.nary}</version>
+      <scope>compile</scope>
     </dependency>
 
     <!-- Rspec like testing -->
     <dependency>
-      <groupId>ar.com.dgarcia</groupId>
+      <groupId>info.kfgodel</groupId>
       <artifactId>java-spec</artifactId>
+      <version>${version.javaspec}</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
+
+  <developers>
+    <developer>
+      <id>dlgarcia</id>
+      <name>Dario L Garcia</name>
+      <email>dario.garcia@10pines.com</email>
+      <organization>10Pines SRL</organization>
+      <organizationUrl>https://www.10pines.com/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
 
 </project>
