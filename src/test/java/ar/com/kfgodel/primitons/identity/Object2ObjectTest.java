@@ -24,7 +24,7 @@ public class Object2ObjectTest extends JavaSpec<PrimitonTestContext> {
 
         it("returns same value as given",()->{
           context().objectInput(()-> new Object());
-          assertThat(context().objectOutput()).isEqualTo(context().objectInput());
+          assertThat(context().objectOutput()).isSameAs(context().objectInput());
         });
 
       });

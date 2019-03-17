@@ -22,12 +22,12 @@ public class Boolean2BooleanTest extends JavaSpec<PrimitonTestContext> {
       describe("when used", () -> {
         context().booleanOutput(()-> context().boolean2boolean().apply(context().booleanInput()));
 
-        it("returns true when it's given",()->{
+        it("returns true when true is passed",()->{
           context().booleanInput(()-> true);
           assertThat(context().booleanOutput()).isEqualTo(true);
         });
 
-        it("returns false when it's given",()->{
+        it("returns false when false is passed",()->{
           context().booleanInput(()-> false);
           assertThat(context().booleanOutput()).isEqualTo(false);
         });
