@@ -65,7 +65,7 @@ public class TypeRepositoryTest extends JavaSpec<PrimitonTestContext> {
           ));
       });
 
-      it("knwos all the primitive types", () -> {
+      it("knows all the primitive types", () -> {
         assertThat(context().typeRepository().primitiveTypes().collect(Collectors.toSet()))
           .isEqualTo(Sets.newHashSet(
             boolean.class,
