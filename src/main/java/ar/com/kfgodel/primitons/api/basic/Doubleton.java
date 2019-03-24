@@ -28,6 +28,9 @@ public interface Doubleton {
   static short toShort(double input) {
     return (short) input;
   }
+  static String toString(double input) {
+    return String.valueOf(input);
+  }
 
   static Byte toBoxedByte(double input) {
     return toByte(input);

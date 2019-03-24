@@ -30,6 +30,10 @@ public interface Byteton {
     return input;
   }
 
+  static String toString(byte input) {
+    return String.valueOf(input);
+  }
+
   static Byte toBoxedByte(byte input) {
     return input;
   }

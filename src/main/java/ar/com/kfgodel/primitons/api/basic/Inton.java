@@ -25,6 +25,10 @@ public interface Inton {
     return (short) input;
   }
 
+  static String toString(int input) {
+    return String.valueOf(input);
+  }
+
   static byte toByte(int input) {
     return (byte) input;
   }

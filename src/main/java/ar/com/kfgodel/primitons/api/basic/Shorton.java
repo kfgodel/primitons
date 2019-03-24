@@ -29,6 +29,11 @@ public interface Shorton {
     return (byte) input;
   }
 
+  static String toString(short input) {
+    return String.valueOf(input);
+  }
+
+
   static Byte toBoxedByte(short input) {
     return toByte(input);
   }

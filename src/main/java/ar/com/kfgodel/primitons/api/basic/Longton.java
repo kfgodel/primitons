@@ -23,6 +23,10 @@ public interface Longton {
     return (short) input;
   }
 
+  static String toString(long input) {
+    return String.valueOf(input);
+  }
+
   static byte toByte(long input) {
     return (byte) input;
   }

@@ -9,6 +9,10 @@ public interface Charton {
     return input;
   }
 
+  static String toString(char input) {
+    return String.valueOf(input);
+  }
+
   static Character toBoxedCharacter(char input) {
     return input;
   }

@@ -15,6 +15,10 @@ public interface Objecton {
     return newArrayOf(Object.class, value);
   }
 
+  static String toString(Object value) {
+    return String.valueOf(value);
+  }
+
   /**
    * Creates a new 1 element array with the given element in it
    * @param elementType The class that defines the type of elements for the array

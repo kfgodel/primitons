@@ -29,6 +29,10 @@ public interface Floaton {
     return (short) input;
   }
 
+  static String toString(float input) {
+    return String.valueOf(input);
+  }
+
   static Byte toBoxedByte(float input) {
     return toByte(input);
   }

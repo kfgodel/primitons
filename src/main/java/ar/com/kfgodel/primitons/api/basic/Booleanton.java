@@ -18,6 +18,10 @@ public interface Booleanton {
     return value;
   }
 
+  static String toString(boolean value){
+    return String.valueOf(value);
+  }
+
   static boolean[] toArray(boolean value) {
     return new boolean[]{value};
   }
