@@ -40,9 +40,9 @@ public class PrimitonToStringConversionTest extends JavaSpec<PrimitonTestContext
         });
       });
 
-      it("has no conversion from object to string ",()->{
+      it("has a conversion from object to string ",()->{
         Optional converter = Primiton.converterFrom(Object.class, String.class);
-        assertThat(converter.isAbsent()).isTrue();
+        assertThat(converter.isPresent()).isTrue();
       });
     });
   }

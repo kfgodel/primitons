@@ -9,6 +9,12 @@ public class UnmappableException extends PrimitonException {
   private final Object value;
   private final Class<?> expectedType;
 
+  public UnmappableException(Object value, Class<?> expectedType, Throwable cause) {
+    super("Value["+value+"] is not convertible to type ["+expectedType+"]: " + cause.getMessage(), cause);
+    this.value = value;
+    this.expectedType = expectedType;
+  }
+
   public UnmappableException(Object value, Class<?> expectedType) {
     this("Value["+value+"] is not convertible to type ["+expectedType+"]", value, expectedType);
   }

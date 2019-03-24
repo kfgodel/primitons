@@ -218,6 +218,7 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Long.class, Long[].class, BoxedLongton::toArray);
 
     reposity.addConverterFrom(Object.class, Object.class, Objecton::identity);
+    reposity.addConverterFrom(Object.class, String.class, Objecton::toString);
     reposity.addConverterFrom(Object.class, Object[].class, Objecton::toArray);
 
     reposity.addConverterFrom(Void.class, Void.class, Objecton::identity);
@@ -240,6 +241,22 @@ public class FunctionRepositoryInitializer {
     reposity.addConverterFrom(Short.class, Short[].class, BoxedShorton::toArray);
 
     reposity.addConverterFrom(String.class, String.class, Objecton::identity);
+    reposity.addConverterFrom(String.class, boolean.class, Strington::toBoolean);
+    reposity.addConverterFrom(String.class, byte.class, Strington::toByte);
+    reposity.addConverterFrom(String.class, char.class, Strington::toChar);
+    reposity.addConverterFrom(String.class, double.class, Strington::toDouble);
+    reposity.addConverterFrom(String.class, float.class, Strington::toFloat);
+    reposity.addConverterFrom(String.class, int.class, Strington::toInt);
+    reposity.addConverterFrom(String.class, long.class, Strington::toLong);
+    reposity.addConverterFrom(String.class, short.class, Strington::toShort);
+    reposity.addConverterFrom(String.class, Boolean.class, Strington::toBoxedBoolean);
+    reposity.addConverterFrom(String.class, Byte.class, Strington::toBoxedByte);
+    reposity.addConverterFrom(String.class, Character.class, Strington::toBoxedCharacter);
+    reposity.addConverterFrom(String.class, Double.class, Strington::toBoxedDouble);
+    reposity.addConverterFrom(String.class, Float.class, Strington::toBoxedFloat);
+    reposity.addConverterFrom(String.class, Integer.class, Strington::toBoxedInteger);
+    reposity.addConverterFrom(String.class, Long.class, Strington::toBoxedLong);
+    reposity.addConverterFrom(String.class, Short.class, Strington::toBoxedShort);
     reposity.addConverterFrom(String.class, String[].class, Strington::toArray);
 
     reposity.addConverterFrom(boolean[].class, boolean[].class, Objecton::identity);

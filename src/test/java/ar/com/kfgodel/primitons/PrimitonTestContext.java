@@ -106,7 +106,23 @@ import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedFloatFunction
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedIntegerFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedLongFunction;
 import ar.com.kfgodel.function.boxed.shorts.boxed.BoxedShortToBoxedShortFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToBooleanFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToByteFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToCharFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToDoubleFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToFloatFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToIntFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToLongFunction;
+import ar.com.kfgodel.function.boxed.strings.StringToShortFunction;
 import ar.com.kfgodel.function.boxed.strings.arrays.boxed.StringToArrayOfStringFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedBooleanFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedByteFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedCharacterFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedDoubleFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedFloatFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedIntegerFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedLongFunction;
+import ar.com.kfgodel.function.boxed.strings.boxed.StringToBoxedShortFunction;
 import ar.com.kfgodel.function.boxed.strings.boxed.StringToStringFunction;
 import ar.com.kfgodel.function.bytes.ByteToByteFunction;
 import ar.com.kfgodel.function.bytes.ByteToDoubleFunction;
@@ -250,6 +266,54 @@ public interface PrimitonTestContext extends TestContext {
 
   ShortToShortFunction short2short();
   void short2short(Supplier<ShortToShortFunction> definition);
+
+  StringToBooleanFunction string2Boolean();
+  void string2Boolean(Supplier<StringToBooleanFunction> definition);
+
+  StringToByteFunction string2Byte();
+  void string2Byte(Supplier<StringToByteFunction> definition);
+
+  StringToCharFunction string2Char();
+  void string2Char(Supplier<StringToCharFunction> definition);
+
+  StringToDoubleFunction string2Double();
+  void string2Double(Supplier<StringToDoubleFunction> definition);
+
+  StringToFloatFunction string2Float();
+  void string2Float(Supplier<StringToFloatFunction> definition);
+
+  StringToIntFunction string2Int();
+  void string2Int(Supplier<StringToIntFunction> definition);
+
+  StringToLongFunction string2Long();
+  void string2Long(Supplier<StringToLongFunction> definition);
+
+  StringToShortFunction string2Short();
+  void string2Short(Supplier<StringToShortFunction> definition);
+
+  StringToBoxedBooleanFunction string2BoxedBoolean();
+  void string2BoxedBoolean(Supplier<StringToBoxedBooleanFunction> definition);
+
+  StringToBoxedByteFunction string2BoxedByte();
+  void string2BoxedByte(Supplier<StringToBoxedByteFunction> definition);
+
+  StringToBoxedCharacterFunction string2BoxedCharacter();
+  void string2BoxedCharacter(Supplier<StringToBoxedCharacterFunction> definition);
+
+  StringToBoxedDoubleFunction string2BoxedDouble();
+  void string2BoxedDouble(Supplier<StringToBoxedDoubleFunction> definition);
+
+  StringToBoxedFloatFunction string2BoxedFloat();
+  void string2BoxedFloat(Supplier<StringToBoxedFloatFunction> definition);
+
+  StringToBoxedIntegerFunction string2BoxedInteger();
+  void string2BoxedInteger(Supplier<StringToBoxedIntegerFunction> definition);
+
+  StringToBoxedLongFunction string2BoxedLong();
+  void string2BoxedLong(Supplier<StringToBoxedLongFunction> definition);
+
+  StringToBoxedShortFunction string2BoxedShort();
+  void string2BoxedShort(Supplier<StringToBoxedShortFunction> definition);
 
   StringToStringFunction string2String();
   void string2String(Supplier<StringToStringFunction> definition);
