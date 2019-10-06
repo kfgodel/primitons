@@ -32,6 +32,9 @@
   </scm>
 
   <properties>
+    <!-- Sonar properties to prevent unintentional id changes (Reference: https://docs.sonarqube.org/latest/analysis/analysis-parameters/) -->
+    <sonar.projectKey>info.kfgodel:primitons</sonar.projectKey>
+
     <version.extended-functions>0.0.2-SNAPSHOT</version.extended-functions>
   </properties>
 
