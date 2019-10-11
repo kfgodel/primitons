@@ -4,13 +4,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>info.kfgodel</groupId>
   <artifactId>primitons</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
 
   <parent>
     <groupId>info.kfgodel</groupId>
     <artifactId>java-pom</artifactId>
-    <version>0.1.6</version>
+    <version>0.1.7</version>
   </parent>
 
   <name>Primitons</name>
@@ -35,7 +36,7 @@
     <!-- Sonar properties to prevent unintentional id changes (Reference: https://docs.sonarqube.org/latest/analysis/analysis-parameters/) -->
     <sonar.projectKey>info.kfgodel:primitons</sonar.projectKey>
 
-    <version.extended-functions>0.0.2-SNAPSHOT</version.extended-functions>
+    <version.extended-functions>0.0.2</version.extended-functions>
   </properties>
 
   <dependencies>
@@ -52,16 +53,12 @@
     <dependency>
       <groupId>info.kfgodel</groupId>
       <artifactId>nary</artifactId>
-      <version>${version.nary}</version>
-      <scope>compile</scope>
     </dependency>
 
     <!-- Rspec like testing -->
     <dependency>
       <groupId>info.kfgodel</groupId>
-      <artifactId>java-spec</artifactId>
-      <version>${version.javaspec}</version>
-      <scope>test</scope>
+      <artifactId>jspek</artifactId>
     </dependency>
 
   </dependencies>
