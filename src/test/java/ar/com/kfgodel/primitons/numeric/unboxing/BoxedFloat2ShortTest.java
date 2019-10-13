@@ -1,10 +1,10 @@
 package ar.com.kfgodel.primitons.numeric.unboxing;
 
-import ar.com.dgarcia.javaspec.api.JavaSpec;
-import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.boxed.BoxedFloaton;
 import ar.com.kfgodel.primitons.api.exceptions.UnmappableException;
+import info.kfgodel.jspek.api.JavaSpec;
+import info.kfgodel.jspek.api.JavaSpecRunner;
 import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;

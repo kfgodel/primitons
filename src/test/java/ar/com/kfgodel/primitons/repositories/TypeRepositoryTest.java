@@ -1,10 +1,10 @@
 package ar.com.kfgodel.primitons.repositories;
 
-import ar.com.dgarcia.javaspec.api.JavaSpec;
-import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.impl.TypeRepositoryImpl;
 import com.google.common.collect.Sets;
+import info.kfgodel.jspek.api.JavaSpec;
+import info.kfgodel.jspek.api.JavaSpecRunner;
 import org.junit.runner.RunWith;
 
 import java.util.stream.Collectors;

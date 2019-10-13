@@ -1,10 +1,10 @@
 package ar.com.kfgodel.primitons.textual;
 
-import ar.com.dgarcia.javaspec.api.JavaSpec;
-import ar.com.dgarcia.javaspec.api.JavaSpecRunner;
 import ar.com.kfgodel.nary.api.optionals.Optional;
 import ar.com.kfgodel.primitons.PrimitonTestContext;
 import ar.com.kfgodel.primitons.api.Primiton;
+import info.kfgodel.jspek.api.JavaSpec;
+import info.kfgodel.jspek.api.JavaSpecRunner;
 import org.junit.runner.RunWith;
 
 import java.util.function.Function;

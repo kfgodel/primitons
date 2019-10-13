@@ -1,6 +1,5 @@
 package ar.com.kfgodel.primitons;
 
-import ar.com.dgarcia.javaspec.api.contexts.TestContext;
 import ar.com.kfgodel.function.arrays.booleans.arrays.ArrayOfBooleanToArrayOfBooleanFunction;
 import ar.com.kfgodel.function.arrays.boxed.booleans.boxed.ArrayOfBoxedBooleanToBoxedBooleanFunction;
 import ar.com.kfgodel.function.arrays.boxed.bytes.boxed.ArrayOfBoxedByteToBoxedByteFunction;
@@ -210,6 +209,7 @@ import ar.com.kfgodel.function.shorts.boxed.ShortToBoxedLongFunction;
 import ar.com.kfgodel.function.shorts.boxed.ShortToBoxedShortFunction;
 import ar.com.kfgodel.primitons.api.repositories.FunctionReposity;
 import ar.com.kfgodel.primitons.api.repositories.TypeRepository;
+import info.kfgodel.jspek.api.contexts.TestContext;
 
 import java.util.function.Supplier;
 
